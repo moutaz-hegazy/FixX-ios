@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>305513197431-qsvb28m7ctf5001es0iaah86agdcrc7e.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.305513197431-qsvb28m7ctf5001es0iaah86agdcrc7e</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>305513197431-b1nv231gab992r3q9rrqocu5rip3bt0j.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCwOo44kPNNdw5y0679hAhrUyxNJOGegkA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>305513197431</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>ITI.FixX-ios</string>
+	<key>PROJECT_ID</key>
+	<string>fixawy-fd039</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fixawy-fd039.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:305513197431:ios:506b2c42cdf4f46c44bb72</string>
+	<key>DATABASE_URL</key>
+	<string>https://fixawy-fd039-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>

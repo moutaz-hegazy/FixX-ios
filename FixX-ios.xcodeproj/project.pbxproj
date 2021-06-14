@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B280B398BCF09D60B16C694 /* Pods_FixX_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 340E1495788B01B062447DB0 /* Pods_FixX_ios.framework */; };
 		A9D5234E2676632300B9C136 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D5234D2676632300B9C136 /* AppDelegate.swift */; };
 		A9D523502676632300B9C136 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D5234F2676632300B9C136 /* SceneDelegate.swift */; };
 		A9D523522676632300B9C136 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D523512676632300B9C136 /* ViewController.swift */; };
 		A9D523552676632300B9C136 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D523532676632300B9C136 /* Main.storyboard */; };
 		A9D523572676632800B9C136 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9D523562676632800B9C136 /* Assets.xcassets */; };
 		A9D5235A2676632800B9C136 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D523582676632800B9C136 /* LaunchScreen.storyboard */; };
+		A9D52362267664DC00B9C136 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9D52361267664DB00B9C136 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		340E1495788B01B062447DB0 /* Pods_FixX_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FixX_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B063103FF19EC01A2BE70B2 /* Pods-FixX-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FixX-ios.debug.xcconfig"; path = "Target Support Files/Pods-FixX-ios/Pods-FixX-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		7347986CDE791043ADD668A0 /* Pods-FixX-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FixX-ios.release.xcconfig"; path = "Target Support Files/Pods-FixX-ios/Pods-FixX-ios.release.xcconfig"; sourceTree = "<group>"; };
 		A9D5234A2676632200B9C136 /* FixX-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FixX-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D5234D2676632300B9C136 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9D5234F2676632300B9C136 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +29,7 @@
 		A9D523562676632800B9C136 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9D523592676632800B9C136 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9D5235B2676632800B9C136 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9D52361267664DB00B9C136 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B280B398BCF09D60B16C694 /* Pods_FixX_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01565DAF5A80B3A26A9D7EEA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5B063103FF19EC01A2BE70B2 /* Pods-FixX-ios.debug.xcconfig */,
+				7347986CDE791043ADD668A0 /* Pods-FixX-ios.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8C47E820A4F3199974435A21 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				340E1495788B01B062447DB0 /* Pods_FixX_ios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A9D523412676632200B9C136 = {
 			isa = PBXGroup;
 			children = (
 				A9D5234C2676632200B9C136 /* FixX-ios */,
 				A9D5234B2676632200B9C136 /* Products */,
+				01565DAF5A80B3A26A9D7EEA /* Pods */,
+				8C47E820A4F3199974435A21 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,6 +89,7 @@
 				A9D523562676632800B9C136 /* Assets.xcassets */,
 				A9D523582676632800B9C136 /* LaunchScreen.storyboard */,
 				A9D5235B2676632800B9C136 /* Info.plist */,
+				A9D52361267664DB00B9C136 /* GoogleService-Info.plist */,
 			);
 			path = "FixX-ios";
 			sourceTree = "<group>";
@@ -74,9 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A9D5235E2676632800B9C136 /* Build configuration list for PBXNativeTarget "FixX-ios" */;
 			buildPhases = (
+				BF4F97AA6D17088A8CCB7625 /* [CP] Check Pods Manifest.lock */,
 				A9D523462676632200B9C136 /* Sources */,
 				A9D523472676632200B9C136 /* Frameworks */,
 				A9D523482676632200B9C136 /* Resources */,
+				70885F6D0D9612AFFC6D99EE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,12 +155,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9D5235A2676632800B9C136 /* LaunchScreen.storyboard in Resources */,
+				A9D52362267664DC00B9C136 /* GoogleService-Info.plist in Resources */,
 				A9D523572676632800B9C136 /* Assets.xcassets in Resources */,
 				A9D523552676632300B9C136 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		70885F6D0D9612AFFC6D99EE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FixX-ios/Pods-FixX-ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FixX-ios/Pods-FixX-ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FixX-ios/Pods-FixX-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF4F97AA6D17088A8CCB7625 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FixX-ios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A9D523462676632200B9C136 /* Sources */ = {
@@ -282,10 +354,12 @@
 		};
 		A9D5235F2676632800B9C136 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B063103FF19EC01A2BE70B2 /* Pods-FixX-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "FixX-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -293,16 +367,18 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ITI.FixX-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		A9D523602676632800B9C136 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7347986CDE791043ADD668A0 /* Pods-FixX-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "FixX-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,7 +386,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ITI.FixX-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
