@@ -38,13 +38,19 @@ class ViewController: UIViewController {
         let email = emailTxt.text ?? ""
         let password = passwordTxt.text ?? ""
         if(!email.isEmpty && !password.isEmpty){
-            Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            /*Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                 if let er = error{
                     print("ERROR >> \(er.localizedDescription)")
                 }else{
                     print("SIGNED UP")
                 }
-            }
+            }*/
+            
+            FirestoreService.shared.registerUser(email: email, password: password, onSuccesshandler: {
+                print("SIGNED UP")
+            }, onFailHandler: {
+                print("ERROR")
+            })
         }
     }
     
@@ -58,6 +64,24 @@ class ViewController: UIViewController {
                     print("ERROR >> \(er.localizedDescription)")
                 }else{
                     print("LOGGEDIN")
+                    /*FirestoreService.shared.fetchUserFromDB(uid: Auth.auth().currentUser?.uid, onCompletion: { user in
+                        print("HELLLOOOOO\(String(describing: user as! User))")
+                    }, passRegister: {_ in })*/
+                    /*FirestoreService.shared.fetchUserOnce(onCompletion: {user in
+                        print("HELLLOOOOO\(String(describing: user as! User))")
+                    })*/
+                    /*FirestoreService.shared.fetchCommentsForTech(onSuccessHandler: {comments in
+                        print("\(comments)")}, onFailHandler: {})*/
+                    /*FirestoreService.shared.updateExtensionPrice(jobId: "7ZvLQI4cPK1im9BwO0L4", extId: "V2yYXn5dWdFC0gKmjzAn", price: 5, onSuccessHandler: {
+                        print("updated")
+                    }, onFailHandler: {
+                        print("failed")
+                    })*/
+                    /*FirestoreService.shared.removeExtension(jobId: "7ZvLQI4cPK1im9BwO0L4", extId: "CXewSFMTCJQfmPeioX0c", onSuccessHandler: {}, onFailHandler: {})*/
+                    /*FirestoreService.shared.fetchExtensionsForJob(jobId: "bU87MiEEa2BRztWM7f8D", onSuccessHandler: {_ in }, onFailHandler: {})*/
+                    FirestoreService.shared.fetchChatUsersTest(onCompletion: {contacts in
+                        print("\(contacts.count)")
+                    })
                 }
             }
         }
