@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0B280B398BCF09D60B16C694 /* Pods_FixX_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 340E1495788B01B062447DB0 /* Pods_FixX_ios.framework */; };
+		A90CE037267A191700971ECB /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90CE036267A191700971ECB /* ChatMessage.swift */; };
+		A90CE03A267A779E00971ECB /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90CE039267A779E00971ECB /* Job.swift */; };
 		A9B8FF57267949A4001B280F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B8FF56267949A4001B280F /* User.swift */; };
 		A9B8FF5E267957B9001B280F /* Technician.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B8FF5D267957B9001B280F /* Technician.swift */; };
 		A9B8FF612679613F001B280F /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B8FF602679613F001B280F /* Comment.swift */; };
@@ -29,6 +31,8 @@
 		340E1495788B01B062447DB0 /* Pods_FixX_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FixX_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B063103FF19EC01A2BE70B2 /* Pods-FixX-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FixX-ios.debug.xcconfig"; path = "Target Support Files/Pods-FixX-ios/Pods-FixX-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		7347986CDE791043ADD668A0 /* Pods-FixX-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FixX-ios.release.xcconfig"; path = "Target Support Files/Pods-FixX-ios/Pods-FixX-ios.release.xcconfig"; sourceTree = "<group>"; };
+		A90CE036267A191700971ECB /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		A90CE039267A779E00971ECB /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		A9B8FF56267949A4001B280F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A9B8FF5D267957B9001B280F /* Technician.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Technician.swift; sourceTree = "<group>"; };
 		A9B8FF602679613F001B280F /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
@@ -95,6 +99,8 @@
 				A9B8FF602679613F001B280F /* Comment.swift */,
 				A9B8FF63267968AA001B280F /* Extension.swift */,
 				A9B8FF662679810F001B280F /* ContactInfo.swift */,
+				A90CE036267A191700971ECB /* ChatMessage.swift */,
+				A90CE039267A779E00971ECB /* Job.swift */,
 			);
 			path = POJOs;
 			sourceTree = "<group>";
@@ -254,11 +260,13 @@
 				A9B8FF5E267957B9001B280F /* Technician.swift in Sources */,
 				A9D523522676632300B9C136 /* ViewController.swift in Sources */,
 				A9D074572678D64700BBEF2D /* FirestoreService.swift in Sources */,
+				A90CE03A267A779E00971ECB /* Job.swift in Sources */,
 				A9B8FF672679810F001B280F /* ContactInfo.swift in Sources */,
 				A9D5234E2676632300B9C136 /* AppDelegate.swift in Sources */,
 				A9B8FF64267968AA001B280F /* Extension.swift in Sources */,
 				A9D0745E2678E39500BBEF2D /* StringPair.swift in Sources */,
 				A9D523502676632300B9C136 /* SceneDelegate.swift in Sources */,
+				A90CE037267A191700971ECB /* ChatMessage.swift in Sources */,
 				A9B8FF612679613F001B280F /* Comment.swift in Sources */,
 				A9B8FF57267949A4001B280F /* User.swift in Sources */,
 			);

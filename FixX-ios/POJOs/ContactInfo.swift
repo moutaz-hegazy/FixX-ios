@@ -11,4 +11,10 @@ import Foundation
 class ContactInfo : Codable{
     var uid : String?
     var channel : String?
+    
+    init() {}
+    init(uid : String?, channel : String?) {
+        self.uid = uid
+        self.channel = channel
+    }
 }

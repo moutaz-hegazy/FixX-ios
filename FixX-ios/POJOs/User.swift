@@ -8,15 +8,6 @@
 
 import Foundation
 
-struct User : Codable{
-    var phoneNumber : String
-    var accountType : String
-    var name : String
-    var email : String
-    var uid : String?
-    var token : String?
-    var profilePicture : StringPair?
-    var loactions : [String]?
-}
+class User : Person{}
 /*class User(phoneNumber: String = "", accountType: String = "", name: String ="", email: String = "", uid : String = "")
     : Person(phoneNumber,accountType,name,email,uid)*/
