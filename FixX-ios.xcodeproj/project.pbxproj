@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,12 @@
 		A9D523572676632800B9C136 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9D523562676632800B9C136 /* Assets.xcassets */; };
 		A9D5235A2676632800B9C136 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D523582676632800B9C136 /* LaunchScreen.storyboard */; };
 		A9D52362267664DC00B9C136 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9D52361267664DB00B9C136 /* GoogleService-Info.plist */; };
+		A9DC5DF6267AA73E0084948C /* OngoingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DC5DF5267AA73D0084948C /* OngoingTableViewCell.swift */; };
+		A9DC5DF9267AADA50084948C /* CompletedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DC5DF8267AADA50084948C /* CompletedTableViewCell.swift */; };
+		A9E43DAA267917B3008B5A45 /* MyOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E43DA9267917B3008B5A45 /* MyOrdersViewController.swift */; };
+		A9E43DAD267917E0008B5A45 /* MyOrdersStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9E43DAC267917E0008B5A45 /* MyOrdersStoryboard.storyboard */; };
+		A9E444F2267A4C68009DD6AE /* OngoingOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E444F1267A4C68009DD6AE /* OngoingOrdersViewController.swift */; };
+		A9E444F6267A4D12009DD6AE /* CompletedOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E444F5267A4D12009DD6AE /* CompletedOrdersViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +36,12 @@
 		A9D523592676632800B9C136 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9D5235B2676632800B9C136 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9D52361267664DB00B9C136 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A9DC5DF5267AA73D0084948C /* OngoingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OngoingTableViewCell.swift; sourceTree = "<group>"; };
+		A9DC5DF8267AADA50084948C /* CompletedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTableViewCell.swift; sourceTree = "<group>"; };
+		A9E43DA9267917B3008B5A45 /* MyOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersViewController.swift; sourceTree = "<group>"; };
+		A9E43DAC267917E0008B5A45 /* MyOrdersStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyOrdersStoryboard.storyboard; sourceTree = "<group>"; };
+		A9E444F1267A4C68009DD6AE /* OngoingOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OngoingOrdersViewController.swift; sourceTree = "<group>"; };
+		A9E444F5267A4D12009DD6AE /* CompletedOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedOrdersViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +94,7 @@
 		A9D5234C2676632200B9C136 /* FixX-ios */ = {
 			isa = PBXGroup;
 			children = (
+				A9E43DA626791767008B5A45 /* MyOrdersScreen */,
 				A9D5234D2676632300B9C136 /* AppDelegate.swift */,
 				A9D5234F2676632300B9C136 /* SceneDelegate.swift */,
 				A9D523512676632300B9C136 /* ViewController.swift */,
@@ -92,6 +105,27 @@
 				A9D52361267664DB00B9C136 /* GoogleService-Info.plist */,
 			);
 			path = "FixX-ios";
+			sourceTree = "<group>";
+		};
+		A9E43DA626791767008B5A45 /* MyOrdersScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A9E43DA726791782008B5A45 /* views */,
+			);
+			path = MyOrdersScreen;
+			sourceTree = "<group>";
+		};
+		A9E43DA726791782008B5A45 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				A9E43DA9267917B3008B5A45 /* MyOrdersViewController.swift */,
+				A9E43DAC267917E0008B5A45 /* MyOrdersStoryboard.storyboard */,
+				A9E444F1267A4C68009DD6AE /* OngoingOrdersViewController.swift */,
+				A9E444F5267A4D12009DD6AE /* CompletedOrdersViewController.swift */,
+				A9DC5DF5267AA73D0084948C /* OngoingTableViewCell.swift */,
+				A9DC5DF8267AADA50084948C /* CompletedTableViewCell.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9D5235A2676632800B9C136 /* LaunchScreen.storyboard in Resources */,
+				A9E43DAD267917E0008B5A45 /* MyOrdersStoryboard.storyboard in Resources */,
 				A9D52362267664DC00B9C136 /* GoogleService-Info.plist in Resources */,
 				A9D523572676632800B9C136 /* Assets.xcassets in Resources */,
 				A9D523552676632300B9C136 /* Main.storyboard in Resources */,
@@ -210,9 +245,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9DC5DF6267AA73E0084948C /* OngoingTableViewCell.swift in Sources */,
 				A9D523522676632300B9C136 /* ViewController.swift in Sources */,
+				A9E444F6267A4D12009DD6AE /* CompletedOrdersViewController.swift in Sources */,
+				A9E444F2267A4C68009DD6AE /* OngoingOrdersViewController.swift in Sources */,
 				A9D5234E2676632300B9C136 /* AppDelegate.swift in Sources */,
 				A9D523502676632300B9C136 /* SceneDelegate.swift in Sources */,
+				A9E43DAA267917B3008B5A45 /* MyOrdersViewController.swift in Sources */,
+				A9DC5DF9267AADA50084948C /* CompletedTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
