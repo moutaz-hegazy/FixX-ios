@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController" customModule="FixX_ios" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="fN3-e8-So5">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6TQ-zl-8TL">
+                    <rect key="frame" x="82" y="150" width="250" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="colored_avatar_user" translatesAutoresizingMaskIntoConstraints="NO" id="6Cg-rp-MkN">
+                    <rect key="frame" x="82" y="255" width="100" height="100"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cQR-vh-jFe">
+                    <rect key="frame" x="82" y="420" width="250" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GgQ-oE-zFY">
+                    <rect key="frame" x="82" y="460" width="250" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TFa-dn-BDq">
+                    <rect key="frame" x="82" y="500" width="250" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W0N-xY-b8T">
+                    <rect key="frame" x="82" y="540" width="250" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="colored_avatar_technician" translatesAutoresizingMaskIntoConstraints="NO" id="We0-uO-XRK">
+                    <rect key="frame" x="232" y="255" width="100" height="100"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Profile Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FxR-Vr-anH">
+                    <rect key="frame" x="134" y="210" width="143" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCk-xT-MbS">
+                    <rect key="frame" x="114" y="360" width="36" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Technician" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="irm-ft-NqK">
+                    <rect key="frame" x="241" y="360" width="82" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPq-tJ-tim">
+                    <rect key="frame" x="180" y="600" width="54" height="30"/>
+                    <state key="normal" title="Sign Up"/>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="iCa-Gf-U8a"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="GgQ-oE-zFY" firstAttribute="leading" secondItem="iCa-Gf-U8a" secondAttribute="leading" constant="82" id="03a-Gl-2hz"/>
+                <constraint firstItem="iCa-Gf-U8a" firstAttribute="trailing" secondItem="cQR-vh-jFe" secondAttribute="trailing" constant="82" id="2Tk-OB-dfF"/>
+                <constraint firstItem="cQR-vh-jFe" firstAttribute="top" secondItem="lCk-xT-MbS" secondAttribute="bottom" constant="39" id="3Vs-Ca-FgE"/>
+                <constraint firstItem="JPq-tJ-tim" firstAttribute="leading" secondItem="iCa-Gf-U8a" secondAttribute="leading" constant="180" id="6yL-5E-nZQ"/>
+                <constraint firstItem="cQR-vh-jFe" firstAttribute="top" secondItem="irm-ft-NqK" secondAttribute="bottom" constant="39" id="RMB-OS-rlK"/>
+                <constraint firstItem="iCa-Gf-U8a" firstAttribute="trailing" secondItem="GgQ-oE-zFY" secondAttribute="trailing" constant="82" id="S2E-sD-pc4"/>
+                <constraint firstItem="lCk-xT-MbS" firstAttribute="leading" secondItem="iCa-Gf-U8a" secondAttribute="leading" constant="114" id="SsT-W4-Wyj"/>
+                <constraint firstItem="FxR-Vr-anH" firstAttribute="top" secondItem="6TQ-zl-8TL" secondAttribute="bottom" constant="26" id="TeN-NA-244"/>
+                <constraint firstItem="TFa-dn-BDq" firstAttribute="top" secondItem="GgQ-oE-zFY" secondAttribute="bottom" constant="6" id="VGN-Nb-con"/>
+                <constraint firstItem="iCa-Gf-U8a" firstAttribute="trailing" secondItem="irm-ft-NqK" secondAttribute="trailing" constant="91" id="Wm5-cL-Ryt"/>
+                <constraint firstItem="cQR-vh-jFe" firstAttribute="top" secondItem="FxR-Vr-anH" secondAttribute="bottom" constant="189" id="Y1u-CD-U6w"/>
+                <constraint firstItem="W0N-xY-b8T" firstAttribute="leading" secondItem="iCa-Gf-U8a" secondAttribute="leading" constant="82" id="YuL-lW-O0B"/>
+                <constraint firstItem="cQR-vh-jFe" firstAttribute="leading" secondItem="iCa-Gf-U8a" secondAttribute="leading" constant="82" id="cKj-Sv-Yk4"/>
+                <constraint firstItem="TFa-dn-BDq" firstAttribute="leading" secondItem="iCa-Gf-U8a" secondAttribute="leading" constant="82" id="dhF-SY-9sl"/>
+                <constraint firstItem="iCa-Gf-U8a" firstAttribute="trailing" secondItem="FxR-Vr-anH" secondAttribute="trailing" constant="137" id="eQM-Ny-TNA"/>
+                <constraint firstItem="GgQ-oE-zFY" firstAttribute="top" secondItem="cQR-vh-jFe" secondAttribute="bottom" constant="6" id="etl-y7-2qh"/>
+                <constraint firstItem="iCa-Gf-U8a" firstAttribute="trailing" secondItem="JPq-tJ-tim" secondAttribute="trailing" constant="180" id="fuc-re-1Cq"/>
+                <constraint firstItem="6TQ-zl-8TL" firstAttribute="top" secondItem="iCa-Gf-U8a" secondAttribute="top" constant="106" id="h50-Z1-SqE"/>
+                <constraint firstItem="6TQ-zl-8TL" firstAttribute="leading" secondItem="iCa-Gf-U8a" secondAttribute="leading" constant="82" id="hCo-qr-0xC"/>
+                <constraint firstItem="FxR-Vr-anH" firstAttribute="leading" secondItem="iCa-Gf-U8a" secondAttribute="leading" constant="134" id="jgf-pB-AAG"/>
+                <constraint firstItem="iCa-Gf-U8a" firstAttribute="trailing" secondItem="6TQ-zl-8TL" secondAttribute="trailing" constant="82" id="oJH-Vu-8Bs"/>
+                <constraint firstItem="iCa-Gf-U8a" firstAttribute="trailing" secondItem="W0N-xY-b8T" secondAttribute="trailing" constant="82" id="qwd-Qn-pCq"/>
+                <constraint firstItem="iCa-Gf-U8a" firstAttribute="trailing" secondItem="TFa-dn-BDq" secondAttribute="trailing" constant="82" id="uO2-qZ-TrG"/>
+                <constraint firstItem="W0N-xY-b8T" firstAttribute="top" secondItem="TFa-dn-BDq" secondAttribute="bottom" constant="6" id="wId-2b-1kh"/>
+                <constraint firstItem="JPq-tJ-tim" firstAttribute="top" secondItem="W0N-xY-b8T" secondAttribute="bottom" constant="26" id="wft-aZ-s5s"/>
+            </constraints>
+            <point key="canvasLocation" x="27.536231884057973" y="65.625"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="colored_avatar_technician" width="512" height="512"/>
+        <image name="colored_avatar_user" width="512" height="512"/>
+    </resources>
+</document>
