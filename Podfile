@@ -9,5 +9,6 @@ target 'FixX-ios' do
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
   pod 'Firebase/Storage'
-
+  
+  pod 'DropDown'
 end

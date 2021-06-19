@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,18 @@
 		A9D523572676632800B9C136 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9D523562676632800B9C136 /* Assets.xcassets */; };
 		A9D5235A2676632800B9C136 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D523582676632800B9C136 /* LaunchScreen.storyboard */; };
 		A9D52362267664DC00B9C136 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9D52361267664DB00B9C136 /* GoogleService-Info.plist */; };
+		A9DBF933267D64CD00038405 /* MyAddressesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DBF932267D64CD00038405 /* MyAddressesViewController.swift */; };
+		A9DBF936267D652500038405 /* MyAddressesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DBF935267D652500038405 /* MyAddressesTableViewCell.swift */; };
+		A9DBF93A267D653E00038405 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DBF938267D653C00038405 /* MapViewController.swift */; };
+		A9DBF93B267D653E00038405 /* AddAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DBF939267D653E00038405 /* AddAddressViewController.swift */; };
+		A9DBF940267D656500038405 /* AddAddress.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9DBF93D267D656000038405 /* AddAddress.storyboard */; };
+		A9DBF941267D656500038405 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9DBF93E267D656200038405 /* Map.storyboard */; };
+		A9DBF942267D656500038405 /* MyAddresses.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9DBF93F267D656500038405 /* MyAddresses.storyboard */; };
+		A9DBF949267D69AA00038405 /* AddWorkLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DBF946267D69A600038405 /* AddWorkLocationViewController.swift */; };
+		A9DBF94A267D69AB00038405 /* MyWorkLocationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DBF947267D69A800038405 /* MyWorkLocationsTableViewCell.swift */; };
+		A9DBF94B267D69AB00038405 /* MyWorkLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DBF948267D69AA00038405 /* MyWorkLocationViewController.swift */; };
+		A9DBF94F267D69BE00038405 /* AddWorkLocation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9DBF94D267D69BC00038405 /* AddWorkLocation.storyboard */; };
+		A9DBF950267D69BE00038405 /* MyWorkLocations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9DBF94E267D69BE00038405 /* MyWorkLocations.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +42,18 @@
 		A9D523592676632800B9C136 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9D5235B2676632800B9C136 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9D52361267664DB00B9C136 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A9DBF932267D64CD00038405 /* MyAddressesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAddressesViewController.swift; sourceTree = "<group>"; };
+		A9DBF935267D652500038405 /* MyAddressesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAddressesTableViewCell.swift; sourceTree = "<group>"; };
+		A9DBF938267D653C00038405 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A9DBF939267D653E00038405 /* AddAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAddressViewController.swift; sourceTree = "<group>"; };
+		A9DBF93D267D656000038405 /* AddAddress.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddAddress.storyboard; sourceTree = "<group>"; };
+		A9DBF93E267D656200038405 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		A9DBF93F267D656500038405 /* MyAddresses.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyAddresses.storyboard; sourceTree = "<group>"; };
+		A9DBF946267D69A600038405 /* AddWorkLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWorkLocationViewController.swift; sourceTree = "<group>"; };
+		A9DBF947267D69A800038405 /* MyWorkLocationsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyWorkLocationsTableViewCell.swift; sourceTree = "<group>"; };
+		A9DBF948267D69AA00038405 /* MyWorkLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyWorkLocationViewController.swift; sourceTree = "<group>"; };
+		A9DBF94D267D69BC00038405 /* AddWorkLocation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddWorkLocation.storyboard; sourceTree = "<group>"; };
+		A9DBF94E267D69BE00038405 /* MyWorkLocations.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyWorkLocations.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +106,8 @@
 		A9D5234C2676632200B9C136 /* FixX-ios */ = {
 			isa = PBXGroup;
 			children = (
+				A9DBF92E267D63E700038405 /* WorkLocations */,
+				A9DBF92D267D63DA00038405 /* MyAddresses */,
 				A9D5234D2676632300B9C136 /* AppDelegate.swift */,
 				A9D5234F2676632300B9C136 /* SceneDelegate.swift */,
 				A9D523512676632300B9C136 /* ViewController.swift */,
@@ -92,6 +118,64 @@
 				A9D52361267664DB00B9C136 /* GoogleService-Info.plist */,
 			);
 			path = "FixX-ios";
+			sourceTree = "<group>";
+		};
+		A9DBF92D267D63DA00038405 /* MyAddresses */ = {
+			isa = PBXGroup;
+			children = (
+				A9DBF92F267D63FF00038405 /* Views */,
+			);
+			path = MyAddresses;
+			sourceTree = "<group>";
+		};
+		A9DBF92E267D63E700038405 /* WorkLocations */ = {
+			isa = PBXGroup;
+			children = (
+				A9DBF944267D698000038405 /* Views */,
+			);
+			path = WorkLocations;
+			sourceTree = "<group>";
+		};
+		A9DBF92F267D63FF00038405 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A9DBF93D267D656000038405 /* AddAddress.storyboard */,
+				A9DBF93E267D656200038405 /* Map.storyboard */,
+				A9DBF93F267D656500038405 /* MyAddresses.storyboard */,
+				A9DBF930267D640700038405 /* ViewControllers */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A9DBF930267D640700038405 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A9DBF932267D64CD00038405 /* MyAddressesViewController.swift */,
+				A9DBF935267D652500038405 /* MyAddressesTableViewCell.swift */,
+				A9DBF939267D653E00038405 /* AddAddressViewController.swift */,
+				A9DBF938267D653C00038405 /* MapViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A9DBF944267D698000038405 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A9DBF94D267D69BC00038405 /* AddWorkLocation.storyboard */,
+				A9DBF94E267D69BE00038405 /* MyWorkLocations.storyboard */,
+				A9DBF945267D698900038405 /* ViewControllers */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A9DBF945267D698900038405 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A9DBF946267D69A600038405 /* AddWorkLocationViewController.swift */,
+				A9DBF947267D69A800038405 /* MyWorkLocationsTableViewCell.swift */,
+				A9DBF948267D69AA00038405 /* MyWorkLocationViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,9 +239,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9D5235A2676632800B9C136 /* LaunchScreen.storyboard in Resources */,
+				A9DBF950267D69BE00038405 /* MyWorkLocations.storyboard in Resources */,
 				A9D52362267664DC00B9C136 /* GoogleService-Info.plist in Resources */,
 				A9D523572676632800B9C136 /* Assets.xcassets in Resources */,
+				A9DBF942267D656500038405 /* MyAddresses.storyboard in Resources */,
 				A9D523552676632300B9C136 /* Main.storyboard in Resources */,
+				A9DBF940267D656500038405 /* AddAddress.storyboard in Resources */,
+				A9DBF94F267D69BE00038405 /* AddWorkLocation.storyboard in Resources */,
+				A9DBF941267D656500038405 /* Map.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,9 +299,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9DBF94B267D69AB00038405 /* MyWorkLocationViewController.swift in Sources */,
 				A9D523522676632300B9C136 /* ViewController.swift in Sources */,
+				A9DBF93A267D653E00038405 /* MapViewController.swift in Sources */,
+				A9DBF949267D69AA00038405 /* AddWorkLocationViewController.swift in Sources */,
+				A9DBF933267D64CD00038405 /* MyAddressesViewController.swift in Sources */,
+				A9DBF94A267D69AB00038405 /* MyWorkLocationsTableViewCell.swift in Sources */,
 				A9D5234E2676632300B9C136 /* AppDelegate.swift in Sources */,
+				A9DBF936267D652500038405 /* MyAddressesTableViewCell.swift in Sources */,
 				A9D523502676632300B9C136 /* SceneDelegate.swift in Sources */,
+				A9DBF93B267D653E00038405 /* AddAddressViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
