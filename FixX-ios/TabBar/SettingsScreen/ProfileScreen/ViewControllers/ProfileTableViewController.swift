@@ -91,14 +91,17 @@ class ProfileTableViewController: UITableViewController {
         editPasswordAlert.addTextField()
         editPasswordAlert.addTextField()
         
+        
         editPasswordAlert.textFields![0].placeholder = "Enter your old password"
         editPasswordAlert.textFields![0].keyboardType = UIKeyboardType.default
         
         editPasswordAlert.textFields![1].placeholder = "Enter your new password"
         editPasswordAlert.textFields![1].keyboardType = UIKeyboardType.default
         
-        editPasswordAlert.textFields![0].placeholder = "Re-enter your new password"
-        editPasswordAlert.textFields![0].keyboardType = UIKeyboardType.default
+        editPasswordAlert.textFields![2].placeholder = "Re-enter your new password"
+        editPasswordAlert.textFields![2].keyboardType = UIKeyboardType.default
+        
+
         
         editPasswordAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:{(action) in print("Canceled..")} ))
         
