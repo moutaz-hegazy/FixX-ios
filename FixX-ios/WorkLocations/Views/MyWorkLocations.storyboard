@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DY5-BR-NFw">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--My Work Locations-->
+        <scene sceneID="s2h-85-bZf">
+            <objects>
+                <viewController id="niT-9f-zeV" customClass="MyWorkLocationViewController" customModule="FixX_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wOR-xg-tKg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ayu-3e-pCa">
+                                <rect key="frame" x="0.0" y="88" width="414" height="718"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="sectionIndexTrackingBackgroundColor" systemColor="systemIndigoColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celll" rowHeight="89" id="Ojg-AD-dxV" customClass="MyWorkLocationsTableViewCell" customModule="FixX_ios" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="89"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ojg-AD-dxV" id="nWW-1d-Hll">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="89"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTK-Qo-Oqb">
+                                                    <rect key="frame" x="70" y="26" width="274" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1M4-aq-oc8">
+                                                    <rect key="frame" x="70" y="67" width="274" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="uTK-Qo-Oqb" firstAttribute="top" secondItem="nWW-1d-Hll" secondAttribute="topMargin" constant="15" id="UiO-SN-U61"/>
+                                                <constraint firstItem="1M4-aq-oc8" firstAttribute="leading" secondItem="nWW-1d-Hll" secondAttribute="leadingMargin" constant="50" id="Uri-nD-Lmh"/>
+                                                <constraint firstItem="1M4-aq-oc8" firstAttribute="bottom" secondItem="nWW-1d-Hll" secondAttribute="bottomMargin" constant="10" id="cZF-3S-efa"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="1M4-aq-oc8" secondAttribute="trailing" constant="50" id="geX-6M-edv"/>
+                                                <constraint firstItem="uTK-Qo-Oqb" firstAttribute="leading" secondItem="nWW-1d-Hll" secondAttribute="leadingMargin" constant="50" id="kxR-lK-e0a"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="uTK-Qo-Oqb" secondAttribute="trailing" constant="50" id="mDi-uy-EGU"/>
+                                                <constraint firstItem="1M4-aq-oc8" firstAttribute="top" secondItem="uTK-Qo-Oqb" secondAttribute="bottom" constant="20" id="qAE-Ag-aHO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="addLbl" destination="1M4-aq-oc8" id="m4r-ha-khc"/>
+                                            <outlet property="titleLbl" destination="uTK-Qo-Oqb" id="3QL-xo-Dm9"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="niT-9f-zeV" id="Hpu-Rp-JYi"/>
+                                    <outlet property="delegate" destination="niT-9f-zeV" id="caQ-Tt-SoI"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uWd-4h-1Nu">
+                                <rect key="frame" x="16" y="816" width="382" height="30"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <state key="normal" title="Add Work Loaction">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addWorkLocationActionBtn:" destination="niT-9f-zeV" eventType="touchUpInside" id="Bc7-3S-d0O"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Bo2-c5-KfR"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uWd-4h-1Nu" firstAttribute="top" secondItem="Ayu-3e-pCa" secondAttribute="bottom" constant="10" id="7lH-Vw-W2j"/>
+                            <constraint firstItem="Ayu-3e-pCa" firstAttribute="trailing" secondItem="Bo2-c5-KfR" secondAttribute="trailing" id="HsS-AY-GAz"/>
+                            <constraint firstItem="uWd-4h-1Nu" firstAttribute="leading" secondItem="Bo2-c5-KfR" secondAttribute="leading" constant="16" id="XR0-kW-o56"/>
+                            <constraint firstItem="Bo2-c5-KfR" firstAttribute="trailing" secondItem="uWd-4h-1Nu" secondAttribute="trailing" constant="16" id="Ycu-6g-1nI"/>
+                            <constraint firstItem="Bo2-c5-KfR" firstAttribute="bottom" secondItem="uWd-4h-1Nu" secondAttribute="bottom" constant="16" id="ZHk-uZ-dkv"/>
+                            <constraint firstItem="Ayu-3e-pCa" firstAttribute="top" secondItem="Bo2-c5-KfR" secondAttribute="top" id="hrv-eN-qvt"/>
+                            <constraint firstItem="Ayu-3e-pCa" firstAttribute="leading" secondItem="Bo2-c5-KfR" secondAttribute="leading" id="tWh-yr-0bj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="My Work Locations" id="MtW-ad-uKI"/>
+                    <connections>
+                        <outlet property="myWorkLocationsTableView" destination="Ayu-3e-pCa" id="55p-fS-2JZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ePf-06-YJX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1200" y="93.75"/>
+        </scene>
+        <!--AddWorkLocation-->
+        <scene sceneID="uwQ-Gd-PgQ">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="AWLVC" storyboardName="AddWorkLocation" id="rrs-p9-wkg" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8W4-02-iZu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2014" y="214"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="17Y-JG-XdN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DY5-BR-NFw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7SM-F1-E8u">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="niT-9f-zeV" kind="relationship" relationship="rootViewController" id="cTj-dg-gZD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FIU-b4-mdI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="289.85507246376812" y="93.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

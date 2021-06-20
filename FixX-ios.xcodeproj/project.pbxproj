@@ -20,6 +20,18 @@
 		A962EF6B267F942900A8420C /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A962EF60267F942800A8420C /* Comment.swift */; };
 		A962EF6C267F942900A8420C /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A962EF61267F942800A8420C /* Person.swift */; };
 		A962EF71267F945500A8420C /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A962EF70267F945400A8420C /* FirestoreService.swift */; };
+		A962EFC6267FCF6200A8420C /* MyWorkLocations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A962EFC4267FCF6100A8420C /* MyWorkLocations.storyboard */; };
+		A962EFC7267FCF6200A8420C /* AddWorkLocation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A962EFC5267FCF6200A8420C /* AddWorkLocation.storyboard */; };
+		A962EFCC267FCFCF00A8420C /* MyWorkLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A962EFC9267FCFCD00A8420C /* MyWorkLocationViewController.swift */; };
+		A962EFCD267FCFCF00A8420C /* AddWorkLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A962EFCA267FCFCE00A8420C /* AddWorkLocationViewController.swift */; };
+		A962EFCE267FCFCF00A8420C /* MyWorkLocationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A962EFCB267FCFCF00A8420C /* MyWorkLocationsTableViewCell.swift */; };
+		A962EFD5267FD01700A8420C /* AddAddress.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A962EFD2267FD01400A8420C /* AddAddress.storyboard */; };
+		A962EFD6267FD01700A8420C /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A962EFD3267FD01600A8420C /* Map.storyboard */; };
+		A962EFD7267FD01700A8420C /* MyAddresses.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A962EFD4267FD01700A8420C /* MyAddresses.storyboard */; };
+		A962EFDE267FD03100A8420C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A962EFD9267FD02D00A8420C /* MapViewController.swift */; };
+		A962EFDF267FD03100A8420C /* AddAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A962EFDA267FD02E00A8420C /* AddAddressViewController.swift */; };
+		A962EFE0267FD03100A8420C /* MyAddressesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A962EFDB267FD03000A8420C /* MyAddressesTableViewCell.swift */; };
+		A962EFE1267FD03100A8420C /* MyAddressesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A962EFDD267FD03100A8420C /* MyAddressesViewController.swift */; };
 		A9776A6E267B698A00E9B80B /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776A6D267B698900E9B80B /* GradientView.swift */; };
 		A9776A73267B6AB300E9B80B /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776A72267B6AB300E9B80B /* RegistrationViewController.swift */; };
 		A9776A7E267B6B3B00E9B80B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776A7C267B6B3B00E9B80B /* SignUpViewController.swift */; };
@@ -81,6 +93,18 @@
 		A962EF60267F942800A8420C /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		A962EF61267F942800A8420C /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		A962EF70267F945400A8420C /* FirestoreService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
+		A962EFC4267FCF6100A8420C /* MyWorkLocations.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyWorkLocations.storyboard; sourceTree = "<group>"; };
+		A962EFC5267FCF6200A8420C /* AddWorkLocation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddWorkLocation.storyboard; sourceTree = "<group>"; };
+		A962EFC9267FCFCD00A8420C /* MyWorkLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyWorkLocationViewController.swift; sourceTree = "<group>"; };
+		A962EFCA267FCFCE00A8420C /* AddWorkLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWorkLocationViewController.swift; sourceTree = "<group>"; };
+		A962EFCB267FCFCF00A8420C /* MyWorkLocationsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyWorkLocationsTableViewCell.swift; sourceTree = "<group>"; };
+		A962EFD2267FD01400A8420C /* AddAddress.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddAddress.storyboard; sourceTree = "<group>"; };
+		A962EFD3267FD01600A8420C /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		A962EFD4267FD01700A8420C /* MyAddresses.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyAddresses.storyboard; sourceTree = "<group>"; };
+		A962EFD9267FD02D00A8420C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A962EFDA267FD02E00A8420C /* AddAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAddressViewController.swift; sourceTree = "<group>"; };
+		A962EFDB267FD03000A8420C /* MyAddressesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAddressesTableViewCell.swift; sourceTree = "<group>"; };
+		A962EFDD267FD03100A8420C /* MyAddressesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAddressesViewController.swift; sourceTree = "<group>"; };
 		A9776A6D267B698900E9B80B /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		A9776A72267B6AB300E9B80B /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		A9776A7C267B6B3B00E9B80B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +205,64 @@
 				A962EF70267F945400A8420C /* FirestoreService.swift */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		A962EFC0267FCEF400A8420C /* WorkLocations */ = {
+			isa = PBXGroup;
+			children = (
+				A962EFC2267FCF3200A8420C /* Views */,
+			);
+			path = WorkLocations;
+			sourceTree = "<group>";
+		};
+		A962EFC1267FCF1000A8420C /* Adresses */ = {
+			isa = PBXGroup;
+			children = (
+				A962EFD0267FCFE500A8420C /* Views */,
+			);
+			path = Adresses;
+			sourceTree = "<group>";
+		};
+		A962EFC2267FCF3200A8420C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A962EFC5267FCF6200A8420C /* AddWorkLocation.storyboard */,
+				A962EFC4267FCF6100A8420C /* MyWorkLocations.storyboard */,
+				A962EFC3267FCF4100A8420C /* ViewControllers */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A962EFC3267FCF4100A8420C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A962EFCA267FCFCE00A8420C /* AddWorkLocationViewController.swift */,
+				A962EFCB267FCFCF00A8420C /* MyWorkLocationsTableViewCell.swift */,
+				A962EFC9267FCFCD00A8420C /* MyWorkLocationViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A962EFD0267FCFE500A8420C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A962EFD2267FD01400A8420C /* AddAddress.storyboard */,
+				A962EFD3267FD01600A8420C /* Map.storyboard */,
+				A962EFD4267FD01700A8420C /* MyAddresses.storyboard */,
+				A962EFD1267FCFEE00A8420C /* ViewControllers */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A962EFD1267FCFEE00A8420C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A962EFDA267FD02E00A8420C /* AddAddressViewController.swift */,
+				A962EFD9267FD02D00A8420C /* MapViewController.swift */,
+				A962EFDB267FD03000A8420C /* MyAddressesTableViewCell.swift */,
+				A962EFDD267FD03100A8420C /* MyAddressesViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		A9776A63267B686800E9B80B /* Utilities */ = {
@@ -316,6 +398,8 @@
 		A9D5234C2676632200B9C136 /* FixX-ios */ = {
 			isa = PBXGroup;
 			children = (
+				A962EFC1267FCF1000A8420C /* Adresses */,
+				A962EFC0267FCEF400A8420C /* WorkLocations */,
 				A962EF6E267F943400A8420C /* Support */,
 				A962EF55267F93D600A8420C /* POJOs */,
 				A9E43DA626791767008B5A45 /* MyOrdersScreen */,
@@ -422,19 +506,24 @@
 				A9776A9D267B6EEF00E9B80B /* LeftMessageCustomCell.xib in Resources */,
 				A9776A98267B6EC700E9B80B /* RightMessageCustomCell.xib in Resources */,
 				A9D5235A2676632800B9C136 /* LaunchScreen.storyboard in Resources */,
+				A962EFC7267FCF6200A8420C /* AddWorkLocation.storyboard in Resources */,
 				A9E43DAD267917E0008B5A45 /* MyOrdersStoryboard.storyboard in Resources */,
 				A9776A90267B6E6200E9B80B /* ChatLogsCustomCell.xib in Resources */,
 				A9776AA9267B716100E9B80B /* Registration.storyboard in Resources */,
+				A962EFD6267FD01700A8420C /* Map.storyboard in Resources */,
 				A9776BB9267BBB3500E9B80B /* SignUpViewControllerA.storyboard in Resources */,
 				A9D52362267664DC00B9C136 /* GoogleService-Info.plist in Resources */,
 				A9776AAF267B71AF00E9B80B /* ChatLogs.storyboard in Resources */,
+				A962EFC6267FCF6200A8420C /* MyWorkLocations.storyboard in Resources */,
 				A9776BBC267BBB4C00E9B80B /* SignUpViewControllerB.storyboard in Resources */,
 				A9D523572676632800B9C136 /* Assets.xcassets in Resources */,
 				A9776A7F267B6B3B00E9B80B /* SignUpViewController.xib in Resources */,
 				A9776AAC267B717D00E9B80B /* CustomizeOrder.storyboard in Resources */,
 				A9776BBF267BBB5F00E9B80B /* SignUpViewControllerC.storyboard in Resources */,
 				A9776BE2267BD0F600E9B80B /* LogInViewController.storyboard in Resources */,
+				A962EFD7267FD01700A8420C /* MyAddresses.storyboard in Resources */,
 				A9776AB2267B71D100E9B80B /* ChatInbox.storyboard in Resources */,
+				A962EFD5267FD01700A8420C /* AddAddress.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,11 +583,16 @@
 				A962EF65267F942900A8420C /* Technician.swift in Sources */,
 				A9E444F2267A4C68009DD6AE /* OngoingOrdersViewController.swift in Sources */,
 				A9D5234E2676632300B9C136 /* AppDelegate.swift in Sources */,
+				A962EFCD267FCFCF00A8420C /* AddWorkLocationViewController.swift in Sources */,
+				A962EFE0267FD03100A8420C /* MyAddressesTableViewCell.swift in Sources */,
 				A9D523502676632300B9C136 /* SceneDelegate.swift in Sources */,
 				A962EF62267F942900A8420C /* ContactInfo.swift in Sources */,
 				A9E43DAA267917B3008B5A45 /* MyOrdersViewController.swift in Sources */,
 				A9DC5DF9267AADA50084948C /* CompletedTableViewCell.swift in Sources */,
 				A9776B30267B9FCC00E9B80B /* SignUpViewControllerC.swift in Sources */,
+				A962EFDF267FD03100A8420C /* AddAddressViewController.swift in Sources */,
+				A962EFDE267FD03100A8420C /* MapViewController.swift in Sources */,
+				A962EFCC267FCFCF00A8420C /* MyWorkLocationViewController.swift in Sources */,
 				A9776B07267B8C4700E9B80B /* SignUpViewControllerB.swift in Sources */,
 				A962EF67267F942900A8420C /* StringPair.swift in Sources */,
 				A9776A73267B6AB300E9B80B /* RegistrationViewController.swift in Sources */,
@@ -511,9 +605,11 @@
 				A9776AA3267B70D800E9B80B /* UITextField+isError.swift in Sources */,
 				A9776A93267B6E9000E9B80B /* ChatInboxViewController.swift in Sources */,
 				A9D523522676632300B9C136 /* ViewController.swift in Sources */,
+				A962EFE1267FD03100A8420C /* MyAddressesViewController.swift in Sources */,
 				A9776AA6267B70EF00E9B80B /* UITextField+setBottomBorder.swift in Sources */,
 				A9776B0D267B8CA100E9B80B /* SignUpViewControllerD.swift in Sources */,
 				A962EF66267F942900A8420C /* User.swift in Sources */,
+				A962EFCE267FCFCF00A8420C /* MyWorkLocationsTableViewCell.swift in Sources */,
 				A9776A85267B6C9200E9B80B /* ImageCollectionViewCell.swift in Sources */,
 				A962EF68267F942900A8420C /* Extension.swift in Sources */,
 				A9776B04267B8C3500E9B80B /* SignUpViewControllerA.swift in Sources */,
