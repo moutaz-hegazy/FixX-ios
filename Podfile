@@ -11,5 +11,6 @@ target 'FixX-ios' do
   pod 'Firebase/Storage'
   pod 'iOSDropDown'
   pod 'Toaster'
+  pod 'DropDown'
 
 end
