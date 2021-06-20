@@ -43,7 +43,6 @@
 		A9D5234E2676632300B9C136 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D5234D2676632300B9C136 /* AppDelegate.swift */; };
 		A9D523502676632300B9C136 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D5234F2676632300B9C136 /* SceneDelegate.swift */; };
 		A9D523522676632300B9C136 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D523512676632300B9C136 /* ViewController.swift */; };
-		A9D523552676632300B9C136 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D523532676632300B9C136 /* Main.storyboard */; };
 		A9D523572676632800B9C136 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9D523562676632800B9C136 /* Assets.xcassets */; };
 		A9D5235A2676632800B9C136 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D523582676632800B9C136 /* LaunchScreen.storyboard */; };
 		A9D52362267664DC00B9C136 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9D52361267664DB00B9C136 /* GoogleService-Info.plist */; };
@@ -95,7 +94,6 @@
 		A9D5234D2676632300B9C136 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9D5234F2676632300B9C136 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A9D523512676632300B9C136 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A9D523542676632300B9C136 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A9D523562676632800B9C136 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9D523592676632800B9C136 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9D5235B2676632800B9C136 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -290,7 +288,6 @@
 				A9D5234D2676632300B9C136 /* AppDelegate.swift */,
 				A9D5234F2676632300B9C136 /* SceneDelegate.swift */,
 				A9D523512676632300B9C136 /* ViewController.swift */,
-				A9D523532676632300B9C136 /* Main.storyboard */,
 				A9D523582676632800B9C136 /* LaunchScreen.storyboard */,
 				A9D5235B2676632800B9C136 /* Info.plist */,
 				A9D52361267664DB00B9C136 /* GoogleService-Info.plist */,
@@ -393,7 +390,6 @@
 				A9776BBC267BBB4C00E9B80B /* SignUpViewControllerB.storyboard in Resources */,
 				A9D523572676632800B9C136 /* Assets.xcassets in Resources */,
 				A9776A7F267B6B3B00E9B80B /* SignUpViewController.xib in Resources */,
-				A9D523552676632300B9C136 /* Main.storyboard in Resources */,
 				A9776AAC267B717D00E9B80B /* CustomizeOrder.storyboard in Resources */,
 				A9776BBF267BBB5F00E9B80B /* SignUpViewControllerC.storyboard in Resources */,
 				A9776BE2267BD0F600E9B80B /* LogInViewController.storyboard in Resources */,
@@ -486,14 +482,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A9D523532676632300B9C136 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A9D523542676632300B9C136 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A9D523582676632800B9C136 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
