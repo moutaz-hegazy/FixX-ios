@@ -13,18 +13,21 @@
         <scene sceneID="7TV-s8-YvA">
             <objects>
                 <viewController storyboardIdentifier="b" id="OWZ-MH-Te2" customClass="SignUpViewControllerB" customModule="FixX_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="oEg-ZZ-YkK">
+                    <view key="view" contentMode="scaleToFill" id="oEg-ZZ-YkK" customClass="GradientView" customModule="FixX_ios" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eau-89-Amb">
-                                <rect key="frame" x="20" y="112" width="106" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Pick Job Profile"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eau-89-Amb">
+                                <rect key="frame" x="20" y="114" width="106" height="30"/>
+                                <state key="normal" title="Pick Job Profile">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Job..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pm2-0t-lKV" customClass="DropDown" customModule="iOSDropDown">
-                                <rect key="frame" x="107" y="158" width="200" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Job..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pm2-0t-lKV" customClass="DropDown" customModule="iOSDropDown">
+                                <rect key="frame" x="114" y="164" width="200" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="uAX-jH-nVi"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -37,18 +40,40 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2f-LT-cov">
-                                <rect key="frame" x="191" y="272" width="32" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2f-LT-cov">
+                                <rect key="frame" x="132" y="258" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="KFe-OU-MX8"/>
+                                    <constraint firstAttribute="width" constant="150" id="ttb-8b-M3g"/>
+                                </constraints>
                                 <state key="normal" title="Next"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="addBorder">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="nextWith_sender:" destination="OWZ-MH-Te2" eventType="touchUpInside" id="PI3-IY-MgC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W46-5v-v3b">
-                                <rect key="frame" x="190" y="310" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W46-5v-v3b">
+                                <rect key="frame" x="132" y="328" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="DCq-r0-cJB"/>
+                                    <constraint firstAttribute="height" constant="50" id="uZV-aq-Kbz"/>
+                                </constraints>
                                 <state key="normal" title="Back"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="addBorder">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="backWith_sender:" destination="OWZ-MH-Te2" eventType="touchUpInside" id="zFy-TU-Snh"/>
                                 </connections>
@@ -56,6 +81,16 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Onv-B5-8Mb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="W46-5v-v3b" firstAttribute="centerX" secondItem="oEg-ZZ-YkK" secondAttribute="centerX" id="0bp-1J-TPv"/>
+                            <constraint firstItem="b2f-LT-cov" firstAttribute="top" secondItem="Pm2-0t-lKV" secondAttribute="bottom" constant="60" id="9Zu-VO-EIa"/>
+                            <constraint firstItem="W46-5v-v3b" firstAttribute="top" secondItem="b2f-LT-cov" secondAttribute="bottom" constant="20" id="GEI-XV-l7m"/>
+                            <constraint firstItem="b2f-LT-cov" firstAttribute="centerX" secondItem="oEg-ZZ-YkK" secondAttribute="centerX" id="Nbe-W2-bcc"/>
+                            <constraint firstItem="Onv-B5-8Mb" firstAttribute="trailing" secondItem="Pm2-0t-lKV" secondAttribute="trailing" constant="100" id="Ynf-Qi-kaX"/>
+                            <constraint firstItem="Eau-89-Amb" firstAttribute="top" secondItem="Onv-B5-8Mb" secondAttribute="top" constant="70" id="ZqI-y5-uHu"/>
+                            <constraint firstItem="Pm2-0t-lKV" firstAttribute="top" secondItem="Eau-89-Amb" secondAttribute="bottom" constant="20" id="aIe-3P-3yY"/>
+                            <constraint firstItem="Eau-89-Amb" firstAttribute="leading" secondItem="Onv-B5-8Mb" secondAttribute="leading" constant="20" id="uNH-ot-rjH"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="jobProfileMenu" destination="Pm2-0t-lKV" id="usQ-8k-AEU"/>

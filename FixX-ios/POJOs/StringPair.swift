@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  StringPair.swift
 //  FixX-ios
 //
 //  Created by moutaz hegazy on 6/15/21.
@@ -8,6 +8,7 @@
 
 import Foundation
 
-class User : Person{
-  
+class StringPair : Codable{
+    var first : String
+    var second : String
 }

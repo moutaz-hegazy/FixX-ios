@@ -8,7 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		0B280B398BCF09D60B16C694 /* Pods_FixX_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 340E1495788B01B062447DB0 /* Pods_FixX_ios.framework */; };
-		A9776A6B267B694D00E9B80B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776A6A267B694D00E9B80B /* User.swift */; };
+		A962EF62267F942900A8420C /* ContactInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A962EF57267F942000A8420C /* ContactInfo.swift */; };
+		A962EF63267F942900A8420C /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = A962EF58267F942100A8420C /* Details.swift */; };
+		A962EF64267F942900A8420C /* ServiceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A962EF59267F942200A8420C /* ServiceItem.swift */; };
+		A962EF65267F942900A8420C /* Technician.swift in Sources */ = {isa = PBXBuildFile; fileRef = A962EF5A267F942300A8420C /* Technician.swift */; };
+		A962EF66267F942900A8420C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A962EF5B267F942400A8420C /* User.swift */; };
+		A962EF67267F942900A8420C /* StringPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = A962EF5C267F942500A8420C /* StringPair.swift */; };
+		A962EF68267F942900A8420C /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A962EF5D267F942500A8420C /* Extension.swift */; };
+		A962EF69267F942900A8420C /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A962EF5E267F942600A8420C /* ChatMessage.swift */; };
+		A962EF6A267F942900A8420C /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = A962EF5F267F942700A8420C /* Job.swift */; };
+		A962EF6B267F942900A8420C /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A962EF60267F942800A8420C /* Comment.swift */; };
+		A962EF6C267F942900A8420C /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A962EF61267F942800A8420C /* Person.swift */; };
+		A962EF71267F945500A8420C /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A962EF70267F945400A8420C /* FirestoreService.swift */; };
 		A9776A6E267B698A00E9B80B /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776A6D267B698900E9B80B /* GradientView.swift */; };
 		A9776A73267B6AB300E9B80B /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776A72267B6AB300E9B80B /* RegistrationViewController.swift */; };
 		A9776A7E267B6B3B00E9B80B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776A7C267B6B3B00E9B80B /* SignUpViewController.swift */; };
@@ -58,7 +69,18 @@
 		340E1495788B01B062447DB0 /* Pods_FixX_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FixX_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B063103FF19EC01A2BE70B2 /* Pods-FixX-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FixX-ios.debug.xcconfig"; path = "Target Support Files/Pods-FixX-ios/Pods-FixX-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		7347986CDE791043ADD668A0 /* Pods-FixX-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FixX-ios.release.xcconfig"; path = "Target Support Files/Pods-FixX-ios/Pods-FixX-ios.release.xcconfig"; sourceTree = "<group>"; };
-		A9776A6A267B694D00E9B80B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A962EF57267F942000A8420C /* ContactInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactInfo.swift; sourceTree = "<group>"; };
+		A962EF58267F942100A8420C /* Details.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
+		A962EF59267F942200A8420C /* ServiceItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceItem.swift; sourceTree = "<group>"; };
+		A962EF5A267F942300A8420C /* Technician.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Technician.swift; sourceTree = "<group>"; };
+		A962EF5B267F942400A8420C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A962EF5C267F942500A8420C /* StringPair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringPair.swift; sourceTree = "<group>"; };
+		A962EF5D267F942500A8420C /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		A962EF5E267F942600A8420C /* ChatMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		A962EF5F267F942700A8420C /* Job.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
+		A962EF60267F942800A8420C /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		A962EF61267F942800A8420C /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		A962EF70267F945400A8420C /* FirestoreService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		A9776A6D267B698900E9B80B /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		A9776A72267B6AB300E9B80B /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		A9776A7C267B6B3B00E9B80B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -135,12 +157,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A9776A61267B681000E9B80B /* POJOs */ = {
+		A962EF55267F93D600A8420C /* POJOs */ = {
 			isa = PBXGroup;
 			children = (
-				A9776A6A267B694D00E9B80B /* User.swift */,
+				A962EF5E267F942600A8420C /* ChatMessage.swift */,
+				A962EF60267F942800A8420C /* Comment.swift */,
+				A962EF57267F942000A8420C /* ContactInfo.swift */,
+				A962EF58267F942100A8420C /* Details.swift */,
+				A962EF5D267F942500A8420C /* Extension.swift */,
+				A962EF5F267F942700A8420C /* Job.swift */,
+				A962EF61267F942800A8420C /* Person.swift */,
+				A962EF59267F942200A8420C /* ServiceItem.swift */,
+				A962EF5C267F942500A8420C /* StringPair.swift */,
+				A962EF5A267F942300A8420C /* Technician.swift */,
+				A962EF5B267F942400A8420C /* User.swift */,
 			);
 			path = POJOs;
+			sourceTree = "<group>";
+		};
+		A962EF6E267F943400A8420C /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				A962EF70267F945400A8420C /* FirestoreService.swift */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 		A9776A63267B686800E9B80B /* Utilities */ = {
@@ -276,8 +316,9 @@
 		A9D5234C2676632200B9C136 /* FixX-ios */ = {
 			isa = PBXGroup;
 			children = (
+				A962EF6E267F943400A8420C /* Support */,
+				A962EF55267F93D600A8420C /* POJOs */,
 				A9E43DA626791767008B5A45 /* MyOrdersScreen */,
-				A9776A61267B681000E9B80B /* POJOs */,
 				A9776A63267B686800E9B80B /* Utilities */,
 				A9776A64267B688500E9B80B /* Registration */,
 				A9776A65267B68A400E9B80B /* CustomizeOrder */,
@@ -449,33 +490,44 @@
 				A9DC5DF6267AA73E0084948C /* OngoingTableViewCell.swift in Sources */,
 				A9D523522676632300B9C136 /* ViewController.swift in Sources */,
 				A9E444F6267A4D12009DD6AE /* CompletedOrdersViewController.swift in Sources */,
+				A962EF71267F945500A8420C /* FirestoreService.swift in Sources */,
+				A962EF65267F942900A8420C /* Technician.swift in Sources */,
 				A9E444F2267A4C68009DD6AE /* OngoingOrdersViewController.swift in Sources */,
 				A9D5234E2676632300B9C136 /* AppDelegate.swift in Sources */,
 				A9D523502676632300B9C136 /* SceneDelegate.swift in Sources */,
+				A962EF62267F942900A8420C /* ContactInfo.swift in Sources */,
 				A9E43DAA267917B3008B5A45 /* MyOrdersViewController.swift in Sources */,
 				A9DC5DF9267AADA50084948C /* CompletedTableViewCell.swift in Sources */,
 				A9776B30267B9FCC00E9B80B /* SignUpViewControllerC.swift in Sources */,
 				A9776B07267B8C4700E9B80B /* SignUpViewControllerB.swift in Sources */,
+				A962EF67267F942900A8420C /* StringPair.swift in Sources */,
 				A9776A73267B6AB300E9B80B /* RegistrationViewController.swift in Sources */,
+				A962EF64267F942900A8420C /* ServiceItem.swift in Sources */,
+				A962EF63267F942900A8420C /* Details.swift in Sources */,
 				A9776AA0267B6FCB00E9B80B /* RegistrationProtocol.swift in Sources */,
 				A9776A7E267B6B3B00E9B80B /* SignUpViewController.swift in Sources */,
 				A9776B01267B8BB200E9B80B /* LogInViewController.swift in Sources */,
 				A9776A82267B6C6E00E9B80B /* CustomizeOrderViewController.swift in Sources */,
 				A9776AA3267B70D800E9B80B /* UITextField+isError.swift in Sources */,
 				A9776A93267B6E9000E9B80B /* ChatInboxViewController.swift in Sources */,
-				A9776A6B267B694D00E9B80B /* User.swift in Sources */,
 				A9D523522676632300B9C136 /* ViewController.swift in Sources */,
 				A9776AA6267B70EF00E9B80B /* UITextField+setBottomBorder.swift in Sources */,
 				A9776B0D267B8CA100E9B80B /* SignUpViewControllerD.swift in Sources */,
+				A962EF66267F942900A8420C /* User.swift in Sources */,
 				A9776A85267B6C9200E9B80B /* ImageCollectionViewCell.swift in Sources */,
+				A962EF68267F942900A8420C /* Extension.swift in Sources */,
 				A9776B04267B8C3500E9B80B /* SignUpViewControllerA.swift in Sources */,
 				A9776A8F267B6E6200E9B80B /* ChatLogsCustomCell.swift in Sources */,
+				A962EF6C267F942900A8420C /* Person.swift in Sources */,
 				A9776A8A267B6E2A00E9B80B /* ChatLogsTableViewController.swift in Sources */,
 				A9776A6E267B698A00E9B80B /* GradientView.swift in Sources */,
 				A9776A97267B6EC700E9B80B /* RightMessageCustomCell.swift in Sources */,
 				A9D5234E2676632300B9C136 /* AppDelegate.swift in Sources */,
+				A962EF6B267F942900A8420C /* Comment.swift in Sources */,
 				A9D523502676632300B9C136 /* SceneDelegate.swift in Sources */,
 				A9776A9C267B6EEF00E9B80B /* LeftMessageCustomCell.swift in Sources */,
+				A962EF69267F942900A8420C /* ChatMessage.swift in Sources */,
+				A962EF6A267F942900A8420C /* Job.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

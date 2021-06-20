@@ -33,14 +33,14 @@ class ChatInboxViewController: UIViewController, UITableViewDelegate, UITableVie
     
     
     @IBAction func sendButtonAction(_ sender: UIButton) {
-        var userImage = UIImage(named: "square.png")
-        var chatMessage = String.init(chatTextField.text!)
-        var userObject = User.init(userAvatar: userImage!, userMessage: chatMessage)
-        if (chatMessage != nil){
-            userSwitcher = !userSwitcher
-            logsArray.append(userObject)
-            self.chatLogTableView.reloadData()
-        }
+//        var userImage = UIImage(named: "square.png")
+//        var chatMessage = String.init(chatTextField.text!)
+//        var userObject = User.init(userAvatar: userImage!, userMessage: chatMessage)
+//        if (chatMessage != nil){
+//            userSwitcher = !userSwitcher
+//            logsArray.append(userObject)
+//            self.chatLogTableView.reloadData()
+//        }
     }
     
     

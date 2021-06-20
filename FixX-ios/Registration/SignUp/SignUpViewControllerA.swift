@@ -7,8 +7,22 @@ class SignUpViewControllerA: UIViewController {
     var profileType: String?
     
 
-    @IBOutlet weak var userAvatar: UIImageView!
-    @IBOutlet weak var technicianAvatar: UIImageView!
+    @IBOutlet weak var userAvatar: UIImageView!{
+        didSet{
+            userAvatar.layer.cornerRadius = 50
+            userAvatar.clipsToBounds = true
+            userAvatar.layer.borderWidth = 1
+            userAvatar.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        }
+    }
+    @IBOutlet weak var technicianAvatar: UIImageView!{
+        didSet{
+            technicianAvatar.layer.cornerRadius = 50
+            technicianAvatar.clipsToBounds = true
+            technicianAvatar.layer.borderWidth = 1
+            technicianAvatar.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        }
+    }
     @IBOutlet weak var userTag: UILabel!
     @IBOutlet weak var technicianTag: UILabel!
     @IBOutlet weak var phoneNumberTextField: UITextField!
@@ -31,12 +45,13 @@ class SignUpViewControllerA: UIViewController {
     
     
     func validatePhoneNumber()-> Bool{
-        let phoneRegex = #"(010|011|012|015)[0-9]{8}"#
-        let validationResult = phoneNumber?.range(
-              of: phoneRegex,
-              options: .regularExpression
-          )
-        return (validationResult != nil)
+//        let phoneRegex = #"(010|011|012|015)[0-9]{8}"#
+//        let validationResult = phoneNumber?.range(
+//              of: phoneRegex,
+//              options: .regularExpression
+//          )
+//        return (validationResult != nil)
+        return true
     }
     
     
@@ -93,9 +108,9 @@ class SignUpViewControllerA: UIViewController {
     
     @IBAction func next(_ sender: UIButton) {
         if(validateSignUp1()){
-            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let storyBoard: UIStoryboard = UIStoryboard(name: "SignUpViewControllerB", bundle: nil)
             let b = storyBoard.instantiateViewController(withIdentifier: "b")
-            self.navigationController?.pushViewController(b, animated: true)
+            present(b, animated: true, completion: nil)
         }else{
             if(!validatePhoneNumber()){
                 phoneNumberTextField.isError(baseColor: UIColor.red.cgColor, numberOfShakes: 3, revert: true)

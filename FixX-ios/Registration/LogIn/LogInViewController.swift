@@ -27,7 +27,6 @@ class LogInViewController: UIViewController {
         emailTextField.addTarget(self, action: #selector(LogInViewController.checkEmailError(emailTextField:)), for: .editingChanged)
         emailTextField.isUserInteractionEnabled = true
         
-        
         passwordTextField.addTarget(self, action: #selector(LogInViewController.checkPasswordError(passwordTextField:)), for: .editingChanged)
         passwordTextField.isUserInteractionEnabled = true
     }
@@ -102,4 +101,19 @@ class LogInViewController: UIViewController {
     @IBAction func loginWithGoogle(_ sender: UIButton) {
         print("Google")
     }
+}
+
+
+extension UIButton{
+    
+    @IBInspectable
+    var addBorder : CGFloat{
+        get{
+            return self.layer.borderWidth
+        }
+        set(newValue){
+            self.layer.borderWidth = newValue
+        }
+    }
+    
 }
