@@ -16,11 +16,17 @@ class Technician : Person{
     var jobsCount : Int = 0
     var reviewCount:Int = 0
     
-    override init() {
-        super.init()
+    init(jobTitle : String?, workLocations: [String]?, rating : Double?, monthlyRating : Int?, jobsCount : Int, reviewCount : Int, phoneNumber : String, accountType : String, name : String, email : String, uid : String?, token : String?, profilePicture : StringPair?, locations : [String]?) {
+        self.jobTitle = jobTitle
+        self.workLocations = workLocations
+        self.rating = rating
+        self.monthlyRating = monthlyRating
+        self.jobsCount = jobsCount
+        self.reviewCount = reviewCount
+        super.init(phoneNumber: phoneNumber, accountType: accountType, name: name, email: email, uid: uid, token: token, profilePicture: profilePicture, locations: locations)
     }
     
     required init(from decoder: Decoder) throws {
-        
+        try super.init(from: decoder)
     }
 }

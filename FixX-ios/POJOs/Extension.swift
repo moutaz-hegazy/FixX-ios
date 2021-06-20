@@ -14,6 +14,7 @@ class Extension : Codable{
     var description : String?
     var price : Int?
     
+    init() {}
     init(extId : String?, images : [StringPair]?, description : String?, price : Int?) {
         self.extId = extId
         self.images = images

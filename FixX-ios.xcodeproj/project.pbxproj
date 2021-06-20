@@ -25,6 +25,8 @@
 		A9D523572676632800B9C136 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9D523562676632800B9C136 /* Assets.xcassets */; };
 		A9D5235A2676632800B9C136 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D523582676632800B9C136 /* LaunchScreen.storyboard */; };
 		A9D52362267664DC00B9C136 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9D52361267664DB00B9C136 /* GoogleService-Info.plist */; };
+		A9EF53A5267E936000825D96 /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EF53A4267E936000825D96 /* Details.swift */; };
+		A9EF53A8267E94CD00825D96 /* ServiceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EF53A7267E94CD00825D96 /* ServiceItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		A9D523592676632800B9C136 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9D5235B2676632800B9C136 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9D52361267664DB00B9C136 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A9EF53A4267E936000825D96 /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
+		A9EF53A7267E94CD00825D96 /* ServiceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 				A9B8FF662679810F001B280F /* ContactInfo.swift */,
 				A90CE036267A191700971ECB /* ChatMessage.swift */,
 				A90CE039267A779E00971ECB /* Job.swift */,
+				A9EF53A4267E936000825D96 /* Details.swift */,
+				A9EF53A7267E94CD00825D96 /* ServiceItem.swift */,
 			);
 			path = POJOs;
 			sourceTree = "<group>";
@@ -262,11 +268,13 @@
 				A9D074572678D64700BBEF2D /* FirestoreService.swift in Sources */,
 				A90CE03A267A779E00971ECB /* Job.swift in Sources */,
 				A9B8FF672679810F001B280F /* ContactInfo.swift in Sources */,
+				A9EF53A5267E936000825D96 /* Details.swift in Sources */,
 				A9D5234E2676632300B9C136 /* AppDelegate.swift in Sources */,
 				A9B8FF64267968AA001B280F /* Extension.swift in Sources */,
 				A9D0745E2678E39500BBEF2D /* StringPair.swift in Sources */,
 				A9D523502676632300B9C136 /* SceneDelegate.swift in Sources */,
 				A90CE037267A191700971ECB /* ChatMessage.swift in Sources */,
+				A9EF53A8267E94CD00825D96 /* ServiceItem.swift in Sources */,
 				A9B8FF612679613F001B280F /* Comment.swift in Sources */,
 				A9B8FF57267949A4001B280F /* User.swift in Sources */,
 			);

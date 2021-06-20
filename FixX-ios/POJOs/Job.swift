@@ -11,7 +11,8 @@ import Foundation
 class Job : Codable{
     var uid: String?
     var type : String = ""
-    var status : JobStatus = JobStatus.OnRequest
+    //var status : JobStatus = JobStatus.OnRequest
+    var status : String = "OnRequest"
     var jobId : String = ""
     var description : String = ""
     var date : String = ""
@@ -37,7 +38,9 @@ class Job : Codable{
     
     init() {}
     init(uid: String?, type : String = "", location: String?,
-         status : JobStatus = JobStatus.OnRequest, jobId : String = "",
+         //status : JobStatus = JobStatus.OnRequest,
+         status : String = "",
+         jobId : String = "",
          description : String = "", date : String = "",
          completionDate : String = "", fromTime : String?, toTime : String?, price : Int?,
          techID : String?, bidders : [String : String]?, images : [StringPair]?,
@@ -59,28 +62,11 @@ class Job : Codable{
         self.location = location
     }
     
-    enum JobStatus : CodingKey, Codable{
-        case OnRequest
-        case Accepted
-        case Completed
-        
-        func encode(to encoder: Encoder) throws {
-            var container = encoder.container(keyedBy: JobStatus.self)
-        }
-        
-        init(from decoder: Decoder) throws {
-            let values = try decoder.container(keyedBy: JobStatus.self)
-            _ = try values.decode(String.self, forKey: .OnRequest)
-            _ = try values.decode(String.self, forKey: .Accepted)
-            _ = try values.decode(String.self, forKey: .Completed)
-            self = try values.decode(JobStatus.self, forKey: .OnRequest)
-        }
-        
-    }
-}
-
-//extension Job {
 //    enum JobStatus : CodingKey, Codable{
+//        case OnRequest
+//        case Accepted
+//        case Completed
+//
 //        func encode(to encoder: Encoder) throws {
 //            var container = encoder.container(keyedBy: JobStatus.self)
 //        }
@@ -90,13 +76,11 @@ class Job : Codable{
 //            _ = try values.decode(String.self, forKey: .OnRequest)
 //            _ = try values.decode(String.self, forKey: .Accepted)
 //            _ = try values.decode(String.self, forKey: .Completed)
+//            self = try values.decode(JobStatus.self, forKey: .OnRequest)
 //        }
 //
-//        case OnRequest
-//        case Accepted
-//        case Completed
-//
 //    }
-//}
+}
+
 
 //functions

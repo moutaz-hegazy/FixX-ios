@@ -8,6 +8,6 @@
 
 import Foundation
 
-class User : Person{}
-/*class User(phoneNumber: String = "", accountType: String = "", name: String ="", email: String = "", uid : String = "")
-    : Person(phoneNumber,accountType,name,email,uid)*/
+class User : Person{
+  
+}

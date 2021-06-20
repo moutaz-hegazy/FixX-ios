@@ -82,9 +82,17 @@ class ViewController: UIViewController {
                     /*FirestoreService.shared.fetchUserFromDB(uid: Auth.auth().currentUser?.uid, onCompletion: { user in
                         print("HELLLOOOOO \(String(describing: (user as? Technician)))")
                     }, passRegister: {_ in })*/
-                    /*FirestoreService.shared.fetchUserOnce(onCompletion: {user in
-                        print("HELLLOOOOO\(String(describing: user as? Technician))")
-                    })*/
+//                    FirestoreService.shared.fetchUserOnce(onCompletion: {user in
+//                        if let user = user as? Person{
+//                            if user.accountType == "User"{
+//                                print("HELLLOOOOO \((user as? User)?.name )")
+//                            } else{
+//                                print("HELLLOOOOO  \((user as? Technician)?.jobTitle)")
+//                            }
+//
+//                        }
+//
+//                    })
                     /*FirestoreService.shared.fetchCommentsForTech(onSuccessHandler: {comments in
                         print("\(comments)")}, onFailHandler: {})*/
                     //let ext = Extension(extId: nil, images: nil, description: "llll", price: nil)
@@ -106,10 +114,10 @@ class ViewController: UIViewController {
                     })*/
 
                     
-                    var ch = ChatMessage()
-                    ch.text = "nohaaaaaa"
-                    ch.fromId = "1"
-                    ch.timestamp = 45454
+//                    var ch = ChatMessage()
+//                    ch.text = "nohaaaaaa"
+//                    ch.fromId = "1"
+//                    ch.timestamp = 45454
                     //FirestoreService.shared.sendChatMessageTest(channel: "di6KGuxvSHYh2wCclKkciDp8H2B2-u2QpkWQ0ahNpL8Vw1tLz4BnUj673", msg: ch)
                     
                     /*FirestoreService.shared.fetchChatHistoryForChannelTest(channelName: "di6KGuxvSHYh2wCclKkciDp8H2B2-u2QpkWQ0ahNpL8Vw1tLz4BnUj673", observerHandler: { chat in
@@ -126,6 +134,48 @@ class ViewController: UIViewController {
                     //var c = Comment(username: "nnnn", commentContent: "nnn", profilePicture: nil, date: nil, reply: nil, timestamp: 12345, rating: nil)
                    // FirestoreService.shared.addRatingAndComment(techId: "di6KGuxvSHYh2wCclKkciDp8H2B2", rating: 2.0, extraRating: 2.0, comment: c, reviews: 0, onSuccessHandler: {}, onFailHandler: {})
                     
+                    //FirestoreService.shared.addBidder(jobId: "0ycHI31QSNeQn0j9oBZI", bidders: ["8tIqMVDfbQVrwzyZMqvJmfiqB1y1": "300"], onCompletion: {})
+                    //FirestoreService.shared.removeBidders(jobId: "0ycHI31QSNeQn0j9oBZI")
+//                    FirestoreService.shared.fetchJobById(jobId: "0ycHI31QSNeQn0j9oBZI", onSuccessHandler: {job in
+//                        print("got job")
+//                        print(job.areaLocation)
+//                    }, onFailHandler: {
+//                        print("failed")
+//                    })
+//                    FirestoreService.shared.saveJobDetails(job: Job(uid: "l7d1fMvNNQOhm264T3ubsbP62xm1", location: "xx", fromTime: nil, toTime: nil, price: nil, techID: "qjrAdFpZAwMwBrEZfE5N94C76G42", bidders: nil, images: nil), onSuccessHandler: {
+//                        job in print("job saved \(job.jobId)")  // eEkt4cgNxFmbcPdGP4IJ
+//                    }, onFailHandler: {})
+                    
+                    
+                    var user = Technician(jobTitle: "Plumber", workLocations: nil, rating: 2.25, monthlyRating: 3, jobsCount: 2, reviewCount: 0, phoneNumber: "123", accountType: "Technician", name: "nnnnnn", email: "nnnnnnnnnn", uid: nil, token: nil, profilePicture: nil, locations: nil)
+                    
+                    let mirror = Mirror(reflecting: user)
+        //            let dictionary = Dictionary(uniqueKeysWithValues: mirror.children.lazy
+        //                                            .map({ (label:String?, value:Any) -> (String, Any)? in
+        //                    guard let label = label else { return nil }
+        //                    return (label, value)
+        //                }).compactMap { $0 })
+                    var dictionary = [String: AnyObject]()
+                    for (_, attr) in mirror.children.enumerated() {
+                        if let propertyName = attr.label {
+                            dictionary[propertyName] = attr.value as AnyObject
+                        }
+                    }
+                if let parent = mirror.superclassMirror{
+                        for (_, attr) in parent.children.enumerated() {
+                            if let propertyName = attr.label {
+                                if dictionary[propertyName] == nil{
+                                    dictionary[propertyName] = attr.value as? AnyObject
+                                }
+                            }
+                        }
+                    }
+                    print(dictionary)
+                    
+                    FirestoreService.shared.saveUserData(user: user, onSuccessHandler: {
+                        person in
+                        print((person as? Person)?.uid)
+                    }, onFailHandler: {})
                 }
             }
         }

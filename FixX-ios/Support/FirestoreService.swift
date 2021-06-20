@@ -80,10 +80,14 @@ struct FirestoreService{
                     switch type {
                     case "User":
                         print("It is a User")
+                        print("\(try? document.data(as: User.self)?.name)")
                         onCompletion(try? document.data(as: User.self))
                     case "Technician":
                         print("It is a Technician")
-                        onCompletion(try? document.data(as: Technician.self))
+                        //let x = try? document.data(as: Technician.self)
+                        //print("\(document.get("reviewCount"))")
+                        //onCompletion(try? document.data(as: Technician.self))
+                        onCompletion(Technician(jobTitle: document.get("jobTitle") as? String, workLocations: document.get("workLocations") as? [String], rating: document.get("rating") as? Double, monthlyRating: document.get("monthlyRating") as? Int, jobsCount: document.get("jobsCount") as? Int ?? 0, reviewCount: document.get("reviewCount") as? Int ?? 0, phoneNumber: document.get("phoneNumber") as? String ?? "" , accountType: document.get("accountType") as? String ?? "", name: document.get("name") as? String ?? "", email: document.get("email") as? String ?? "", uid: document.get("uid") as? String, token: document.get("token") as? String, profilePicture: document.get("profilePicture") as? StringPair, locations: document.get("locations") as? [String]))
                     case .none:
                         return
                     case .some(_):
@@ -332,23 +336,28 @@ struct FirestoreService{
     }
     
     func removeTechnicianFromJob(jobId : String){
-        db.collection("Jobs").document(jobId).updateData(["techID" : NSNull(), "status" : Job.JobStatus.OnRequest.stringValue,
+        db.collection("Jobs").document(jobId).updateData(["techID" : NSNull(),
+                                                          //"status" : Job.JobStatus.OnRequest.stringValue,
+                                                          "status" : "OnRequest",
                                                           "price" : NSNull()])
     }
     
     func selectTechForJob(techId : String, jobId : String, price : String){
         db.collection("Jobs").document(jobId).updateData(["techID" : techId, "price" : Int(price), "bidders" : NSNull(),
-                                                          "status" : Job.JobStatus.Accepted.stringValue])
+                                                          //"status" : Job.JobStatus.Accepted.stringValue
+                                                          "status" : "Accepted"])
     }
     
     func fetchJobById(jobId : String, onSuccessHandler : @escaping (Job) -> Void,
                       onFailHandler : @escaping ()-> Void){
         db.collection("Jobs").document(jobId).getDocument(completion: {snapshot, error in
+            print("after in")
             if error != nil{
                 onFailHandler()
             } else{
-                if let job = try? snapshot?.data(as: Job.self){
-                    onSuccessHandler(job)
+                if let snapshot = snapshot{
+                    print("inside let")
+                    onSuccessHandler(try! snapshot.data(as: Job.self) as! Job)
                 }
             }
         })
@@ -392,30 +401,41 @@ struct FirestoreService{
     }
     
     
-    func saveUserData(user : Any, onSuccessHandler : @escaping (Person?) -> Void, onFailHandler : @escaping ()-> Void){
+    func saveUserData(user : Any, onSuccessHandler : @escaping (Any?) -> Void, onFailHandler : @escaping ()-> Void){
         if let user = user as? Person{
             user.uid = auth.currentUser!.uid as String
-            let mirror = Mirror(reflecting: user)
-            let dictionary = Dictionary(uniqueKeysWithValues: mirror.children.lazy
-                                            .map({ (label:String?, value:Any) -> (String, Any)? in
-                    guard let label = label else { return nil }
-                    return (label, value)
-                }).compactMap { $0 })
-            db.collection("Users").document(auth.currentUser!.uid as String).setData(dictionary, completion: {error in
-                if error != nil{
-                    onFailHandler()
-                } else{
-                    onSuccessHandler(user)
+                let mirror = Mirror(reflecting: user)
+                var dictionary = [String: AnyObject]()
+                for (_, attr) in mirror.children.enumerated() {
+                    if let propertyName = attr.label {
+                        dictionary[propertyName] = attr.value as AnyObject
+                    }
                 }
-            })
+            if let parent = mirror.superclassMirror{
+                    for (_, attr) in parent.children.enumerated() {
+                        if let propertyName = attr.label {
+                            if dictionary[propertyName] == nil{
+                                dictionary[propertyName] = attr.value as? AnyObject
+                            }
+                        }
+                    }
+                }
+                    
+                db.collection("Users").document(auth.currentUser!.uid as String).setData(dictionary, completion: {error in
+                    if error != nil{
+                        onFailHandler()
+                    } else{
+                        onSuccessHandler(user)
+                    }
+                })
         }
-        
     }
     
     func fetchMyOngoingOrderedJobs(onSuccessHandler : @escaping ([Job])-> Void, onFailureHandler : @escaping ()-> Void){
         var retrievedJobs = [Job]()
         db.collection("Jobs").whereField("uid", isEqualTo: auth.currentUser!.uid)
-            .whereField("status", in: [Job.JobStatus.OnRequest.stringValue, Job.JobStatus.Accepted.stringValue])
+            //.whereField("status", in: [Job.JobStatus.OnRequest.stringValue, Job.JobStatus.Accepted.stringValue])
+            .whereField("status", in: ["OnRequest", "Accepted"])
             .getDocuments(completion: {queryResult, error in
                 if error != nil{
                     onFailureHandler()
@@ -460,7 +480,8 @@ struct FirestoreService{
     func fetchMyCompletedOrderedJobs(onSuccessHandler : @escaping ([Job])-> Void, onFailHandler : @escaping ()-> Void){
         var retrievedJobs = [Job]()
         db.collection("Jobs").whereField("uid", isEqualTo: auth.currentUser!.uid)
-            .whereField("status", isEqualTo: Job.JobStatus.Completed.stringValue)
+           // .whereField("status", isEqualTo: Job.JobStatus.Completed.stringValue)
+            .whereField("status", isEqualTo: "Completed")
             .getDocuments(completion: {queryResult, error in
                 if error != nil{
                     onFailHandler()
@@ -479,7 +500,8 @@ struct FirestoreService{
     func fetchMyOngoingWork(onSuccessHandler : @escaping ([Job])-> Void, onFailHandler : @escaping ()-> Void){
         var retrievedJobs = [Job]()
         db.collection("Jobs").whereField("techID", isEqualTo: auth.currentUser!.uid)
-            .whereField("status", isEqualTo: Job.JobStatus.Accepted.stringValue)
+            //.whereField("status", isEqualTo: Job.JobStatus.Accepted.stringValue)
+            .whereField("status", isEqualTo: "Accepted")
             .getDocuments(completion: {queryResult, error in
                 if error == nil{
                     queryResult?.documents.forEach{ document in
@@ -488,7 +510,9 @@ struct FirestoreService{
                         }
                     }
                     db.collection("Jobs").whereField("privateRequest", isEqualTo: true)
-                        .whereField("status", isEqualTo: Job.JobStatus.OnRequest.stringValue).getDocuments(completion: {
+                        //.whereField("status", isEqualTo: Job.JobStatus.OnRequest.stringValue)
+                        .whereField("status", isEqualTo: "OnRequest")
+                        .getDocuments(completion: {
                             snapshot, error in
                             if error == nil{
                                 snapshot?.documents.forEach{ document in
@@ -510,7 +534,8 @@ struct FirestoreService{
     func fetchMyCompletedWork(onSuccessHandler : @escaping ([Job])-> Void, onFailHandler : @escaping ()-> Void){
         var retrievedJobs = [Job]()
         db.collection("Jobs").whereField("techID", isEqualTo: auth.currentUser!.uid)
-            .whereField("status", isEqualTo: Job.JobStatus.Completed.stringValue)
+            //.whereField("status", isEqualTo: Job.JobStatus.Completed.stringValue)
+            .whereField("status", isEqualTo: "Completed")
             .getDocuments(completion: {queryResult, error in
                 if error != nil{
                     onFailHandler()
@@ -528,7 +553,9 @@ struct FirestoreService{
     func fetchAvailableWork(jobTitle : String, workLocations : [String],
                             onSuccessHandler : @escaping ([Job])-> Void, onFailHandler : @escaping ()-> Void){
         var retrievedJobs = [Job]()
-        db.collection("Jobs").whereField("status", isEqualTo: Job.JobStatus.OnRequest.stringValue)
+        db.collection("Jobs")
+            //.whereField("status", isEqualTo: Job.JobStatus.OnRequest.stringValue)
+            .whereField("status", isEqualTo: "OnRequest")
             .whereField("type", isEqualTo: jobTitle)
             .whereField("privateRequest", isEqualTo: false)
             .whereField("areaLocation", in: workLocations)
