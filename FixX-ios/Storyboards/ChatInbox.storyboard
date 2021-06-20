@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Chat Inbox View Controller-->
+        <scene sceneID="H0s-yM-wxV">
+            <objects>
+                <viewController id="yG2-H4-sit" customClass="ChatInboxViewController" customModule="FixX_ios" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VMj-3x-XPW" customClass="GradientView" customModule="FixX_ios" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qn6-A8-Vfz">
+                                <rect key="frame" x="0.0" y="44" width="414" height="750"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="750" id="Bzg-I1-nub"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Right" id="3kl-un-JSC" customClass="RightMessageCustomCell" customModule="FixX_ios" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3kl-un-JSC" id="fz7-Bb-5qy">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HwG-xF-X2B">
+                                <rect key="frame" x="313" y="802" width="81" height="50"/>
+                                <color key="backgroundColor" red="0.1678334054" green="0.1690261435" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="81" id="j9A-Uk-JN7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Send">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendButtonAction:" destination="yG2-H4-sit" eventType="touchUpInside" id="k68-wr-cAl"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Message..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U0W-3E-DgS">
+                                <rect key="frame" x="20" y="802" width="285" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dr3-ZE-tLb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HwG-xF-X2B" firstAttribute="top" secondItem="qn6-A8-Vfz" secondAttribute="bottom" constant="8" symbolic="YES" id="9zs-MN-FVp"/>
+                            <constraint firstItem="U0W-3E-DgS" firstAttribute="top" secondItem="qn6-A8-Vfz" secondAttribute="bottom" constant="8" symbolic="YES" id="B1o-jJ-xEr"/>
+                            <constraint firstItem="qn6-A8-Vfz" firstAttribute="top" secondItem="dr3-ZE-tLb" secondAttribute="top" id="Bjh-gU-sXG"/>
+                            <constraint firstItem="HwG-xF-X2B" firstAttribute="leading" secondItem="U0W-3E-DgS" secondAttribute="trailing" constant="8" symbolic="YES" id="TXx-wJ-GTO"/>
+                            <constraint firstItem="dr3-ZE-tLb" firstAttribute="trailing" secondItem="HwG-xF-X2B" secondAttribute="trailing" constant="20" id="VeW-Es-1uF"/>
+                            <constraint firstItem="dr3-ZE-tLb" firstAttribute="bottom" secondItem="HwG-xF-X2B" secondAttribute="bottom" constant="10" id="aip-Ui-5dm"/>
+                            <constraint firstItem="qn6-A8-Vfz" firstAttribute="trailing" secondItem="dr3-ZE-tLb" secondAttribute="trailing" id="kFd-P6-07p"/>
+                            <constraint firstItem="dr3-ZE-tLb" firstAttribute="bottom" secondItem="U0W-3E-DgS" secondAttribute="bottom" constant="10" id="mHG-dj-2Zp"/>
+                            <constraint firstItem="U0W-3E-DgS" firstAttribute="leading" secondItem="dr3-ZE-tLb" secondAttribute="leading" constant="20" id="nFs-IS-Fo0"/>
+                            <constraint firstItem="qn6-A8-Vfz" firstAttribute="leading" secondItem="dr3-ZE-tLb" secondAttribute="leading" id="tiX-lp-mff"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="chatLogTableView" destination="qn6-A8-Vfz" id="eYG-I7-GsI"/>
+                        <outlet property="chatTextField" destination="U0W-3E-DgS" id="gQ1-B7-6Gl"/>
+                        <outlet property="sendButton" destination="HwG-xF-X2B" id="sZ8-2I-L1q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="px5-sx-TTg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2377" y="869"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

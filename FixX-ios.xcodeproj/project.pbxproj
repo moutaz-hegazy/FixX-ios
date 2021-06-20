@@ -8,6 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		0B280B398BCF09D60B16C694 /* Pods_FixX_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 340E1495788B01B062447DB0 /* Pods_FixX_ios.framework */; };
+		A9776A6B267B694D00E9B80B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776A6A267B694D00E9B80B /* User.swift */; };
+		A9776A6E267B698A00E9B80B /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776A6D267B698900E9B80B /* GradientView.swift */; };
+		A9776A73267B6AB300E9B80B /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776A72267B6AB300E9B80B /* RegistrationViewController.swift */; };
+		A9776A7E267B6B3B00E9B80B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776A7C267B6B3B00E9B80B /* SignUpViewController.swift */; };
+		A9776A7F267B6B3B00E9B80B /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9776A7D267B6B3B00E9B80B /* SignUpViewController.xib */; };
+		A9776A82267B6C6E00E9B80B /* CustomizeOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776A81267B6C6E00E9B80B /* CustomizeOrderViewController.swift */; };
+		A9776A85267B6C9200E9B80B /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776A84267B6C9200E9B80B /* ImageCollectionViewCell.swift */; };
+		A9776A8A267B6E2A00E9B80B /* ChatLogsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776A89267B6E2A00E9B80B /* ChatLogsTableViewController.swift */; };
+		A9776A8F267B6E6200E9B80B /* ChatLogsCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776A8D267B6E6200E9B80B /* ChatLogsCustomCell.swift */; };
+		A9776A90267B6E6200E9B80B /* ChatLogsCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9776A8E267B6E6200E9B80B /* ChatLogsCustomCell.xib */; };
+		A9776A93267B6E9000E9B80B /* ChatInboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776A92267B6E9000E9B80B /* ChatInboxViewController.swift */; };
+		A9776A97267B6EC700E9B80B /* RightMessageCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776A95267B6EC700E9B80B /* RightMessageCustomCell.swift */; };
+		A9776A98267B6EC700E9B80B /* RightMessageCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9776A96267B6EC700E9B80B /* RightMessageCustomCell.xib */; };
+		A9776A9C267B6EEF00E9B80B /* LeftMessageCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776A9A267B6EEF00E9B80B /* LeftMessageCustomCell.swift */; };
+		A9776A9D267B6EEF00E9B80B /* LeftMessageCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9776A9B267B6EEF00E9B80B /* LeftMessageCustomCell.xib */; };
+		A9776AA0267B6FCB00E9B80B /* RegistrationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776A9F267B6FCB00E9B80B /* RegistrationProtocol.swift */; };
+		A9776AA3267B70D800E9B80B /* UITextField+isError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776AA2267B70D800E9B80B /* UITextField+isError.swift */; };
+		A9776AA6267B70EF00E9B80B /* UITextField+setBottomBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776AA5267B70EF00E9B80B /* UITextField+setBottomBorder.swift */; };
+		A9776AA9267B716100E9B80B /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9776AA8267B716100E9B80B /* Registration.storyboard */; };
+		A9776AAC267B717D00E9B80B /* CustomizeOrder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9776AAB267B717D00E9B80B /* CustomizeOrder.storyboard */; };
+		A9776AAF267B71AF00E9B80B /* ChatLogs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9776AAE267B71AF00E9B80B /* ChatLogs.storyboard */; };
+		A9776AB2267B71D100E9B80B /* ChatInbox.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9776AB1267B71D100E9B80B /* ChatInbox.storyboard */; };
+		A9776B01267B8BB200E9B80B /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776B00267B8BB200E9B80B /* LogInViewController.swift */; };
+		A9776B04267B8C3500E9B80B /* SignUpViewControllerA.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776B03267B8C3500E9B80B /* SignUpViewControllerA.swift */; };
+		A9776B07267B8C4700E9B80B /* SignUpViewControllerB.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776B06267B8C4700E9B80B /* SignUpViewControllerB.swift */; };
+		A9776B0D267B8CA100E9B80B /* SignUpViewControllerD.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776B0C267B8CA100E9B80B /* SignUpViewControllerD.swift */; };
+		A9776B30267B9FCC00E9B80B /* SignUpViewControllerC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776B2F267B9FCC00E9B80B /* SignUpViewControllerC.swift */; };
+		A9776BB9267BBB3500E9B80B /* SignUpViewControllerA.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9776BB8267BBB3500E9B80B /* SignUpViewControllerA.storyboard */; };
+		A9776BBC267BBB4C00E9B80B /* SignUpViewControllerB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9776BBB267BBB4C00E9B80B /* SignUpViewControllerB.storyboard */; };
+		A9776BBF267BBB5F00E9B80B /* SignUpViewControllerC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9776BBE267BBB5F00E9B80B /* SignUpViewControllerC.storyboard */; };
+		A9776BC2267BBB8D00E9B80B /* SignUpViewControllerD.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9776BC1267BBB8D00E9B80B /* SignUpViewControllerD.storyboard */; };
+		A9776BE2267BD0F600E9B80B /* LogInViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9776BE1267BD0F600E9B80B /* LogInViewController.storyboard */; };
 		A9D5234E2676632300B9C136 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D5234D2676632300B9C136 /* AppDelegate.swift */; };
 		A9D523502676632300B9C136 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D5234F2676632300B9C136 /* SceneDelegate.swift */; };
 		A9D523522676632300B9C136 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D523512676632300B9C136 /* ViewController.swift */; };
@@ -27,6 +59,38 @@
 		340E1495788B01B062447DB0 /* Pods_FixX_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FixX_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B063103FF19EC01A2BE70B2 /* Pods-FixX-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FixX-ios.debug.xcconfig"; path = "Target Support Files/Pods-FixX-ios/Pods-FixX-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		7347986CDE791043ADD668A0 /* Pods-FixX-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FixX-ios.release.xcconfig"; path = "Target Support Files/Pods-FixX-ios/Pods-FixX-ios.release.xcconfig"; sourceTree = "<group>"; };
+		A9776A6A267B694D00E9B80B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A9776A6D267B698900E9B80B /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		A9776A72267B6AB300E9B80B /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		A9776A7C267B6B3B00E9B80B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		A9776A7D267B6B3B00E9B80B /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		A9776A81267B6C6E00E9B80B /* CustomizeOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeOrderViewController.swift; sourceTree = "<group>"; };
+		A9776A84267B6C9200E9B80B /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		A9776A89267B6E2A00E9B80B /* ChatLogsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogsTableViewController.swift; sourceTree = "<group>"; };
+		A9776A8D267B6E6200E9B80B /* ChatLogsCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogsCustomCell.swift; sourceTree = "<group>"; };
+		A9776A8E267B6E6200E9B80B /* ChatLogsCustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatLogsCustomCell.xib; sourceTree = "<group>"; };
+		A9776A92267B6E9000E9B80B /* ChatInboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInboxViewController.swift; sourceTree = "<group>"; };
+		A9776A95267B6EC700E9B80B /* RightMessageCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightMessageCustomCell.swift; sourceTree = "<group>"; };
+		A9776A96267B6EC700E9B80B /* RightMessageCustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RightMessageCustomCell.xib; sourceTree = "<group>"; };
+		A9776A9A267B6EEF00E9B80B /* LeftMessageCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMessageCustomCell.swift; sourceTree = "<group>"; };
+		A9776A9B267B6EEF00E9B80B /* LeftMessageCustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeftMessageCustomCell.xib; sourceTree = "<group>"; };
+		A9776A9F267B6FCB00E9B80B /* RegistrationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationProtocol.swift; sourceTree = "<group>"; };
+		A9776AA2267B70D800E9B80B /* UITextField+isError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+isError.swift"; sourceTree = "<group>"; };
+		A9776AA5267B70EF00E9B80B /* UITextField+setBottomBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+setBottomBorder.swift"; sourceTree = "<group>"; };
+		A9776AA8267B716100E9B80B /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
+		A9776AAB267B717D00E9B80B /* CustomizeOrder.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomizeOrder.storyboard; sourceTree = "<group>"; };
+		A9776AAE267B71AF00E9B80B /* ChatLogs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatLogs.storyboard; sourceTree = "<group>"; };
+		A9776AB1267B71D100E9B80B /* ChatInbox.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatInbox.storyboard; sourceTree = "<group>"; };
+		A9776B00267B8BB200E9B80B /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		A9776B03267B8C3500E9B80B /* SignUpViewControllerA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewControllerA.swift; sourceTree = "<group>"; };
+		A9776B06267B8C4700E9B80B /* SignUpViewControllerB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewControllerB.swift; sourceTree = "<group>"; };
+		A9776B0C267B8CA100E9B80B /* SignUpViewControllerD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewControllerD.swift; sourceTree = "<group>"; };
+		A9776B2F267B9FCC00E9B80B /* SignUpViewControllerC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewControllerC.swift; sourceTree = "<group>"; };
+		A9776BB8267BBB3500E9B80B /* SignUpViewControllerA.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpViewControllerA.storyboard; sourceTree = "<group>"; };
+		A9776BBB267BBB4C00E9B80B /* SignUpViewControllerB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpViewControllerB.storyboard; sourceTree = "<group>"; };
+		A9776BBE267BBB5F00E9B80B /* SignUpViewControllerC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpViewControllerC.storyboard; sourceTree = "<group>"; };
+		A9776BC1267BBB8D00E9B80B /* SignUpViewControllerD.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpViewControllerD.storyboard; sourceTree = "<group>"; };
+		A9776BE1267BD0F600E9B80B /* LogInViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogInViewController.storyboard; sourceTree = "<group>"; };
 		A9D5234A2676632200B9C136 /* FixX-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FixX-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D5234D2676632300B9C136 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9D5234F2676632300B9C136 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +137,126 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A9776A61267B681000E9B80B /* POJOs */ = {
+			isa = PBXGroup;
+			children = (
+				A9776A6A267B694D00E9B80B /* User.swift */,
+			);
+			path = POJOs;
+			sourceTree = "<group>";
+		};
+		A9776A63267B686800E9B80B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A9776A6D267B698900E9B80B /* GradientView.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		A9776A64267B688500E9B80B /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				A9776BC4267BC07300E9B80B /* LogIn */,
+				A9776A71267B6A6300E9B80B /* SignUp */,
+				A9776A72267B6AB300E9B80B /* RegistrationViewController.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		A9776A65267B68A400E9B80B /* CustomizeOrder */ = {
+			isa = PBXGroup;
+			children = (
+				A9776A81267B6C6E00E9B80B /* CustomizeOrderViewController.swift */,
+				A9776A84267B6C9200E9B80B /* ImageCollectionViewCell.swift */,
+			);
+			path = CustomizeOrder;
+			sourceTree = "<group>";
+		};
+		A9776A66267B68C400E9B80B /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				A9776A87267B6DF700E9B80B /* ChatLogs */,
+				A9776A88267B6E0000E9B80B /* ChatInbox */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		A9776A67267B68D800E9B80B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A9776A9F267B6FCB00E9B80B /* RegistrationProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A9776A68267B68ED00E9B80B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A9776AA2267B70D800E9B80B /* UITextField+isError.swift */,
+				A9776AA5267B70EF00E9B80B /* UITextField+setBottomBorder.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A9776A69267B690D00E9B80B /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A9776AA8267B716100E9B80B /* Registration.storyboard */,
+				A9776BE1267BD0F600E9B80B /* LogInViewController.storyboard */,
+				A9776BB8267BBB3500E9B80B /* SignUpViewControllerA.storyboard */,
+				A9776BBB267BBB4C00E9B80B /* SignUpViewControllerB.storyboard */,
+				A9776BBE267BBB5F00E9B80B /* SignUpViewControllerC.storyboard */,
+				A9776BC1267BBB8D00E9B80B /* SignUpViewControllerD.storyboard */,
+				A9776AAB267B717D00E9B80B /* CustomizeOrder.storyboard */,
+				A9776AAE267B71AF00E9B80B /* ChatLogs.storyboard */,
+				A9776AB1267B71D100E9B80B /* ChatInbox.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		A9776A71267B6A6300E9B80B /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				A9776B03267B8C3500E9B80B /* SignUpViewControllerA.swift */,
+				A9776B06267B8C4700E9B80B /* SignUpViewControllerB.swift */,
+				A9776B2F267B9FCC00E9B80B /* SignUpViewControllerC.swift */,
+				A9776B0C267B8CA100E9B80B /* SignUpViewControllerD.swift */,
+				A9776A7C267B6B3B00E9B80B /* SignUpViewController.swift */,
+				A9776A7D267B6B3B00E9B80B /* SignUpViewController.xib */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		A9776A87267B6DF700E9B80B /* ChatLogs */ = {
+			isa = PBXGroup;
+			children = (
+				A9776A89267B6E2A00E9B80B /* ChatLogsTableViewController.swift */,
+				A9776A8D267B6E6200E9B80B /* ChatLogsCustomCell.swift */,
+				A9776A8E267B6E6200E9B80B /* ChatLogsCustomCell.xib */,
+			);
+			path = ChatLogs;
+			sourceTree = "<group>";
+		};
+		A9776A88267B6E0000E9B80B /* ChatInbox */ = {
+			isa = PBXGroup;
+			children = (
+				A9776A92267B6E9000E9B80B /* ChatInboxViewController.swift */,
+				A9776A95267B6EC700E9B80B /* RightMessageCustomCell.swift */,
+				A9776A96267B6EC700E9B80B /* RightMessageCustomCell.xib */,
+				A9776A9A267B6EEF00E9B80B /* LeftMessageCustomCell.swift */,
+				A9776A9B267B6EEF00E9B80B /* LeftMessageCustomCell.xib */,
+			);
+			path = ChatInbox;
+			sourceTree = "<group>";
+		};
+		A9776BC4267BC07300E9B80B /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				A9776B00267B8BB200E9B80B /* LogInViewController.swift */,
+			);
+			path = LogIn;
+			sourceTree = "<group>";
+		};
 		A9D523412676632200B9C136 = {
 			isa = PBXGroup;
 			children = (
@@ -95,14 +279,22 @@
 			isa = PBXGroup;
 			children = (
 				A9E43DA626791767008B5A45 /* MyOrdersScreen */,
+				A9776A61267B681000E9B80B /* POJOs */,
+				A9776A63267B686800E9B80B /* Utilities */,
+				A9776A64267B688500E9B80B /* Registration */,
+				A9776A65267B68A400E9B80B /* CustomizeOrder */,
+				A9776A66267B68C400E9B80B /* Chat */,
+				A9776A67267B68D800E9B80B /* Protocols */,
+				A9776A68267B68ED00E9B80B /* Extensions */,
+				A9776A69267B690D00E9B80B /* Storyboards */,
 				A9D5234D2676632300B9C136 /* AppDelegate.swift */,
 				A9D5234F2676632300B9C136 /* SceneDelegate.swift */,
 				A9D523512676632300B9C136 /* ViewController.swift */,
 				A9D523532676632300B9C136 /* Main.storyboard */,
-				A9D523562676632800B9C136 /* Assets.xcassets */,
 				A9D523582676632800B9C136 /* LaunchScreen.storyboard */,
 				A9D5235B2676632800B9C136 /* Info.plist */,
 				A9D52361267664DB00B9C136 /* GoogleService-Info.plist */,
+				A9D523562676632800B9C136 /* Assets.xcassets */,
 			);
 			path = "FixX-ios";
 			sourceTree = "<group>";
@@ -188,11 +380,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9776BC2267BBB8D00E9B80B /* SignUpViewControllerD.storyboard in Resources */,
+				A9776A9D267B6EEF00E9B80B /* LeftMessageCustomCell.xib in Resources */,
+				A9776A98267B6EC700E9B80B /* RightMessageCustomCell.xib in Resources */,
 				A9D5235A2676632800B9C136 /* LaunchScreen.storyboard in Resources */,
 				A9E43DAD267917E0008B5A45 /* MyOrdersStoryboard.storyboard in Resources */,
+				A9776A90267B6E6200E9B80B /* ChatLogsCustomCell.xib in Resources */,
+				A9776AA9267B716100E9B80B /* Registration.storyboard in Resources */,
+				A9776BB9267BBB3500E9B80B /* SignUpViewControllerA.storyboard in Resources */,
 				A9D52362267664DC00B9C136 /* GoogleService-Info.plist in Resources */,
+				A9776AAF267B71AF00E9B80B /* ChatLogs.storyboard in Resources */,
+				A9776BBC267BBB4C00E9B80B /* SignUpViewControllerB.storyboard in Resources */,
 				A9D523572676632800B9C136 /* Assets.xcassets in Resources */,
+				A9776A7F267B6B3B00E9B80B /* SignUpViewController.xib in Resources */,
 				A9D523552676632300B9C136 /* Main.storyboard in Resources */,
+				A9776AAC267B717D00E9B80B /* CustomizeOrder.storyboard in Resources */,
+				A9776BBF267BBB5F00E9B80B /* SignUpViewControllerC.storyboard in Resources */,
+				A9776BE2267BD0F600E9B80B /* LogInViewController.storyboard in Resources */,
+				A9776AB2267B71D100E9B80B /* ChatInbox.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +458,28 @@
 				A9D523502676632300B9C136 /* SceneDelegate.swift in Sources */,
 				A9E43DAA267917B3008B5A45 /* MyOrdersViewController.swift in Sources */,
 				A9DC5DF9267AADA50084948C /* CompletedTableViewCell.swift in Sources */,
+				A9776B30267B9FCC00E9B80B /* SignUpViewControllerC.swift in Sources */,
+				A9776B07267B8C4700E9B80B /* SignUpViewControllerB.swift in Sources */,
+				A9776A73267B6AB300E9B80B /* RegistrationViewController.swift in Sources */,
+				A9776AA0267B6FCB00E9B80B /* RegistrationProtocol.swift in Sources */,
+				A9776A7E267B6B3B00E9B80B /* SignUpViewController.swift in Sources */,
+				A9776B01267B8BB200E9B80B /* LogInViewController.swift in Sources */,
+				A9776A82267B6C6E00E9B80B /* CustomizeOrderViewController.swift in Sources */,
+				A9776AA3267B70D800E9B80B /* UITextField+isError.swift in Sources */,
+				A9776A93267B6E9000E9B80B /* ChatInboxViewController.swift in Sources */,
+				A9776A6B267B694D00E9B80B /* User.swift in Sources */,
+				A9D523522676632300B9C136 /* ViewController.swift in Sources */,
+				A9776AA6267B70EF00E9B80B /* UITextField+setBottomBorder.swift in Sources */,
+				A9776B0D267B8CA100E9B80B /* SignUpViewControllerD.swift in Sources */,
+				A9776A85267B6C9200E9B80B /* ImageCollectionViewCell.swift in Sources */,
+				A9776B04267B8C3500E9B80B /* SignUpViewControllerA.swift in Sources */,
+				A9776A8F267B6E6200E9B80B /* ChatLogsCustomCell.swift in Sources */,
+				A9776A8A267B6E2A00E9B80B /* ChatLogsTableViewController.swift in Sources */,
+				A9776A6E267B698A00E9B80B /* GradientView.swift in Sources */,
+				A9776A97267B6EC700E9B80B /* RightMessageCustomCell.swift in Sources */,
+				A9D5234E2676632300B9C136 /* AppDelegate.swift in Sources */,
+				A9D523502676632300B9C136 /* SceneDelegate.swift in Sources */,
+				A9776A9C267B6EEF00E9B80B /* LeftMessageCustomCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
