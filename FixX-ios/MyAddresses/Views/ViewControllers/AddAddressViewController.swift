@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import DropDown
+import iOSDropDown
 
 class AddAddressViewController: UIViewController {
     
@@ -16,15 +16,13 @@ class AddAddressViewController: UIViewController {
     @IBOutlet weak var buildingTxt: UITextField!
     @IBOutlet weak var floorTxt: UITextField!
     @IBOutlet weak var notesTxt: UITextField!
+
     
-    @IBOutlet weak var cityDropDownView: UIView!
-    @IBOutlet weak var areaDropDownView: UIView!
+    @IBOutlet weak var cityDropDown: DropDown!
     
-    @IBOutlet weak var cityLabel: UILabel!
-    @IBOutlet weak var areaLabel: UILabel!
+    @IBOutlet weak var areaDropDown: DropDown!
     
-    let cityDropDown = DropDown()
-    let areaDropDown = DropDown()
+
     
     let cities = ["Cairo", "Alexandria"]
     let alexArea = ["Sporting", "Smouha"]
@@ -40,28 +38,18 @@ class AddAddressViewController: UIViewController {
         
     }
     
-    @IBAction func cityDropDownActionBtn(_ sender: Any) {
-        cityDropDown.show()
-    }
-
-    @IBAction func areaDropDownAction(_ sender: Any) {
-        areaDropDown.show()
-    }
-    
-    
     @IBAction func useMapActionBtn(_ sender: Any) {
         
         let mapVC = self.storyboard?.instantiateViewController(identifier: "MVC") as! MapViewController
-       // self.present(mapVC, animated: true, completion: nil)
        self.navigationController?.pushViewController(mapVC, animated: true)
     }
     
     
     @IBAction func addAddressActionBtn(_ sender: Any) {
-        
-        if cityLabel.text == "City" {
+    
+        if cityDropDown.text == "City"{
             self.showToast(message: "Please Choose City", font: .systemFont(ofSize: 12.0))
-        }else if areaLabel.text == "Area"{
+        }else if areaDropDown.text == "Area"{
             self.showToast(message: "Please Choose Area", font: .systemFont(ofSize: 12.0))
         }else{
             self.navigationController?.popViewController(animated: true)
@@ -69,38 +57,34 @@ class AddAddressViewController: UIViewController {
     }
     
     func setCityDropDown(){
-    cityLabel.text = "City"
-    cityDropDown.anchorView = cityDropDownView
-    cityDropDown.dataSource = cities
-    cityDropDown.bottomOffset = CGPoint(x: 0, y: (cityDropDown.anchorView?.plainView.bounds.height)!)
-    cityDropDown.topOffset = CGPoint(x: 0, y: -(cityDropDown.anchorView?.plainView.bounds.height)!)
-    cityDropDown.direction = .bottom
-    cityDropDown.selectionAction = { [self] (index: Int, item: String) in
-        cityLabel.text = item
-        print("selected item is \(item) at index \(index)")
-        setAreaDropDown()
+        cityDropDown.text = "City"
+        cityDropDown.isSearchEnable = false
+        cityDropDown.optionArray = cities
+        cityDropDown.didSelect{ [self](selectedText , index ,id) in
+            if selectedText == "Cairo" {
+                areaDropDown.optionArray = cairoArea
+            }else if selectedText == "Alexandria" {
+                areaDropDown.optionArray = alexArea
+            } else {
+                areaDropDown.optionArray = emptyArea
+            }
+    }
+}
+    
+    func setAreaDropDown(){
+        areaDropDown.text = "Area"
+        areaDropDown.isSearchEnable = false
+    
+        if cityDropDown.text == "Cairo" {
+            areaDropDown.optionArray = cairoArea
+        }else if cityDropDown.text == "Alexandria" {
+            areaDropDown.optionArray = alexArea
+        } else {
+            areaDropDown.optionArray = emptyArea
         }
     }
     
-    func setAreaDropDown(){
-    areaLabel.text = "Area"
-    areaDropDown.anchorView = areaDropDownView
-        if cityLabel.text == "Cairo" {
-            areaDropDown.dataSource = cairoArea
-        }else if cityLabel.text == "Alexandria" {
-            areaDropDown.dataSource = alexArea
-        } else {
-            areaDropDown.dataSource = emptyArea
-        }
-  
-    areaDropDown.bottomOffset = CGPoint(x: 0, y: (areaDropDown.anchorView?.plainView.bounds.height)!)
-    areaDropDown.topOffset = CGPoint(x: 0, y: -(areaDropDown.anchorView?.plainView.bounds.height)!)
-    areaDropDown.direction = .bottom
-    areaDropDown.selectionAction = { [self] (index: Int, item: String) in
-        areaLabel.text = item
-        print("selected item is \(item) at index \(index)")
-        }
-    }
+    
     
 
 }

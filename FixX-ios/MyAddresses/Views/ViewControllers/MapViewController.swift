@@ -206,7 +206,14 @@ MKMapViewDelegate, UIGestureRecognizerDelegate {
                        let b = pm.administrativeArea
                        let c = pm.region
                        let d = pm.subAdministrativeArea
-                       
+                    print("country\(String(describing: country))")
+                    print("city\(String(describing: city))")
+                    print("area\(String(describing: area))")
+                    print("a\(String(describing: a))")
+                    print("b\(String(describing: b))")
+                    print("c\(String(describing: c))")
+                    print("d\(String(describing: d))")
+                    
                        self.addTitle = a ?? " "
    //                    \(String(describing: city))  %  \(String(describing: area)) %  \(String(describing: a))% \(String(describing: b)) % \(String(describing: c)) % \(String(describing: d))"
                        
