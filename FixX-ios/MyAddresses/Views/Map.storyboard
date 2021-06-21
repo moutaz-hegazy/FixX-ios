@@ -25,7 +25,7 @@
                                 <rect key="frame" x="378" y="74" width="20" height="22"/>
                                 <state key="normal" image="location.fill" catalog="system"/>
                                 <connections>
-                                    <action selector="myLocationBtn:" destination="8zO-Og-HTM" eventType="touchUpInside" id="2lM-PO-tnM"/>
+                                    <action selector="myLocationBtn:" destination="8zO-Og-HTM" eventType="touchUpInside" id="YsC-Uk-3Mi"/>
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lit-jb-O5n">
@@ -35,7 +35,7 @@
                                     <navigationItem title="Title" id="cWl-RY-dci">
                                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="B06-bt-Xrb">
                                             <connections>
-                                                <action selector="searchBtn:" destination="8zO-Og-HTM" id="SAx-0X-qch"/>
+                                                <action selector="searchBtn:" destination="8zO-Og-HTM" id="w15-FT-AUW"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -48,7 +48,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="addAddressActionBtn:" destination="8zO-Og-HTM" eventType="touchUpInside" id="mlo-Aq-SbC"/>
+                                    <action selector="addAddressActionBtn:" destination="8zO-Og-HTM" eventType="touchUpInside" id="dTc-wZ-Pgn"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -74,7 +74,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="myMap" destination="pVm-28-Owu" id="NLN-Pj-OVD"/>
+                        <outlet property="myMap" destination="pVm-28-Owu" id="e0q-pj-r6c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qOM-xB-fmN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
