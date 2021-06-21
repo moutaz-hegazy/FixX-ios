@@ -107,10 +107,24 @@ class SignUpViewControllerA: UIViewController {
     
     
     @IBAction func next(_ sender: UIButton) {
+        phoneNumber = phoneNumberTextField.text
         if(validateSignUp1()){
-            let storyBoard: UIStoryboard = UIStoryboard(name: "SignUpViewControllerB", bundle: nil)
-            let b = storyBoard.instantiateViewController(withIdentifier: "b")
-            present(b, animated: true, completion: nil)
+            if(profileType == "User"){
+                let user = User(phoneNumber: phoneNumber!, accountType: "User", name: "", email: "", uid: nil, token: nil, profilePicture: nil, locations: nil)
+                
+                if let regVC = UIStoryboard(name: "SignUpViewControllerD", bundle: nil).instantiateViewController(identifier: "d") as? SignUpViewControllerD{
+                    regVC.regData = user
+                    present(regVC, animated: true, completion: nil)
+                }
+            }else{
+                let storyBoard: UIStoryboard = UIStoryboard(name: "SignUpViewControllerB", bundle: nil)
+                if let b = storyBoard.instantiateViewController(withIdentifier: "b")
+                    as? SignUpViewControllerB{
+                    
+                    b.techData = Technician(jobTitle: nil, workLocations: nil, rating: nil, monthlyRating: nil, jobsCount: 0, reviewCount: 0, phoneNumber: phoneNumber!, accountType: "Technician", name: "", email: "", uid: nil, token: nil, profilePicture: nil, locations: nil)
+                    present(b, animated: true, completion: nil)
+                }
+            }
         }else{
             if(!validatePhoneNumber()){
                 phoneNumberTextField.isError(baseColor: UIColor.red.cgColor, numberOfShakes: 3, revert: true)

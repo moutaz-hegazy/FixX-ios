@@ -1,3 +1,4 @@
+
 import UIKit
 import Toaster
 
@@ -7,6 +8,7 @@ class SignUpViewControllerD: UIViewController {
     var email: String?
     var password: String?
     var confirmPassword: String?
+    var regData : Person?
     
     
     @IBOutlet weak var usernameTextField: UITextField!
@@ -73,11 +75,21 @@ class SignUpViewControllerD: UIViewController {
     
     
     @IBAction func signUp(_ sender: UIButton) {
+        username = usernameTextField.text
+        email = emailTextField.text
+        password = passwordTextField.text
+        confirmPassword = confirmPasswordTextField.text
         if(validateSignUp()){
-            print("signed up")
-            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let customizeOrderViewController = storyBoard.instantiateViewController(withIdentifier: "covc")
-            self.navigationController?.pushViewController(customizeOrderViewController, animated: true)
+            regData?.name = username!
+            regData?.email = email!
+            FirestoreService.shared.registerUser(user: regData!, password: password!) { (person) in
+                print(person)
+            } onFailHandler: {
+                
+            }
+
+
+            
         }else{
             if(!validateUsername()){
                 usernameTextField.isError(baseColor: UIColor.red.cgColor, numberOfShakes: 3, revert: true)
@@ -95,6 +107,6 @@ class SignUpViewControllerD: UIViewController {
     }
     
     @IBAction func back(_ sender: UIButton){
-        self.navigationController?.popViewController(animated: true)
+        presentingViewController?.dismiss(animated: true, completion: nil)
     }
 }

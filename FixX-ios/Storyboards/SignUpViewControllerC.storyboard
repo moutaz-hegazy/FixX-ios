@@ -13,66 +13,162 @@
         <scene sceneID="PUP-ZP-hxu">
             <objects>
                 <viewController storyboardIdentifier="c" id="QDo-QM-8Za" customClass="SignUpViewControllerC" customModule="FixX_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="IUo-jo-kz4">
+                    <view key="view" contentMode="scaleToFill" id="IUo-jo-kz4" customClass="GradientView" customModule="FixX_ios" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9a-iZ-0bg">
-                                <rect key="frame" x="20" y="103" width="194" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Select Your Work Addresses"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9a-iZ-0bg">
+                                <rect key="frame" x="20" y="104" width="194" height="30"/>
+                                <state key="normal" title="Select Your Work Addresses">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Pl-XC-GXG" customClass="DropDown" customModule="iOSDropDown">
-                                <rect key="frame" x="107" y="155" width="200" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Pl-XC-GXG" customClass="DropDown" customModule="iOSDropDown">
+                                <rect key="frame" x="107" y="159" width="200" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="9Fd-zt-TqN"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSearchEnable" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="listHeight">
-                                        <real key="value" value="300"/>
+                                        <real key="value" value="200"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="rowHeight">
                                         <real key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xaZ-lf-lVa">
-                                <rect key="frame" x="107" y="197" width="200" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Area" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xaZ-lf-lVa" customClass="DropDown" customModule="iOSDropDown">
+                                <rect key="frame" x="107" y="203" width="200" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="5pl-QC-puu"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rowHeight">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSearchEnable" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="listHeight">
+                                        <real key="value" value="250"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOQ-wo-TEv">
-                                <rect key="frame" x="163" y="285" width="88" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOQ-wo-TEv">
+                                <rect key="frame" x="132" y="287" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Hs5-gH-Hd0"/>
+                                    <constraint firstAttribute="width" constant="150" id="d2d-wp-2Gl"/>
+                                </constraints>
                                 <state key="normal" title="Add Address"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="addBorder">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="addAddressWith_sender:" destination="QDo-QM-8Za" eventType="touchUpInside" id="lmy-c5-G7c"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4F-ci-fUl">
-                                <rect key="frame" x="191" y="363" width="32" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Next"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="3r2-6O-YHQ">
+                                <rect key="frame" x="20" y="792" width="374" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GP1-6P-bcL">
+                                        <rect key="frame" x="0.0" y="0.0" width="177" height="50"/>
+                                        <state key="normal" title="Back"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="16"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="addBorder">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="backWith_sender:" destination="QDo-QM-8Za" eventType="touchUpInside" id="AdF-Ud-1cr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4F-ci-fUl">
+                                        <rect key="frame" x="197" y="0.0" width="177" height="50"/>
+                                        <state key="normal" title="Next"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="addBorder">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="16"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="nextWith_sender:" destination="QDo-QM-8Za" eventType="touchUpInside" id="sBd-j5-agu"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="NS7-Pn-dhH"/>
+                                </constraints>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FMG-g9-J1f">
+                                <rect key="frame" x="0.0" y="347" width="414" height="445"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="workLocationCell" textLabel="7IN-55-7zt" style="IBUITableViewCellStyleDefault" id="dKt-a7-8MB">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dKt-a7-8MB" id="ZNy-Ia-vZi">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7IN-55-7zt">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <action selector="nextWith_sender:" destination="QDo-QM-8Za" eventType="touchUpInside" id="sBd-j5-agu"/>
+                                    <outlet property="dataSource" destination="QDo-QM-8Za" id="YZN-DJ-g4X"/>
+                                    <outlet property="delegate" destination="QDo-QM-8Za" id="p9a-fk-T4V"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GP1-6P-bcL">
-                                <rect key="frame" x="190" y="401" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <action selector="backWith_sender:" destination="QDo-QM-8Za" eventType="touchUpInside" id="AdF-Ud-1cr"/>
-                                </connections>
-                            </button>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dc3-Y4-s4m"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3r2-6O-YHQ" firstAttribute="top" secondItem="FMG-g9-J1f" secondAttribute="bottom" id="1G7-I5-Uai"/>
+                            <constraint firstItem="xaZ-lf-lVa" firstAttribute="top" secondItem="1Pl-XC-GXG" secondAttribute="bottom" constant="10" id="3dw-RV-yar"/>
+                            <constraint firstItem="xaZ-lf-lVa" firstAttribute="centerX" secondItem="IUo-jo-kz4" secondAttribute="centerX" id="4k0-gB-R0l"/>
+                            <constraint firstItem="uOQ-wo-TEv" firstAttribute="top" secondItem="xaZ-lf-lVa" secondAttribute="bottom" constant="50" id="5vg-xh-aDF"/>
+                            <constraint firstItem="1Pl-XC-GXG" firstAttribute="centerX" secondItem="IUo-jo-kz4" secondAttribute="centerX" id="KRR-kb-bbm"/>
+                            <constraint firstItem="A9a-iZ-0bg" firstAttribute="leading" secondItem="dc3-Y4-s4m" secondAttribute="leading" constant="20" id="MXC-zK-CfT"/>
+                            <constraint firstItem="dc3-Y4-s4m" firstAttribute="trailing" secondItem="FMG-g9-J1f" secondAttribute="trailing" id="PY4-sf-vFf"/>
+                            <constraint firstItem="1Pl-XC-GXG" firstAttribute="top" secondItem="A9a-iZ-0bg" secondAttribute="bottom" constant="25" id="Su1-mN-oK3"/>
+                            <constraint firstItem="A9a-iZ-0bg" firstAttribute="top" secondItem="dc3-Y4-s4m" secondAttribute="top" constant="60" id="UcB-zg-eaL"/>
+                            <constraint firstItem="uOQ-wo-TEv" firstAttribute="centerX" secondItem="IUo-jo-kz4" secondAttribute="centerX" id="fQm-1f-BzQ"/>
+                            <constraint firstItem="3r2-6O-YHQ" firstAttribute="leading" secondItem="dc3-Y4-s4m" secondAttribute="leading" constant="20" id="g3z-yv-uOR"/>
+                            <constraint firstItem="FMG-g9-J1f" firstAttribute="top" secondItem="uOQ-wo-TEv" secondAttribute="bottom" constant="10" id="hu6-Z8-Ozi"/>
+                            <constraint firstItem="FMG-g9-J1f" firstAttribute="leading" secondItem="dc3-Y4-s4m" secondAttribute="leading" id="osB-77-t4s"/>
+                            <constraint firstItem="dc3-Y4-s4m" firstAttribute="bottom" secondItem="3r2-6O-YHQ" secondAttribute="bottom" constant="20" id="srq-jx-jyo"/>
+                            <constraint firstItem="dc3-Y4-s4m" firstAttribute="trailing" secondItem="3r2-6O-YHQ" secondAttribute="trailing" constant="20" id="zxj-O5-tH4"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="areaMenu" destination="xaZ-lf-lVa" id="OGA-LO-v0b"/>
                         <outlet property="cityMenu" destination="1Pl-XC-GXG" id="e0A-tQ-ajs"/>
+                        <outlet property="locationsTableView" destination="FMG-g9-J1f" id="2bH-pp-MHp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hYn-04-FJw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

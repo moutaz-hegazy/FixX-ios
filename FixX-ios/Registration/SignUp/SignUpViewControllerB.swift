@@ -4,28 +4,31 @@ import iOSDropDown
 class SignUpViewControllerB: UIViewController {
     
     var jobProfile: String?
+    var techData : Technician?
     
     @IBOutlet weak var jobProfileMenu: DropDown!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        jobProfileMenu.optionArray = ["Plumber", "Electrician", "Carpenter", "Painter"]
-        jobProfileMenu.optionIds = [1,2,3,4]
-        // Do any additional setup after loading the view.
+        jobProfileMenu.optionArray = Constants.SERVICE_ARRAY
+        jobProfileMenu.didSelect { [weak self](job, index, id) in
+            self?.jobProfile = job
+        }
     }
     
     @IBAction func next(_sender: UIButton){
-        print("next")
-        //jobProfile = jobProfileMenu
         if(jobProfile != nil){
-            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let c = storyBoard.instantiateViewController(withIdentifier: "c")
-            self.navigationController?.pushViewController(c, animated: true)
+            techData?.jobTitle = jobProfile
+            let storyBoard: UIStoryboard = UIStoryboard(name: "SignUpViewControllerC", bundle: nil)
+            if let c = storyBoard.instantiateViewController(withIdentifier: "c") as? SignUpViewControllerC{
+                c.techData = techData
+                present(c, animated: true, completion: nil)
+            }
         }
     }
     
     @IBAction func back(_sender: UIButton){
-        self.navigationController?.popViewController(animated: true)
+        presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
 

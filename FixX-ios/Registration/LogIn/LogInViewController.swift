@@ -22,13 +22,7 @@ class LogInViewController: UIViewController {
         let tapForgotPassword = UITapGestureRecognizer(target: self, action: #selector(LogInViewController.tapForgotPassword(gesture:)))
                forgotPassword.isUserInteractionEnabled = true
                forgotPassword.addGestureRecognizer(tapForgotPassword)
-        
-        
-        emailTextField.addTarget(self, action: #selector(LogInViewController.checkEmailError(emailTextField:)), for: .editingChanged)
-        emailTextField.isUserInteractionEnabled = true
-        
-        passwordTextField.addTarget(self, action: #selector(LogInViewController.checkPasswordError(passwordTextField:)), for: .editingChanged)
-        passwordTextField.isUserInteractionEnabled = true
+                
     }
     
     
@@ -48,13 +42,6 @@ class LogInViewController: UIViewController {
         return (validationResult != nil)
     }
     
-    @objc func checkEmailError(emailTextField: UITextField){
-        email = emailTextField.text
-        if(!validateEmail()){
-            emailTextField.isError(baseColor: UIColor.red.cgColor, numberOfShakes: 3, revert: true)
-        }
-    }
-    
     
     func validatePassword()-> Bool{
         let validationResult = password?.range(
@@ -64,13 +51,6 @@ class LogInViewController: UIViewController {
         return (validationResult != nil)
     }
     
-    @objc func checkPasswordError(passwordTextField: UITextField){
-        password = passwordTextField.text
-        if(!validatePassword()){
-           passwordTextField.isError(baseColor: UIColor.red.cgColor, numberOfShakes: 3, revert: true)
-        }
-    }
-    
     
     func validateLogin()-> Bool{
         if(validateEmail() && validatePassword()){
@@ -78,8 +58,8 @@ class LogInViewController: UIViewController {
         }else{
             if(!validateEmail()){
                 emailTextField.isError(baseColor: UIColor.red.cgColor, numberOfShakes: 3, revert: true)
-                Toast(text: "Invalid Email. Enter a proper Email.").show()            }
-            if(!validatePassword()){
+                Toast(text: "Invalid Email. Enter a proper Email.").show()
+            }else if(!validatePassword()){
                 passwordTextField.isError(baseColor: UIColor.red.cgColor, numberOfShakes: 3, revert: true)
                 Toast(text: "Invalid Password. Enter a proper Password.").show()
             }
@@ -89,11 +69,16 @@ class LogInViewController: UIViewController {
     
     
     @IBAction func login(_ sender: UIButton) {
-        print("Login")
+        email = emailTextField.text
+        password = passwordTextField.text
         if(validateLogin()){
-            let storyBoard: UIStoryboard = UIStoryboard(name: "CustomizeOrder", bundle: nil)
-            let customizeOrderViewController = storyBoard.instantiateViewController(withIdentifier: "covc")
-            self.navigationController?.pushViewController(customizeOrderViewController, animated: true)
+            FirestoreService.shared.loginWithEmailAndPassword(email: email!, password: password!) { (person) in
+                print("Logged In")
+            } onFailHandler: {
+                print("Failed")
+            } passRegister: { (listener) in
+                
+            }
         }
     }
         

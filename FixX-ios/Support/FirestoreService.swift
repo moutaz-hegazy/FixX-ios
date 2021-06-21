@@ -20,18 +20,18 @@ struct FirestoreService{
     private var contactsRef = Database.database().reference(withPath: "Contacts")
     private var chatsRef = Database.database().reference(withPath: "Chats")
     
-    func registerUser(email : String,
+    func registerUser(user:Person,
                       password : String,
-                      onSuccesshandler : @escaping ()-> Void,
+                      onSuccesshandler : @escaping (Person?)-> Void,
                       onFailHandler : @escaping ()-> Void)
     {
-        auth.createUser(withEmail: email, password: password){
+        auth.createUser(withEmail: user.email, password: password){
     
             authResult, error in
             if error != nil{
                 onFailHandler()
             }else{
-                onSuccesshandler()
+                saveUserData(userData: user, onSuccessHandler: onSuccesshandler, onFailHandler: onFailHandler)
             }
         }
     }
@@ -401,8 +401,9 @@ struct FirestoreService{
     }
     
     
-    func saveUserData(user : Any, onSuccessHandler : @escaping (Any?) -> Void, onFailHandler : @escaping ()-> Void){
-        if let user = user as? Person{
+    func saveUserData(userData : Any, onSuccessHandler : @escaping (Person?) -> Void, onFailHandler : @escaping ()-> Void){
+        
+        if let user = userData as? Person{
             user.uid = auth.currentUser!.uid as String
                 let mirror = Mirror(reflecting: user)
                 var dictionary = [String: AnyObject]()
@@ -420,7 +421,7 @@ struct FirestoreService{
                         }
                     }
                 }
-                    
+
                 db.collection("Users").document(auth.currentUser!.uid as String).setData(dictionary, completion: {error in
                     if error != nil{
                         onFailHandler()

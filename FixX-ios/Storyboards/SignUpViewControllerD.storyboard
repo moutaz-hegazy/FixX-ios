@@ -13,46 +13,76 @@
         <scene sceneID="Kco-qy-a0P">
             <objects>
                 <viewController storyboardIdentifier="d" id="NXi-0P-aCL" customClass="SignUpViewControllerD" customModule="FixX_ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Gup-BL-HIo">
+                    <view key="view" contentMode="scaleToFill" id="Gup-BL-HIo" customClass="GradientView" customModule="FixX_ios" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uQH-xv-pQU">
-                                <rect key="frame" x="82" y="190" width="250" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uQH-xv-pQU">
+                                <rect key="frame" x="82" y="194" width="250" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="jtp-he-cfk"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LHu-Mx-XoE">
-                                <rect key="frame" x="82" y="230" width="250" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LHu-Mx-XoE">
+                                <rect key="frame" x="82" y="233" width="250" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="ZvZ-x7-W6n"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cMQ-Bi-NfH">
-                                <rect key="frame" x="82" y="270" width="250" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cMQ-Bi-NfH">
+                                <rect key="frame" x="82" y="272" width="250" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="spG-nm-ZRX"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LHV-eT-vN9">
-                                <rect key="frame" x="82" y="310" width="250" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LHV-eT-vN9">
+                                <rect key="frame" x="82" y="311" width="250" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="VMf-3C-Rbx"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wbl-lO-Rvb">
-                                <rect key="frame" x="180" y="370" width="54" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wbl-lO-Rvb">
+                                <rect key="frame" x="132" y="395" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1Q5-pK-Cqt"/>
+                                    <constraint firstAttribute="width" constant="150" id="Jpn-zQ-zYi"/>
+                                </constraints>
                                 <state key="normal" title="Sign Up"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="addBorder">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="signUp:" destination="NXi-0P-aCL" eventType="touchUpInside" id="PCW-Cm-GuD"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lX5-JT-pnc">
-                                <rect key="frame" x="190" y="414" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lX5-JT-pnc">
+                                <rect key="frame" x="132" y="495" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="4ax-4b-lCs"/>
+                                    <constraint firstAttribute="height" constant="50" id="Wug-Bu-pt8"/>
+                                </constraints>
                                 <state key="normal" title="Back"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="addBorder">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="back:" destination="NXi-0P-aCL" eventType="touchUpInside" id="vpF-I1-0u3"/>
                                 </connections>
@@ -60,6 +90,20 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BJU-xS-D2P"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LHV-eT-vN9" firstAttribute="top" secondItem="cMQ-Bi-NfH" secondAttribute="bottom" constant="5" id="9zw-7t-VHO"/>
+                            <constraint firstItem="LHu-Mx-XoE" firstAttribute="centerX" secondItem="Gup-BL-HIo" secondAttribute="centerX" id="LU1-c0-EuR"/>
+                            <constraint firstItem="lX5-JT-pnc" firstAttribute="top" secondItem="Wbl-lO-Rvb" secondAttribute="bottom" constant="50" id="TYj-D4-fAv"/>
+                            <constraint firstItem="LHV-eT-vN9" firstAttribute="centerX" secondItem="Gup-BL-HIo" secondAttribute="centerX" id="XGh-Vl-DHH"/>
+                            <constraint firstItem="cMQ-Bi-NfH" firstAttribute="top" secondItem="LHu-Mx-XoE" secondAttribute="bottom" constant="5" id="aF2-DK-DhX"/>
+                            <constraint firstItem="Wbl-lO-Rvb" firstAttribute="top" secondItem="LHV-eT-vN9" secondAttribute="bottom" constant="50" id="cHO-kV-PTs"/>
+                            <constraint firstItem="LHu-Mx-XoE" firstAttribute="top" secondItem="uQH-xv-pQU" secondAttribute="bottom" constant="5" id="lva-SH-0YQ"/>
+                            <constraint firstItem="uQH-xv-pQU" firstAttribute="centerX" secondItem="Gup-BL-HIo" secondAttribute="centerX" id="mEK-5O-5UK"/>
+                            <constraint firstItem="uQH-xv-pQU" firstAttribute="top" secondItem="BJU-xS-D2P" secondAttribute="top" constant="150" id="ncA-Gf-HO9"/>
+                            <constraint firstItem="cMQ-Bi-NfH" firstAttribute="centerX" secondItem="Gup-BL-HIo" secondAttribute="centerX" id="sDw-EK-7of"/>
+                            <constraint firstItem="lX5-JT-pnc" firstAttribute="centerX" secondItem="Gup-BL-HIo" secondAttribute="centerX" id="txQ-9z-Fh1"/>
+                            <constraint firstItem="Wbl-lO-Rvb" firstAttribute="centerX" secondItem="Gup-BL-HIo" secondAttribute="centerX" id="uar-Ai-ha1"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="confirmPasswordTextField" destination="LHV-eT-vN9" id="iH1-Pq-3Er"/>

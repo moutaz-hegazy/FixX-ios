@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yOA-MJ-Kd7">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Safety Tips-->
+        <scene sceneID="Uec-Ab-2eV">
+            <objects>
+                <tableViewController id="yOA-MJ-Kd7" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="aoy-bA-ZpY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="NJH-n2-g8j">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="yrb-4d-XyC">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yrb-4d-XyC" id="1k6-u9-4ES">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make the most of your Fix-X visit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtL-QO-GRP">
+                                                    <rect key="frame" x="20" y="18" width="305.5" height="24"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="dtL-QO-GRP" firstAttribute="top" secondItem="1k6-u9-4ES" secondAttribute="topMargin" constant="7" id="9ce-zE-3fJ"/>
+                                                <constraint firstItem="dtL-QO-GRP" firstAttribute="leading" secondItem="1k6-u9-4ES" secondAttribute="leadingMargin" id="JP4-W3-5bE"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="879" id="wTq-d2-taC">
+                                        <rect key="frame" x="0.0" y="88" width="414" height="879"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wTq-d2-taC" id="Vk1-4l-Gm4">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="879"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6r4-cw-z5y">
+                                                    <rect key="frame" x="20" y="16" width="374" height="95.5"/>
+                                                    <string key="text">- Fix-X aims at excellence in services provided to its customers,those are Fix-X tips to help you enjoy our services even better.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1c-xM-QOj">
+                                                    <rect key="frame" x="20" y="131.5" width="374" height="95.5"/>
+                                                    <string key="text">- Contracting Fix-X fixer outside the app voids your grantee and keeps you without any quality or cost control, so always use Fix-X for your repair needs.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kr0-9u-eZl">
+                                                    <rect key="frame" x="20" y="247" width="374" height="119.5"/>
+                                                    <string key="text">- We always make sure our fixers are honest and safe to let in your house, but your peace of mind always keep your personal belongings away from the fixing area.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Try having company when Fix-X fixers are at your home." lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QX6-h8-yDt">
+                                                    <rect key="frame" x="20" y="386.5" width="374" height="48"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCI-l7-7kM">
+                                                    <rect key="frame" x="20" y="454.5" width="374" height="95.5"/>
+                                                    <string key="text">- Fixing your home might involve dangerous materials and tools, so always keep your children away from Fix-X fixers gadgets and tools to ensure their safety.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Be in close proximity to the fixers, but try not to distract them with questions until the job is finished." lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbn-oE-JXH">
+                                                    <rect key="frame" x="20" y="570" width="374" height="72"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Please be sure about your order for Fix-X to enable us to serve you best, cancelling and no show is not welcome at Fix-X." lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9V-E8-lGR">
+                                                    <rect key="frame" x="20" y="662" width="374" height="72"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="xbn-oE-JXH" firstAttribute="leading" secondItem="Vk1-4l-Gm4" secondAttribute="leadingMargin" id="3IB-um-8rh"/>
+                                                <constraint firstItem="j1c-xM-QOj" firstAttribute="top" secondItem="6r4-cw-z5y" secondAttribute="bottom" constant="20" id="48e-gq-pa5"/>
+                                                <constraint firstItem="oCI-l7-7kM" firstAttribute="top" secondItem="QX6-h8-yDt" secondAttribute="bottom" constant="20" id="4GU-WI-E8H"/>
+                                                <constraint firstItem="6r4-cw-z5y" firstAttribute="trailing" secondItem="Vk1-4l-Gm4" secondAttribute="trailingMargin" id="5Mg-Pq-ysC"/>
+                                                <constraint firstItem="j1c-xM-QOj" firstAttribute="trailing" secondItem="Vk1-4l-Gm4" secondAttribute="trailingMargin" id="Dcb-sx-7OY"/>
+                                                <constraint firstItem="Kr0-9u-eZl" firstAttribute="leading" secondItem="Vk1-4l-Gm4" secondAttribute="leadingMargin" id="FUq-5O-c6P"/>
+                                                <constraint firstItem="QX6-h8-yDt" firstAttribute="leading" secondItem="Vk1-4l-Gm4" secondAttribute="leadingMargin" id="Iyc-m4-VUN"/>
+                                                <constraint firstItem="H9V-E8-lGR" firstAttribute="trailing" secondItem="Vk1-4l-Gm4" secondAttribute="trailingMargin" id="KH4-wa-FsM"/>
+                                                <constraint firstItem="xbn-oE-JXH" firstAttribute="trailing" secondItem="Vk1-4l-Gm4" secondAttribute="trailingMargin" id="LBV-da-oHP"/>
+                                                <constraint firstItem="Kr0-9u-eZl" firstAttribute="top" secondItem="j1c-xM-QOj" secondAttribute="bottom" constant="20" id="Si8-9y-tuN"/>
+                                                <constraint firstItem="QX6-h8-yDt" firstAttribute="top" secondItem="Kr0-9u-eZl" secondAttribute="bottom" constant="20" id="d1c-RE-JTm"/>
+                                                <constraint firstItem="6r4-cw-z5y" firstAttribute="leading" secondItem="Vk1-4l-Gm4" secondAttribute="leadingMargin" id="dSs-XM-RcP"/>
+                                                <constraint firstItem="H9V-E8-lGR" firstAttribute="top" secondItem="xbn-oE-JXH" secondAttribute="bottom" constant="20" id="dXd-Up-BKd"/>
+                                                <constraint firstItem="oCI-l7-7kM" firstAttribute="trailing" secondItem="Vk1-4l-Gm4" secondAttribute="trailingMargin" id="dbx-fG-962"/>
+                                                <constraint firstItem="Kr0-9u-eZl" firstAttribute="trailing" secondItem="Vk1-4l-Gm4" secondAttribute="trailingMargin" id="hC3-uI-oSh"/>
+                                                <constraint firstItem="xbn-oE-JXH" firstAttribute="top" secondItem="oCI-l7-7kM" secondAttribute="bottom" constant="20" id="kEe-b9-pqH"/>
+                                                <constraint firstItem="6r4-cw-z5y" firstAttribute="top" secondItem="Vk1-4l-Gm4" secondAttribute="topMargin" constant="5" id="o81-OZ-Ahl"/>
+                                                <constraint firstItem="QX6-h8-yDt" firstAttribute="trailing" secondItem="Vk1-4l-Gm4" secondAttribute="trailingMargin" id="pEi-72-2Gq"/>
+                                                <constraint firstItem="oCI-l7-7kM" firstAttribute="leading" secondItem="Vk1-4l-Gm4" secondAttribute="leadingMargin" id="tKA-y6-3TZ"/>
+                                                <constraint firstItem="j1c-xM-QOj" firstAttribute="leading" secondItem="Vk1-4l-Gm4" secondAttribute="leadingMargin" id="uDn-Sw-nf5"/>
+                                                <constraint firstItem="H9V-E8-lGR" firstAttribute="leading" secondItem="Vk1-4l-Gm4" secondAttribute="leadingMargin" id="ylj-Z3-XqS"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="yOA-MJ-Kd7" id="vlv-fg-kz9"/>
+                            <outlet property="delegate" destination="yOA-MJ-Kd7" id="uTY-0S-oTy"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Safety Tips" id="Utz-nC-l9Y"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TNc-Gz-V8G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1031.8840579710145" y="-60.267857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
