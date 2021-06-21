@@ -19,7 +19,7 @@ class ShowTechnicianTableViewController: UITableViewController {
         
         
         
-        technicians = [Technician(techPhoto: UIImage(imageLiteralResourceName: "profile"), techName: "Dina Adel", techRate: 3.5, noOfJobs: "4", noOfReviews: "2"),Technician(techPhoto: UIImage(imageLiteralResourceName: "profile"), techName: "Esraa Gohar", techRate: 5, noOfJobs: "5", noOfReviews: "3")]
+        technicians = [Technician(techPhoto:"", techName: "Dina Adel", techRate: 3.5, noOfJobs: "4", noOfReviews: "2"),Technician(techPhoto: "", techName: "Esraa Gohar", techRate: 5, noOfJobs: "5", noOfReviews: "3")]
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -52,17 +52,30 @@ class ShowTechnicianTableViewController: UITableViewController {
         cell.TechName?.text = tech.techName
         cell.TechNoOfJobs?.text = tech.noOfJobs
         cell.TechNoOfReviews?.text = tech.noOfReviews
-        cell.TechImage?.image = tech.techPhoto
+        //cell.TechImage?.image = tech.techPhoto
 
         // Configure the cell...
 
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let profileTech = self.storyboard?.instantiateViewController(identifier:"ProfileVC") as! TechnicianProfileViewController
+        
+        profileTech.name = technicians[indexPath.row].techName
+        profileTech.noOfJobs = technicians[indexPath.row].noOfJobs
+        profileTech.noOfReviews = technicians[indexPath.row].noOfReviews
+        profileTech.rating = technicians[indexPath.row].techRate
+        profileTech.image = technicians[indexPath.row].techPhoto
+        
+        self.navigationController?.pushViewController(profileTech, animated: true)
+        
+    }
     
     
     struct Technician {
-        let techPhoto : UIImage
+        let techPhoto : String
         let techName : String
         let techRate : Double
         let noOfJobs : String

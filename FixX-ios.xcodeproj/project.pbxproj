@@ -12,6 +12,9 @@
 		A995047F267D6FBF00701979 /* ShowTechnicianTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A995047D267D6FBF00701979 /* ShowTechnicianTableViewController.swift */; };
 		A9950482267D6FD800701979 /* ShowTechnicianScreenStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9950481267D6FD800701979 /* ShowTechnicianScreenStoryboard.storyboard */; };
 		A995048A267D73E700701979 /* TabBarStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9950489267D73E700701979 /* TabBarStoryboard.storyboard */; };
+		A9BF40452680C6FD00AE3177 /* TechnicianProfileStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9BF40442680C6FD00AE3177 /* TechnicianProfileStoryboard.storyboard */; };
+		A9BF404D2680FB3800AE3177 /* TechnicianProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BF404C2680FB3800AE3177 /* TechnicianProfileViewController.swift */; };
+		A9BF405126810CF200AE3177 /* ReviewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BF405026810CF200AE3177 /* ReviewsTableViewCell.swift */; };
 		A9D5234E2676632300B9C136 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D5234D2676632300B9C136 /* AppDelegate.swift */; };
 		A9D523502676632300B9C136 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D5234F2676632300B9C136 /* SceneDelegate.swift */; };
 		A9D523522676632300B9C136 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D523512676632300B9C136 /* ViewController.swift */; };
@@ -44,6 +47,9 @@
 		A995047D267D6FBF00701979 /* ShowTechnicianTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTechnicianTableViewController.swift; sourceTree = "<group>"; };
 		A9950481267D6FD800701979 /* ShowTechnicianScreenStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ShowTechnicianScreenStoryboard.storyboard; sourceTree = "<group>"; };
 		A9950489267D73E700701979 /* TabBarStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabBarStoryboard.storyboard; sourceTree = "<group>"; };
+		A9BF40442680C6FD00AE3177 /* TechnicianProfileStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TechnicianProfileStoryboard.storyboard; sourceTree = "<group>"; };
+		A9BF404C2680FB3800AE3177 /* TechnicianProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnicianProfileViewController.swift; sourceTree = "<group>"; };
+		A9BF405026810CF200AE3177 /* ReviewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsTableViewCell.swift; sourceTree = "<group>"; };
 		A9D5234A2676632200B9C136 /* FixX-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FixX-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D5234D2676632300B9C136 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9D5234F2676632300B9C136 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +108,7 @@
 		A9950479267D6F6500701979 /* ShowTechnician */ = {
 			isa = PBXGroup;
 			children = (
+				A9BF40412680C69900AE3177 /* TechnicianProfile */,
 				A995047B267D6F8300701979 /* ViewControllers */,
 				A995047A267D6F7600701979 /* Views */,
 			);
@@ -152,6 +159,32 @@
 			);
 			name = ViewController;
 			path = "New Group1";
+			sourceTree = "<group>";
+		};
+		A9BF40412680C69900AE3177 /* TechnicianProfile */ = {
+			isa = PBXGroup;
+			children = (
+				A9BF40432680C6C300AE3177 /* ViewControllers */,
+				A9BF40422680C6B400AE3177 /* Views */,
+			);
+			path = TechnicianProfile;
+			sourceTree = "<group>";
+		};
+		A9BF40422680C6B400AE3177 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A9BF40442680C6FD00AE3177 /* TechnicianProfileStoryboard.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A9BF40432680C6C300AE3177 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A9BF404C2680FB3800AE3177 /* TechnicianProfileViewController.swift */,
+				A9BF405026810CF200AE3177 /* ReviewsTableViewCell.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		A9D523412676632200B9C136 = {
@@ -376,6 +409,7 @@
 				A9EFFAFC267D78B800EF9920 /* TermsAndConditionsScreenStoryboard.storyboard in Resources */,
 				A9950482267D6FD800701979 /* ShowTechnicianScreenStoryboard.storyboard in Resources */,
 				A9EFFAF1267D786000EF9920 /* ProfileScreenStoryboard.storyboard in Resources */,
+				A9BF40452680C6FD00AE3177 /* TechnicianProfileStoryboard.storyboard in Resources */,
 				A9D52362267664DC00B9C136 /* GoogleService-Info.plist in Resources */,
 				A9EFFAFD267D78B800EF9920 /* SafetyTipsScreenStoryboard.storyboard in Resources */,
 				A9EFFB03267D791600EF9920 /* MyOrdersStoryboard.storyboard in Resources */,
@@ -439,6 +473,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9EFFAD8267D776F00EF9920 /* ServiceCollectionViewCell.swift in Sources */,
+				A9BF404D2680FB3800AE3177 /* TechnicianProfileViewController.swift in Sources */,
 				A9D523522676632300B9C136 /* ViewController.swift in Sources */,
 				A9D5234E2676632300B9C136 /* AppDelegate.swift in Sources */,
 				A995047F267D6FBF00701979 /* ShowTechnicianTableViewController.swift in Sources */,
@@ -446,6 +481,7 @@
 				A9EFFAD7267D776F00EF9920 /* HomeScreenViewController.swift in Sources */,
 				A9EFFACD267D771800EF9920 /* TabBarViewController.swift in Sources */,
 				A9EFFAEE267D784700EF9920 /* ProfileTableViewController.swift in Sources */,
+				A9BF405126810CF200AE3177 /* ReviewsTableViewCell.swift in Sources */,
 				A9EFFAD6267D776F00EF9920 /* CardView.swift in Sources */,
 				A9EFFAE3267D77E600EF9920 /* SettingsScreenTableViewController.swift in Sources */,
 				A9D523502676632300B9C136 /* SceneDelegate.swift in Sources */,
