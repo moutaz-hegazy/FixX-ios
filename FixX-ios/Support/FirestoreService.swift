@@ -378,7 +378,16 @@ struct FirestoreService{
             }
         }
     }
-
+    
+    func logInWithDefault (onCompletion : @escaping()->(), onFail : @escaping()->()){
+        auth.signIn(withEmail: Constants.defaultEmail, password: Constants.defaultPassword) { (res, error) in
+            if(error == nil){
+                onCompletion()
+            }else{
+                onFail()
+            }
+        }
+    }
     
     func saveJobDetails(job : Job, onSuccessHandler : @escaping (Job) -> Void, onFailHandler : @escaping () -> Void){
         let mirror = Mirror(reflecting: job)

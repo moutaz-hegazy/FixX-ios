@@ -20,6 +20,8 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+            
+        print("wezza >>> \(HomeScreenViewController.USER_OBJECT?.name)>>> \(HomeScreenViewController.USER_OBJECT?.email)")
         self.ServiceCollectionView?.backgroundView = backgroungImage
         
         arrServices.append(Service(photo: UIImage(named: "painter")!, name: "Painter"))
@@ -59,6 +61,7 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
         
         // Do any additional setup after loading the view.
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return arrServices.count
@@ -88,6 +91,24 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
         return UIEdgeInsets(top: 2, left:0, bottom: 2, right: 13)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("wezza >>> \(arrServices[indexPath.item].name)")
+        startCustomizeOrderScreen(for : arrServices[indexPath.item].name)
+    }
+    
+    private func startCustomizeOrderScreen(for jobtype : String){
+        if let customizeOrderVC = UIStoryboard(name: "CustomizeOrder", bundle: nil)
+            .instantiateViewController(identifier: "customizeOrderVC") as? CustomizeOrderViewController{
+            print("wezza >>> here 11")
+            customizeOrderVC.jobType = jobtype
+            print("wezza >>> here 12")
+            customizeOrderVC.modalPresentationStyle = .fullScreen
+            print("wezza >>> here 13")
+            present(customizeOrderVC, animated: true, completion: nil)
+        }
+    }
+
+    
     let backgroungImage : UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(named: "pattern1")
@@ -98,9 +119,5 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
     struct Service {
         let photo : UIImage
         let name : String
-    }
-    
-    deinit {
-        
     }
 }

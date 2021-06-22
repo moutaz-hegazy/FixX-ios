@@ -72,16 +72,24 @@ class LogInViewController: UIViewController {
         email = emailTextField.text
         password = passwordTextField.text
         if(validateLogin()){
-            FirestoreService.shared.loginWithEmailAndPassword(email: email!, password: password!) { (person) in
-                print("Logged In")
+            FirestoreService.shared.loginWithEmailAndPassword(email: email!, password: password!) {
+                [weak self] (person) in
+                HomeScreenViewController.USER_OBJECT = person
+                self?.startHomeScreen()
             } onFailHandler: {
-                print("Failed")
+                
             } passRegister: { (listener) in
                 
             }
         }
     }
         
+    private func startHomeScreen(){
+        if let homeVC = UIStoryboard(name: "TabBarStoryboard", bundle: nil).instantiateViewController(identifier: "tabBarVC") as? UITabBarController{
+            homeVC.modalPresentationStyle = .fullScreen
+            present(homeVC, animated: true)
+        }
+    }
     
     @IBAction func loginWithGoogle(_ sender: UIButton) {
         print("Google")

@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--My Orders View Controller-->
+        <!--My Orders-->
         <scene sceneID="KXw-ZO-62d">
             <objects>
                 <viewController storyboardIdentifier="myOrdersVC" id="Jhd-xT-elG" customClass="MyOrdersViewController" customModule="FixX_ios" customModuleProvider="target" sceneMemberID="viewController">
@@ -37,7 +37,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0bk-qa-PEL">
-                                <rect key="frame" x="0.0" y="163" width="414" height="699"/>
+                                <rect key="frame" x="0.0" y="163" width="414" height="650"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qFY-iy-JaI">
@@ -59,15 +59,17 @@
                             <constraint firstItem="0bk-qa-PEL" firstAttribute="top" secondItem="7Uo-Bd-Ulr" secondAttribute="bottom" constant="10" id="CGd-9p-IBk"/>
                             <constraint firstItem="qFY-iy-JaI" firstAttribute="leading" secondItem="2DG-BJ-Z0c" secondAttribute="leading" id="G6s-Yp-Hdp"/>
                             <constraint firstItem="OB6-3d-vPD" firstAttribute="trailing" secondItem="0bk-qa-PEL" secondAttribute="trailing" id="OmE-tc-nYl"/>
+                            <constraint firstItem="OB6-3d-vPD" firstAttribute="bottom" secondItem="0bk-qa-PEL" secondAttribute="bottom" id="QE9-jX-Fh8"/>
                             <constraint firstItem="0bk-qa-PEL" firstAttribute="leading" secondItem="OB6-3d-vPD" secondAttribute="leading" id="W2L-q0-P1t"/>
                             <constraint firstItem="7Uo-Bd-Ulr" firstAttribute="top" secondItem="qFY-iy-JaI" secondAttribute="bottom" constant="35" id="dIg-lS-Nlg"/>
                             <constraint firstItem="OB6-3d-vPD" firstAttribute="trailing" secondItem="7Uo-Bd-Ulr" secondAttribute="trailing" constant="5" id="icM-Jp-axg"/>
-                            <constraint firstItem="OB6-3d-vPD" firstAttribute="bottom" secondItem="0bk-qa-PEL" secondAttribute="bottom" id="iln-BA-Tec"/>
                             <constraint firstItem="7Uo-Bd-Ulr" firstAttribute="leading" secondItem="OB6-3d-vPD" secondAttribute="leading" constant="5" id="lAF-BU-fu4"/>
                             <constraint firstItem="OB6-3d-vPD" firstAttribute="trailing" secondItem="qFY-iy-JaI" secondAttribute="trailing" id="lgd-9G-UuV"/>
                             <constraint firstItem="qFY-iy-JaI" firstAttribute="top" secondItem="OB6-3d-vPD" secondAttribute="top" id="noJ-Q8-OZd"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="My Orders" image="cart.fill" catalog="system" id="Wlf-Ok-6Sw"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="completedBtn" destination="MlX-YK-qyS" id="fj3-xC-WMG"/>
                         <outlet property="ongoingBtn" destination="hQW-qh-SeS" id="NaT-QJ-SCW"/>
@@ -376,6 +378,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="options" width="512" height="512"/>
         <systemColor name="linkColor">

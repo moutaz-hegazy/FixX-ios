@@ -12,8 +12,6 @@
 		A92E65A72680C30400C80E45 /* ServiceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92E658B2680C2E500C80E45 /* ServiceCollectionViewCell.swift */; };
 		A92E65A82680C30400C80E45 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92E658C2680C2E500C80E45 /* HomeScreenViewController.swift */; };
 		A92E65A92680C30400C80E45 /* HomeScreenStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A92E658E2680C2E500C80E45 /* HomeScreenStoryboard.storyboard */; };
-		A92E65AA2680C30400C80E45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92E65902680C2EF00C80E45 /* ViewController.swift */; };
-		A92E65AB2680C30400C80E45 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92E65912680C2EF00C80E45 /* TabBarViewController.swift */; };
 		A92E65AC2680C30400C80E45 /* TabBarStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A92E65932680C2F900C80E45 /* TabBarStoryboard.storyboard */; };
 		A92E65AD2680C30400C80E45 /* SettingsScreenTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92E65962680C30300C80E45 /* SettingsScreenTableViewController.swift */; };
 		A92E65AE2680C30400C80E45 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92E65972680C30300C80E45 /* SettingsViewController.swift */; };
@@ -93,8 +91,6 @@
 		A92E658B2680C2E500C80E45 /* ServiceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCollectionViewCell.swift; sourceTree = "<group>"; };
 		A92E658C2680C2E500C80E45 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		A92E658E2680C2E500C80E45 /* HomeScreenStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HomeScreenStoryboard.storyboard; sourceTree = "<group>"; };
-		A92E65902680C2EF00C80E45 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A92E65912680C2EF00C80E45 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		A92E65932680C2F900C80E45 /* TabBarStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabBarStoryboard.storyboard; sourceTree = "<group>"; };
 		A92E65962680C30300C80E45 /* SettingsScreenTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsScreenTableViewController.swift; sourceTree = "<group>"; };
 		A92E65972680C30300C80E45 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -197,21 +193,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A92E65852680C2D800C80E45 /* MyOrdersScreen */ = {
-			isa = PBXGroup;
-			children = (
-				A92E65862680C2D900C80E45 /* View */,
-			);
-			path = MyOrdersScreen;
-			sourceTree = "<group>";
-		};
-		A92E65862680C2D900C80E45 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		A92E65882680C2E500C80E45 /* HomeScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,15 +218,6 @@
 				A92E658E2680C2E500C80E45 /* HomeScreenStoryboard.storyboard */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		A92E658F2680C2EF00C80E45 /* New Group1 */ = {
-			isa = PBXGroup;
-			children = (
-				A92E65902680C2EF00C80E45 /* ViewController.swift */,
-				A92E65912680C2EF00C80E45 /* TabBarViewController.swift */,
-			);
-			path = "New Group1";
 			sourceTree = "<group>";
 		};
 		A92E65922680C2F900C80E45 /* View */ = {
@@ -358,8 +330,6 @@
 			isa = PBXGroup;
 			children = (
 				A92E65882680C2E500C80E45 /* HomeScreen */,
-				A92E65852680C2D800C80E45 /* MyOrdersScreen */,
-				A92E658F2680C2EF00C80E45 /* New Group1 */,
 				A92E65942680C30300C80E45 /* SettingsScreen */,
 				A92E65922680C2F900C80E45 /* View */,
 			);
@@ -726,7 +696,6 @@
 				A9776B30267B9FCC00E9B80B /* SignUpViewControllerC.swift in Sources */,
 				A9776B07267B8C4700E9B80B /* SignUpViewControllerB.swift in Sources */,
 				A962EF67267F942900A8420C /* StringPair.swift in Sources */,
-				A92E65AB2680C30400C80E45 /* TabBarViewController.swift in Sources */,
 				A9776A73267B6AB300E9B80B /* RegistrationViewController.swift in Sources */,
 				A962EF64267F942900A8420C /* ServiceItem.swift in Sources */,
 				A962EF63267F942900A8420C /* Details.swift in Sources */,
@@ -743,7 +712,6 @@
 				A9776A85267B6C9200E9B80B /* ImageCollectionViewCell.swift in Sources */,
 				A962EF68267F942900A8420C /* Extension.swift in Sources */,
 				A92E65AE2680C30400C80E45 /* SettingsViewController.swift in Sources */,
-				A92E65AA2680C30400C80E45 /* ViewController.swift in Sources */,
 				A9776B04267B8C3500E9B80B /* SignUpViewControllerA.swift in Sources */,
 				A9776A8F267B6E6200E9B80B /* ChatLogsCustomCell.swift in Sources */,
 				A962EF6C267F942900A8420C /* Person.swift in Sources */,

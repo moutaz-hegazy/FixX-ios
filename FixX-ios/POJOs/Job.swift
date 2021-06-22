@@ -25,11 +25,7 @@ class Job : Codable{
     var images : [StringPair]?
     var privateRequest : Bool = false
     
-    var location : String?{
-        didSet{
-            areaLocation = ""  //getEnglishLocation(value?.substringAfter("%")?.substringBefore("/") ?: "")
-        }
-    }
+    var location : String?
     
     var areaLocation : String?
     var rateable : Bool = false
@@ -60,6 +56,9 @@ class Job : Codable{
         self.images = images
         self.privateRequest = privateRequest
         self.location = location
+        
+        areaLocation = String(location![location!.firstIndex(of: "%")! ..< location!.firstIndex(of: "/")!])
+        areaLocation?.removeFirst()
     }
     
 //    enum JobStatus : CodingKey, Codable{

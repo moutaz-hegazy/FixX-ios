@@ -10,6 +10,7 @@ class CustomizeOrderViewController:
         UICollectionViewDataSource,
         UICollectionViewDelegateFlowLayout{
     
+    var jobType : String?
 
     //Order details
     var orderLocation: String?
@@ -25,6 +26,15 @@ class CustomizeOrderViewController:
     var startTimePicker: UIDatePicker?
     var endTimePicker: UIDatePicker?
     
+    private lazy var currentDate : String = {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "nl_NL")
+        formatter.setLocalizedDateFormatFromTemplate("dd-MMM-yyyy")
+        var datetime = formatter.string(from: Date())
+        datetime.remove(at: datetime.firstIndex(of: ".")!)
+        return datetime.replacingOccurrences(of: " ", with: "-")
+    }()
+    
 
     //outlets
     @IBOutlet weak var selectLocationMenu: DropDown!
@@ -39,27 +49,27 @@ class CustomizeOrderViewController:
     @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var selectTechnicianButton: UIButton!
     @IBOutlet weak var publishOrderButton: UIButton!
+    @IBOutlet weak var navBarItem: UINavigationItem!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        selectLocationMenu.optionArray = ["Alexandria", "Cairo", "Suez", "Luxor", "Aswan"]
-        selectLocationMenu.optionIds = [1,2,3,4,5]
-        orderImages = [UIImage(named: "1")!, UIImage(named: "2")!, UIImage(named: "3")!]
-        //        selectLocationMenu.didSelect{(selectedText, index, id) in
-        //            self.valueLabel.text = "Selected String: \(selected)"
-        //        }
+        selectLocationMenu.optionArray = ["%Alex,montaza/", "Add New Location"] //HomeScreenViewController.USER_OBJECT?.locations ?? [] + ["Add New location"]
+        
+        selectLocationMenu.didSelect { (loc, index, id) in
+            if(index == self.selectLocationMenu.optionArray.count-1){
+                // add new location
+            }else{
+                self.orderLocation = loc
+            }
+        }
+
         imagePickerController.delegate = self
         let tapImageAdder = UITapGestureRecognizer(target: self, action: #selector(CustomizeOrderViewController.imageTapped(gesture:)))
         imageAdder.addGestureRecognizer(tapImageAdder)
         imageAdder.isUserInteractionEnabled = true
         
-        
-        //        let holdToDelete = UITapGestureRecognizer(target: self, action: #selector(CustomizeOrderViewController.displayDeleteImageActionSheet))
-        //        if(orderImages != nil){
-        //            for image in orderImages!{
-        //            }
-        //        }
+        navBarItem.title = "\(jobType!) Request"
         
         
         let holdImageToDelete = UILongPressGestureRecognizer(target: self, action: #selector(handleHoldToDelete(gestureRecognizer:)))
@@ -71,7 +81,6 @@ class CustomizeOrderViewController:
         
         checkImagePermissions()
     }
-    
     
     @objc func handleHoldToDelete(gestureRecognizer: UILongPressGestureRecognizer) {
         if (gestureRecognizer.state != .began) {return}
@@ -208,7 +217,6 @@ class CustomizeOrderViewController:
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ImageCollectionViewCell
         cell.attachedImage.image = orderImages?[indexPath.row] as? UIImage
-        //cell.addSubview(attachedImage)
         cell.attachedImage.contentMode = UIView.ContentMode.scaleAspectFit
         return cell
     }
@@ -218,7 +226,7 @@ class CustomizeOrderViewController:
     
     //Mark: Date picker
     @IBAction func pickDate(_ sender: UIButton) {
-        showDatePicker()
+        showDatePicker(from : sender)
         print("Date is selected")
     }
     
@@ -240,19 +248,25 @@ class CustomizeOrderViewController:
         print("End time is set")
     }
     
+    @IBAction func backBtnPressed(_ sender: UIBarButtonItem) {
+        
+        presentingViewController?.dismiss(animated: true, completion: nil)
+        
+    }
+    
     
     
     
     //Mark: Date picker
-    func showDatePicker(){
+    func showDatePicker(from inview: UIView ){
         datePicker = UIDatePicker()
-        let datePickerSize: CGSize = datePicker!.sizeThatFits(CGSize.zero)
+        //let datePickerSize: CGSize = view.bounds.size //datePicker!.sizeThatFits(CGSize.zero)
         datePicker?.date = Date()
         datePicker?.datePickerMode = .date
         datePicker?.minimumDate = Date()
         datePicker?.locale = .current
         datePicker?.backgroundColor = UIColor.white
-        datePicker?.frame = CGRect(x: 10.0, y: 350.0, width:self.view.frame.width, height: datePickerSize.height)
+        datePicker?.frame = CGRect(origin: inview.frame.origin, size: inview.frame.size)
         datePicker?.addTarget(self, action: #selector(dueDateChanged(sender:)), for: .valueChanged)
         self.view.addSubview(datePicker!)
     }
@@ -262,14 +276,16 @@ class CustomizeOrderViewController:
     
     //Mark: Date picker
     @objc func dueDateChanged(sender: UIDatePicker){
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd MMMM yyyy"
-        dateFormatter.dateStyle = .short
-        dateFormatter.timeStyle = .none
-        let selectedDate = dateFormatter.string(from: sender.date)
-        print(selectedDate)
-        dateLabel.text = selectedDate
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "nl_NL")
+        formatter.setLocalizedDateFormatFromTemplate("dd-MMM-yyyy")
+        var datetime = formatter.string(from: sender.date)
+        datetime.remove(at: datetime.firstIndex(of: ".")!)
+        let dateForm = datetime.replacingOccurrences(of: " ", with: "-")
+        dateLabel.text = dateForm
+        orderDate = dateForm
         datePicker?.isHidden = true
+        print(dateForm)
     }
     
     
@@ -293,11 +309,12 @@ class CustomizeOrderViewController:
     //Mark: Time picker
     @objc func dueStartTimeChanged(sender: UIDatePicker){
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "h:mm a"
+        dateFormatter.dateFormat = "hh:mm"
         dateFormatter.timeStyle = .short
         let selectedStartTime = dateFormatter.string(from: sender.date)
         print(selectedStartTime)
         startTimeLabel.text = selectedStartTime
+        orderStartTime = selectedStartTime
         startTimePicker?.isHidden = true
     }
     
@@ -327,6 +344,7 @@ class CustomizeOrderViewController:
         let selectedEndTime = dateFormatter.string(from: sender.date)
         print(selectedEndTime)
         endTimeLabel.text = selectedEndTime
+        orderEndTime = selectedEndTime
         endTimePicker?.isHidden = true
     }
     
@@ -335,27 +353,39 @@ class CustomizeOrderViewController:
     
     @IBAction func selectTechnician(_ sender: UIButton) {
         print("Select Technician")
+        let job = getOrderData(isPrivate: true)
     }
     
     
     
     @IBAction func publishOrder(_ sender: UIButton) {
         print("Publish Order")
-        getOrderData()
+        let job = getOrderData(isPrivate: false)
+        if job != nil{
+            FirestoreService.shared.saveJobDetails(job: job!) { (jobData) in
+                self.presentingViewController?.dismiss(animated: true, completion: nil)
+            } onFailHandler: {
+                
+            }
+        }
     }
     
     
-    func getOrderData(){
+    func getOrderData(isPrivate : Bool)-> Job?{
         orderLocation = selectLocationMenu.text
         orderDate = dateLabel.text
         orderStartTime = startTimeLabel.text
         orderEndTime = endTimeLabel.text
         orderDescription = descriptionTextField.text
-        print(orderLocation!)
-        print(orderDate!)
-        print(orderStartTime!)
-        print(orderEndTime!)
-        print(orderDescription!)
+        
+        if(orderLocation != nil){
+            let job = Job(uid: HomeScreenViewController.USER_OBJECT?.uid, type: jobType!, location: orderLocation, status: "OnRequest", jobId: "", description: descriptionTextField.text ?? "", date: orderDate ?? currentDate, completionDate: "", fromTime: orderStartTime, toTime: orderEndTime, price: nil, techID: nil, bidders: nil, images: nil, privateRequest: isPrivate)
+            
+            print(job.areaLocation)
+            
+            return job
+        }
+        return nil
     }
 }
 

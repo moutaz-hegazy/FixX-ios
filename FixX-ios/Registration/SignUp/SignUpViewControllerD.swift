@@ -73,6 +73,13 @@ class SignUpViewControllerD: UIViewController {
        }
     }
     
+    private func startHomeScreen(){
+        if let homeVC = UIStoryboard(name: "TabBarStoryboard", bundle: nil).instantiateViewController(identifier: "tabBarVC") as? UITabBarController{
+            homeVC.modalPresentationStyle = .fullScreen
+            present(homeVC, animated: true)
+        }
+    }
+    
     
     @IBAction func signUp(_ sender: UIButton) {
         username = usernameTextField.text
@@ -82,8 +89,11 @@ class SignUpViewControllerD: UIViewController {
         if(validateSignUp()){
             regData?.name = username!
             regData?.email = email!
-            FirestoreService.shared.registerUser(user: regData!, password: password!) { (person) in
-                print(person)
+            FirestoreService.shared.registerUser(user: regData!, password: password!) {
+                [weak self] (person) in
+                
+                HomeScreenViewController.USER_OBJECT = person
+                self?.startHomeScreen()
             } onFailHandler: {
                 
             }
