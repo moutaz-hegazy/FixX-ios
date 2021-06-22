@@ -13,8 +13,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBa
 MKMapViewDelegate, UIGestureRecognizerDelegate {
     
     
-    var addTitle: String = " "
-       
+    var country: String = " "
+    var city: String = " "
+    var area: String = " "
+    var subArea: String = " "
+    
+    var delegete: AddressProtocol?
+    
        @IBAction func myLocationBtn(_ sender: Any) {
            if(CLLocationManager.locationServicesEnabled()){
                locationManager.requestLocation()
@@ -62,15 +67,17 @@ MKMapViewDelegate, UIGestureRecognizerDelegate {
                
                let touchLocation = gestureRecgnizer.location(in: myMap)
                let locationCoordinate = myMap.convert(touchLocation, toCoordinateFrom: myMap)
-               print("Tapped latityde: \(locationCoordinate.latitude), longitude: \(locationCoordinate.longitude)")
-               
+              
                
                let myPin = MKPointAnnotation()
-                         myPin.coordinate = locationCoordinate
+               myPin.coordinate = locationCoordinate
                getAddressFromLatAndLon(lat: locationCoordinate.latitude, lon: locationCoordinate.longitude)
-               myPin.title = self.addTitle
+          //  DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) { [self] in
+                myPin.title = country + ", " + city + ", " + area + ", " + subArea
+                myPin.subtitle = "hello"
+                myMap.addAnnotation(myPin)
+           // }
                          
-                         myMap.addAnnotation(myPin)
            }
            if (gestureRecgnizer.state != UIGestureRecognizer.State.began){
                    return
@@ -93,15 +100,17 @@ MKMapViewDelegate, UIGestureRecognizerDelegate {
                let region = MKCoordinateRegion(center: coordinates, span: span)
                
                myMap.setRegion(region, animated: true)
-               
-               let myPin = MKPointAnnotation()
-               myPin.coordinate = coordinates
-               myPin.title = "Hey There"
-               myPin.subtitle = "I'm Here"
-               
-               myMap.addAnnotation(myPin)
-               
-               
+            
+            getAddressFromLatAndLon(lat: locationManager.location?.coordinate.latitude ?? 0.0, lon: locationManager.location?.coordinate.longitude ?? 0.0)
+            
+            let myPin = MKPointAnnotation()
+            myPin.coordinate = coordinates
+            
+          //  DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) { [self] in
+             myPin.title = country + ", " + city + ", " + area + ", " + subArea
+                myPin.subtitle = "hello"
+             myMap.addAnnotation(myPin)
+      //   }
            }
        }
        
@@ -165,12 +174,18 @@ MKMapViewDelegate, UIGestureRecognizerDelegate {
                        if let longitude = response?.boundingRegion.center.longitude{
                            
                            //create annotation
-                           let annotation = MKPointAnnotation()
-                           annotation.title = searchBar.text
-                           annotation.coordinate = CLLocationCoordinate2DMake(latitude, longitude)
-                           self.myMap.addAnnotation(annotation)
-                           
-                           
+                    
+                        self.getAddressFromLatAndLon(lat: latitude, lon: longitude)
+                        
+                        let myPin = MKPointAnnotation()
+                        myPin.coordinate = CLLocationCoordinate2DMake(latitude, longitude)
+                        
+                      //  DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) { [self] in
+                        myPin.title = self.country + ", " + self.city + ", " + self.area + ", " + self.subArea
+                        self.myMap.addAnnotation(myPin)
+                   //  }
+                          
+    
                            //zooming in on annotation
                            let coordinate = CLLocationCoordinate2DMake(latitude, longitude)
                            let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
@@ -196,26 +211,22 @@ MKMapViewDelegate, UIGestureRecognizerDelegate {
                if(error != nil){
                    print("error")
                }else{
+                
                    let pm = placemarks! as [CLPlacemark]
+               
                    if(pm.count > 0){
                        let pm = placemarks![0]
                        let country = pm.country
-                       let city = pm.subLocality
-                       let area = pm.locality
-                       let a = pm.name
-                       let b = pm.administrativeArea
-                       let c = pm.region
-                       let d = pm.subAdministrativeArea
-                    print("country\(String(describing: country))")
-                    print("city\(String(describing: city))")
-                    print("area\(String(describing: area))")
-                    print("a\(String(describing: a))")
-                    print("b\(String(describing: b))")
-                    print("c\(String(describing: c))")
-                    print("d\(String(describing: d))")
+                       let city = pm.administrativeArea
                     
-                       self.addTitle = a ?? " "
-   //                    \(String(describing: city))  %  \(String(describing: area)) %  \(String(describing: a))% \(String(describing: b)) % \(String(describing: c)) % \(String(describing: d))"
+                        let subArea = pm.subLocality
+                        let area = pm.locality
+             
+                    self.country = country ?? ""
+                    self.city = city ?? ""
+                    self.area = area ?? ""
+                    self.subArea = subArea ?? ""
+                
                        
                    }
                }
@@ -225,6 +236,8 @@ MKMapViewDelegate, UIGestureRecognizerDelegate {
        
 
        @IBAction func addAddressActionBtn(_ sender: Any) {
+        
+        delegete?.sendAddressBack(city: city, area: area, subArea: subArea)
            self.navigationController?.popViewController(animated: true)
        }
 

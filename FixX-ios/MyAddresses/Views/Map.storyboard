@@ -22,8 +22,12 @@
                                 <gestureRecognizers/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xOZ-w8-ax0">
-                                <rect key="frame" x="378" y="74" width="20" height="22"/>
-                                <state key="normal" image="location.fill" catalog="system"/>
+                                <rect key="frame" x="358" y="74" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="1Ur-bi-gWJ"/>
+                                    <constraint firstAttribute="width" constant="40" id="hCU-N1-On5"/>
+                                </constraints>
+                                <state key="normal" image="location.fill.viewfinder" catalog="system"/>
                                 <connections>
                                     <action selector="myLocationBtn:" destination="8zO-Og-HTM" eventType="touchUpInside" id="YsC-Uk-3Mi"/>
                                 </connections>
@@ -42,8 +46,9 @@
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDi-tu-ArW">
-                                <rect key="frame" x="50" y="782" width="314" height="30"/>
-                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <rect key="frame" x="50" y="776" width="314" height="36"/>
+                                <color key="backgroundColor" red="0.50034951809999995" green="0.1570959904" blue="0.59121192889999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Add Address">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -83,12 +88,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="location.fill" catalog="system" width="128" height="121"/>
+        <image name="location.fill.viewfinder" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

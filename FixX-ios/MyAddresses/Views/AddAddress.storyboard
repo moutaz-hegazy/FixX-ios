@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -54,8 +53,9 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k22-lc-whU">
-                                                <rect key="frame" x="50" y="460" width="314" height="30"/>
-                                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                                <rect key="frame" x="50" y="460" width="314" height="36"/>
+                                                <color key="backgroundColor" red="0.50034951809999995" green="0.1570959904" blue="0.59121192889999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <state key="normal" title="Use Map">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -64,8 +64,9 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ue-30-Gdq">
-                                                <rect key="frame" x="50" y="520" width="314" height="30"/>
-                                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                                <rect key="frame" x="50" y="526" width="314" height="36"/>
+                                                <color key="backgroundColor" red="0.50034951809999995" green="0.1570959904" blue="0.59121192889999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <state key="normal" title="Add Address">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -79,7 +80,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                        <color key="backgroundColor" red="0.88884387475297844" green="0.92395688926844832" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="8Hc-jg-D8l" firstAttribute="leading" secondItem="55G-iN-Wq3" secondAttribute="leading" constant="20" id="2Qh-GZ-B0p"/>
                                             <constraint firstAttribute="trailing" secondItem="s0f-xu-amQ" secondAttribute="trailing" constant="20" id="3lm-yY-3jF"/>
@@ -112,6 +113,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" red="0.88884387480000004" green="0.92395688929999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="55G-iN-Wq3" secondAttribute="trailing" id="9r8-8u-9F7"/>
                                     <constraint firstItem="55G-iN-Wq3" firstAttribute="leading" secondItem="xVD-oc-U2j" secondAttribute="leading" id="D74-i6-WVn"/>
@@ -121,7 +123,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KVi-oN-ba6"/>
-                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                        <color key="backgroundColor" red="0.88884387480000004" green="0.92395688929999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="55G-iN-Wq3" firstAttribute="width" secondItem="MkG-6s-HXE" secondAttribute="width" id="J9p-Ku-Vhb"/>
                             <constraint firstItem="xVD-oc-U2j" firstAttribute="top" secondItem="KVi-oN-ba6" secondAttribute="top" constant="44" id="POz-cc-AbK"/>
@@ -155,12 +157,4 @@
             <point key="canvasLocation" x="1697.1014492753625" y="274.55357142857139"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>

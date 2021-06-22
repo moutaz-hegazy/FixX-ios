@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0B280B398BCF09D60B16C694 /* Pods_FixX_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 340E1495788B01B062447DB0 /* Pods_FixX_ios.framework */; };
 		A9214B9A2680DDCA000431AC /* iOSDropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9214B992680DDCA000431AC /* iOSDropDown.framework */; };
+		A9CB6DF72681297500DBAE18 /* AddressProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB6DF62681297500DBAE18 /* AddressProtocol.swift */; };
 		A9D5234E2676632300B9C136 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D5234D2676632300B9C136 /* AppDelegate.swift */; };
 		A9D523502676632300B9C136 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D5234F2676632300B9C136 /* SceneDelegate.swift */; };
 		A9D523522676632300B9C136 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D523512676632300B9C136 /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 		5B063103FF19EC01A2BE70B2 /* Pods-FixX-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FixX-ios.debug.xcconfig"; path = "Target Support Files/Pods-FixX-ios/Pods-FixX-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		7347986CDE791043ADD668A0 /* Pods-FixX-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FixX-ios.release.xcconfig"; path = "Target Support Files/Pods-FixX-ios/Pods-FixX-ios.release.xcconfig"; sourceTree = "<group>"; };
 		A9214B992680DDCA000431AC /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9CB6DF62681297500DBAE18 /* AddressProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressProtocol.swift; sourceTree = "<group>"; };
 		A9D5234A2676632200B9C136 /* FixX-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FixX-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D5234D2676632300B9C136 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9D5234F2676632300B9C136 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A9CB6DF52681294C00DBAE18 /* Contracts */ = {
+			isa = PBXGroup;
+			children = (
+				A9CB6DF62681297500DBAE18 /* AddressProtocol.swift */,
+			);
+			path = Contracts;
+			sourceTree = "<group>";
+		};
 		A9D523412676632200B9C136 = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +137,7 @@
 		A9DBF92D267D63DA00038405 /* MyAddresses */ = {
 			isa = PBXGroup;
 			children = (
+				A9CB6DF52681294C00DBAE18 /* Contracts */,
 				A9DBF92F267D63FF00038405 /* Views */,
 			);
 			path = MyAddresses;
@@ -311,6 +322,7 @@
 				A9DBF94A267D69AB00038405 /* MyWorkLocationsTableViewCell.swift in Sources */,
 				A9D5234E2676632300B9C136 /* AppDelegate.swift in Sources */,
 				A9DBF936267D652500038405 /* MyAddressesTableViewCell.swift in Sources */,
+				A9CB6DF72681297500DBAE18 /* AddressProtocol.swift in Sources */,
 				A9D523502676632300B9C136 /* SceneDelegate.swift in Sources */,
 				A9DBF93B267D653E00038405 /* AddAddressViewController.swift in Sources */,
 			);

@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,8 +23,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="750"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sAM-XT-iKu">
-                                                <rect key="frame" x="50" y="310" width="314" height="30"/>
-                                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                                <rect key="frame" x="50" y="310" width="314" height="36"/>
+                                                <color key="backgroundColor" red="0.50034951809999995" green="0.1570959904" blue="0.59121192889999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <state key="normal" title="Add Work Location">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -44,7 +44,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                        <color key="backgroundColor" red="0.88884387480000004" green="0.92395688929999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="Xdj-vw-uLV" firstAttribute="leading" secondItem="FhK-Ua-yqw" secondAttribute="leading" constant="20" id="630-8H-uJd"/>
                                             <constraint firstAttribute="trailing" secondItem="86D-5b-0fw" secondAttribute="trailing" constant="20" id="Amh-Tm-uV6"/>
@@ -59,6 +59,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" red="0.88884387480000004" green="0.92395688929999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="FhK-Ua-yqw" firstAttribute="top" secondItem="GZI-bZ-phx" secondAttribute="top" id="Ft0-if-vXl"/>
                                     <constraint firstAttribute="trailing" secondItem="FhK-Ua-yqw" secondAttribute="trailing" id="dvf-Uv-SBr"/>
@@ -68,7 +69,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CBF-kz-SD7"/>
-                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                        <color key="backgroundColor" red="0.88884387480000004" green="0.92395688929999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="GZI-bZ-phx" firstAttribute="top" secondItem="CBF-kz-SD7" secondAttribute="top" constant="44" id="7bh-8k-nd1"/>
                             <constraint firstItem="GZI-bZ-phx" firstAttribute="leading" secondItem="CBF-kz-SD7" secondAttribute="leading" id="8x1-Yh-2eL"/>
@@ -89,12 +90,4 @@
             <point key="canvasLocation" x="1115.9420289855072" y="59.598214285714285"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>

@@ -9,7 +9,8 @@
 import UIKit
 import iOSDropDown
 
-class AddAddressViewController: UIViewController {
+class AddAddressViewController: UIViewController, AddressProtocol {
+
     
     @IBOutlet weak var titleTxt: UITextField!
     @IBOutlet weak var streetTxt: UITextField!
@@ -22,11 +23,78 @@ class AddAddressViewController: UIViewController {
     
     @IBOutlet weak var areaDropDown: DropDown!
     
+    var cityFound = false
+    var areaFound = false
+    
 
     
     let cities = ["Cairo", "Alexandria"]
-    let alexArea = ["Sporting", "Smouha"]
-    let cairoArea = ["Madenti", "Maadi"]
+    let alexArea = ["AR Riyadah",
+                    "Moharam Bek",
+                    "Abu Qir",
+                    "Al Montaza",
+                    "Al Hadarah",
+                    "Al Ibrahimeyah",
+                    "Asafra",
+                    "Al Azaritah",
+                    "Bahari",
+                    "Dekhela",
+                    "Bokli",
+                    "Borg Al Arab",
+                    "Al Qabari",
+                    "Fleming",
+                    "Janklees",
+                    "Gleem",
+                    "Kafr Abdou",
+                    "Louran",
+                    "El Mandara",
+                    "Miami",
+                    "San Stifano",
+                    "Sidy Beshr",
+                    "Smouha",
+                    "Sidy Gaber",
+                    "Shatebi",
+                    "Sporting",
+                    "Victoria",
+                    "Stanli",
+                    "Wabor El Maya",
+                    "El Hanovil",
+                    "El Bitash",
+                    "Qism Bab Sharqi",
+                    //"Qism El-Raml",
+                    "Mansheya",
+                    "Al Attarin",
+                    "First Al Raml",
+                    "Mustafa Kamel",
+                    "Ezbet Saad",
+                    "Abees"]
+    let cairoArea = ["Al-Shrouk",
+                     "1st Settlement",
+                     "Fifth Settlement",
+                     "Madenti",
+                     "Al-Rehab",
+                     "10th Of Ramadan",
+                     "Badr City",
+                     "Zamalek",
+                     "Heliopolis",
+                     "Nasser City",
+                     "Qobbah",
+                     "Maadi",
+                     "Mokkatm",
+                     "Mohandsen",
+                     "Shekh Zayed",
+                     "Dokki",
+                     "Giza Square",
+                     "Haram",
+                     "Fissal",
+                     "Shobra",
+                     "Obour",
+                     "Matareya",
+                     "6th October",
+                     "Helwan",
+                     "Ain Shams",
+                     "Manyal",
+                     "Agouza"]
     let emptyArea = [""]
     
     
@@ -38,9 +106,15 @@ class AddAddressViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        areaFound = false
+        cityFound = false
+    }
+    
     @IBAction func useMapActionBtn(_ sender: Any) {
         
         let mapVC = self.storyboard?.instantiateViewController(identifier: "MVC") as! MapViewController
+        mapVC.delegete = self
        self.navigationController?.pushViewController(mapVC, animated: true)
     }
     
@@ -75,12 +149,52 @@ class AddAddressViewController: UIViewController {
         areaDropDown.text = "Area"
         areaDropDown.isSearchEnable = false
     
-        if cityDropDown.text == "Cairo" {
-            areaDropDown.optionArray = cairoArea
-        }else if cityDropDown.text == "Alexandria" {
-            areaDropDown.optionArray = alexArea
-        } else {
-            areaDropDown.optionArray = emptyArea
+       
+    }
+    
+    func sendAddressBack(city: String, area: String, subArea: String) {
+        
+        print(city)
+        print(area)
+        print(subArea)
+        
+        for item in cities.indices{
+            
+            if cities[item].contains(city){
+                cityDropDown.text = cities[item]
+                cityFound = true
+                
+                if cityDropDown.text == "Cairo" {
+                    areaDropDown.optionArray = cairoArea
+                }else if cityDropDown.text == "Alexandria" {
+                    areaDropDown.optionArray = alexArea
+                } else {
+                    areaDropDown.optionArray = emptyArea
+                }
+            }
+        }
+        if !cityFound{
+            cityDropDown.text = "City"
+        }
+        
+        if cityDropDown.text == "Cairo"{
+            for item in cairoArea.indices{
+                if cairoArea[item].contains(area) || cairoArea[item].contains(subArea){
+                    areaDropDown.text = cairoArea[item]
+                    areaFound = true
+                }
+            }
+        }else if cityDropDown.text == "Alexandria"{
+            for item in alexArea.indices{
+                if alexArea[item].contains(area) || alexArea[item].contains(subArea){
+                    areaDropDown.text = alexArea[item]
+                    areaFound = true
+                }
+            }
+        }
+        
+        if !areaFound{
+            areaDropDown.text = "Area"
         }
     }
     
