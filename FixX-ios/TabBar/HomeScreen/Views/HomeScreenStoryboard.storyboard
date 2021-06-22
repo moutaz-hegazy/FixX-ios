@@ -103,10 +103,42 @@
                                     <outlet property="delegate" destination="T7E-wq-A7O" id="Ecc-Dk-lMp"/>
                                 </connections>
                             </collectionView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="work_icon" translatesAutoresizingMaskIntoConstraints="NO" id="x71-rJ-W2K">
+                                <rect key="frame" x="314" y="713" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.76470588235294112" green="0.76470588235294112" blue="0.76470588235294112" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Gqy-hP-DBk"/>
+                                    <constraint firstAttribute="height" constant="80" id="Tji-e1-g3w"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <button hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4N-BL-GYR">
+                                <rect key="frame" x="314" y="713" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="7fe-la-lal"/>
+                                    <constraint firstAttribute="width" constant="80" id="TKh-Fe-V0q"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="addBorder">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="workBtnPressed:" destination="T7E-wq-A7O" eventType="touchUpInside" id="UiO-p3-SNH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EEo-kP-tHK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="EEo-kP-tHK" firstAttribute="bottom" secondItem="x71-rJ-W2K" secondAttribute="bottom" constant="20" id="EdC-Pc-wys"/>
                             <constraint firstItem="DQf-HR-r2j" firstAttribute="leading" secondItem="55t-CV-gHk" secondAttribute="leading" id="Iza-OW-DwB"/>
                             <constraint firstItem="DQf-HR-r2j" firstAttribute="trailing" secondItem="55t-CV-gHk" secondAttribute="trailing" id="JSr-I7-WCO"/>
                             <constraint firstItem="55t-CV-gHk" firstAttribute="bottom" secondItem="EEo-kP-tHK" secondAttribute="bottom" id="T6j-Ju-cCX"/>
@@ -114,6 +146,9 @@
                             <constraint firstItem="55t-CV-gHk" firstAttribute="leading" secondItem="EEo-kP-tHK" secondAttribute="leading" id="Yni-yS-7fR"/>
                             <constraint firstItem="55t-CV-gHk" firstAttribute="trailing" secondItem="EEo-kP-tHK" secondAttribute="trailing" id="ZUt-Au-N1O"/>
                             <constraint firstItem="DQf-HR-r2j" firstAttribute="top" secondItem="EEo-kP-tHK" secondAttribute="top" id="fg2-ur-pTp"/>
+                            <constraint firstItem="EEo-kP-tHK" firstAttribute="bottom" secondItem="x4N-BL-GYR" secondAttribute="bottom" constant="20" id="l6S-NQ-pIS"/>
+                            <constraint firstItem="EEo-kP-tHK" firstAttribute="trailing" secondItem="x4N-BL-GYR" secondAttribute="trailing" constant="20" id="lNv-VU-Fn8"/>
+                            <constraint firstItem="EEo-kP-tHK" firstAttribute="trailing" secondItem="x71-rJ-W2K" secondAttribute="trailing" constant="20" id="nWI-qe-xWX"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="DdN-X9-cYQ">
@@ -122,6 +157,8 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="ServiceCollectionView" destination="55t-CV-gHk" id="Azg-CR-0ED"/>
+                        <outlet property="workBtn" destination="x4N-BL-GYR" id="o8s-HE-OOx"/>
+                        <outlet property="workIcon" destination="x71-rJ-W2K" id="0S6-FL-ah4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LvD-5o-fDG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -131,6 +168,7 @@
     </scenes>
     <resources>
         <image name="house" catalog="system" width="128" height="106"/>
+        <image name="work_icon" width="50" height="50"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

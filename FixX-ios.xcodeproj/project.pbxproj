@@ -34,6 +34,12 @@
 		A962EF6B267F942900A8420C /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A962EF60267F942800A8420C /* Comment.swift */; };
 		A962EF6C267F942900A8420C /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A962EF61267F942800A8420C /* Person.swift */; };
 		A962EF71267F945500A8420C /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A962EF70267F945400A8420C /* FirestoreService.swift */; };
+		A96323F226827B5F00565A0F /* MyJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96323F126827B5F00565A0F /* MyJobsViewController.swift */; };
+		A96323F526827BEB00565A0F /* OngoingJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96323F426827BEB00565A0F /* OngoingJobsViewController.swift */; };
+		A96323F826827C0100565A0F /* CompletedJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96323F726827C0100565A0F /* CompletedJobsViewController.swift */; };
+		A96323FB26827C2200565A0F /* AvailableJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96323FA26827C2200565A0F /* AvailableJobsViewController.swift */; };
+		A96324002682A3DD00565A0F /* JobDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96323FF2682A3DD00565A0F /* JobDetailsViewController.swift */; };
+		A96324042682A40D00565A0F /* JobDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A96324032682A40D00565A0F /* JobDetails.storyboard */; };
 		A9776A6E267B698A00E9B80B /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776A6D267B698900E9B80B /* GradientView.swift */; };
 		A9776A73267B6AB300E9B80B /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776A72267B6AB300E9B80B /* RegistrationViewController.swift */; };
 		A9776A7E267B6B3B00E9B80B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776A7C267B6B3B00E9B80B /* SignUpViewController.swift */; };
@@ -79,6 +85,20 @@
 		A9E43DAD267917E0008B5A45 /* MyOrdersStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9E43DAC267917E0008B5A45 /* MyOrdersStoryboard.storyboard */; };
 		A9E444F2267A4C68009DD6AE /* OngoingOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E444F1267A4C68009DD6AE /* OngoingOrdersViewController.swift */; };
 		A9E444F6267A4D12009DD6AE /* CompletedOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E444F5267A4D12009DD6AE /* CompletedOrdersViewController.swift */; };
+		A9EDA44A26824F6800F26634 /* AddWorkLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDA43926824F6700F26634 /* AddWorkLocationViewController.swift */; };
+		A9EDA44B26824F6800F26634 /* MyWorkLocationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDA43A26824F6700F26634 /* MyWorkLocationsTableViewCell.swift */; };
+		A9EDA44C26824F6800F26634 /* MyWorkLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDA43B26824F6700F26634 /* MyWorkLocationViewController.swift */; };
+		A9EDA44D26824F6800F26634 /* AddWorkLocation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9EDA43C26824F6700F26634 /* AddWorkLocation.storyboard */; };
+		A9EDA44E26824F6800F26634 /* MyWorkLocations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9EDA43D26824F6700F26634 /* MyWorkLocations.storyboard */; };
+		A9EDA44F26824F6800F26634 /* AddressProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDA44026824F6800F26634 /* AddressProtocol.swift */; };
+		A9EDA45026824F6800F26634 /* MyAddresses.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9EDA44226824F6800F26634 /* MyAddresses.storyboard */; };
+		A9EDA45126824F6800F26634 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9EDA44326824F6800F26634 /* Map.storyboard */; };
+		A9EDA45226824F6800F26634 /* AddAddress.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9EDA44426824F6800F26634 /* AddAddress.storyboard */; };
+		A9EDA45326824F6800F26634 /* MyAddressesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDA44626824F6800F26634 /* MyAddressesViewController.swift */; };
+		A9EDA45426824F6800F26634 /* AddAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDA44726824F6800F26634 /* AddAddressViewController.swift */; };
+		A9EDA45526824F6800F26634 /* MyAddressesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDA44826824F6800F26634 /* MyAddressesTableViewCell.swift */; };
+		A9EDA45626824F6800F26634 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDA44926824F6800F26634 /* MapViewController.swift */; };
+		A9EDA45C268277FD00F26634 /* MyJobs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9EDA45B268277FD00F26634 /* MyJobs.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +131,12 @@
 		A962EF60267F942800A8420C /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		A962EF61267F942800A8420C /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		A962EF70267F945400A8420C /* FirestoreService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
+		A96323F126827B5F00565A0F /* MyJobsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyJobsViewController.swift; sourceTree = "<group>"; };
+		A96323F426827BEB00565A0F /* OngoingJobsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OngoingJobsViewController.swift; sourceTree = "<group>"; };
+		A96323F726827C0100565A0F /* CompletedJobsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedJobsViewController.swift; sourceTree = "<group>"; };
+		A96323FA26827C2200565A0F /* AvailableJobsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableJobsViewController.swift; sourceTree = "<group>"; };
+		A96323FF2682A3DD00565A0F /* JobDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailsViewController.swift; sourceTree = "<group>"; };
+		A96324032682A40D00565A0F /* JobDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JobDetails.storyboard; sourceTree = "<group>"; };
 		A9776A6D267B698900E9B80B /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		A9776A72267B6AB300E9B80B /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		A9776A7C267B6B3B00E9B80B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +184,20 @@
 		A9E43DAC267917E0008B5A45 /* MyOrdersStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyOrdersStoryboard.storyboard; sourceTree = "<group>"; };
 		A9E444F1267A4C68009DD6AE /* OngoingOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OngoingOrdersViewController.swift; sourceTree = "<group>"; };
 		A9E444F5267A4D12009DD6AE /* CompletedOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedOrdersViewController.swift; sourceTree = "<group>"; };
+		A9EDA43926824F6700F26634 /* AddWorkLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWorkLocationViewController.swift; sourceTree = "<group>"; };
+		A9EDA43A26824F6700F26634 /* MyWorkLocationsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyWorkLocationsTableViewCell.swift; sourceTree = "<group>"; };
+		A9EDA43B26824F6700F26634 /* MyWorkLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyWorkLocationViewController.swift; sourceTree = "<group>"; };
+		A9EDA43C26824F6700F26634 /* AddWorkLocation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddWorkLocation.storyboard; sourceTree = "<group>"; };
+		A9EDA43D26824F6700F26634 /* MyWorkLocations.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyWorkLocations.storyboard; sourceTree = "<group>"; };
+		A9EDA44026824F6800F26634 /* AddressProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressProtocol.swift; sourceTree = "<group>"; };
+		A9EDA44226824F6800F26634 /* MyAddresses.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyAddresses.storyboard; sourceTree = "<group>"; };
+		A9EDA44326824F6800F26634 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		A9EDA44426824F6800F26634 /* AddAddress.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddAddress.storyboard; sourceTree = "<group>"; };
+		A9EDA44626824F6800F26634 /* MyAddressesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAddressesViewController.swift; sourceTree = "<group>"; };
+		A9EDA44726824F6800F26634 /* AddAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAddressViewController.swift; sourceTree = "<group>"; };
+		A9EDA44826824F6800F26634 /* MyAddressesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAddressesTableViewCell.swift; sourceTree = "<group>"; };
+		A9EDA44926824F6800F26634 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A9EDA45B268277FD00F26634 /* MyJobs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyJobs.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,6 +372,23 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
+		A96323FD2682A36100565A0F /* JobDetailsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A96323FE2682A37700565A0F /* Views */,
+			);
+			path = JobDetailsScreen;
+			sourceTree = "<group>";
+		};
+		A96323FE2682A37700565A0F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A96323FF2682A3DD00565A0F /* JobDetailsViewController.swift */,
+				A96324032682A40D00565A0F /* JobDetails.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A9776A63267B686800E9B80B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -474,6 +531,10 @@
 		A9D5234C2676632200B9C136 /* FixX-ios */ = {
 			isa = PBXGroup;
 			children = (
+				A96323FD2682A36100565A0F /* JobDetailsScreen */,
+				A9EDA459268277C000F26634 /* MyJobsScreen */,
+				A9EDA43E26824F6800F26634 /* MyAddresses */,
+				A9EDA43626824F6700F26634 /* WorkLocations */,
 				A9BBD8092680AB6800197447 /* LaunchScreen */,
 				A9E11278267FEC760043B827 /* Constants */,
 				A962F049267FD27C00A8420C /* TabBar */,
@@ -524,6 +585,93 @@
 				A9DC5DF8267AADA50084948C /* CompletedTableViewCell.swift */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		A9EDA43626824F6700F26634 /* WorkLocations */ = {
+			isa = PBXGroup;
+			children = (
+				A9EDA43726824F6700F26634 /* Views */,
+			);
+			path = WorkLocations;
+			sourceTree = "<group>";
+		};
+		A9EDA43726824F6700F26634 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A9EDA43826824F6700F26634 /* ViewControllers */,
+				A9EDA43C26824F6700F26634 /* AddWorkLocation.storyboard */,
+				A9EDA43D26824F6700F26634 /* MyWorkLocations.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A9EDA43826824F6700F26634 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A9EDA43926824F6700F26634 /* AddWorkLocationViewController.swift */,
+				A9EDA43A26824F6700F26634 /* MyWorkLocationsTableViewCell.swift */,
+				A9EDA43B26824F6700F26634 /* MyWorkLocationViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A9EDA43E26824F6800F26634 /* MyAddresses */ = {
+			isa = PBXGroup;
+			children = (
+				A9EDA43F26824F6800F26634 /* Contracts */,
+				A9EDA44126824F6800F26634 /* Views */,
+			);
+			path = MyAddresses;
+			sourceTree = "<group>";
+		};
+		A9EDA43F26824F6800F26634 /* Contracts */ = {
+			isa = PBXGroup;
+			children = (
+				A9EDA44026824F6800F26634 /* AddressProtocol.swift */,
+			);
+			path = Contracts;
+			sourceTree = "<group>";
+		};
+		A9EDA44126824F6800F26634 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A9EDA44226824F6800F26634 /* MyAddresses.storyboard */,
+				A9EDA44326824F6800F26634 /* Map.storyboard */,
+				A9EDA44426824F6800F26634 /* AddAddress.storyboard */,
+				A9EDA44526824F6800F26634 /* ViewControllers */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A9EDA44526824F6800F26634 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A9EDA44626824F6800F26634 /* MyAddressesViewController.swift */,
+				A9EDA44726824F6800F26634 /* AddAddressViewController.swift */,
+				A9EDA44826824F6800F26634 /* MyAddressesTableViewCell.swift */,
+				A9EDA44926824F6800F26634 /* MapViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A9EDA459268277C000F26634 /* MyJobsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A9EDA45A268277DB00F26634 /* Views */,
+			);
+			path = MyJobsScreen;
+			sourceTree = "<group>";
+		};
+		A9EDA45A268277DB00F26634 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A9EDA45B268277FD00F26634 /* MyJobs.storyboard */,
+				A96323F126827B5F00565A0F /* MyJobsViewController.swift */,
+				A96323F426827BEB00565A0F /* OngoingJobsViewController.swift */,
+				A96323F726827C0100565A0F /* CompletedJobsViewController.swift */,
+				A96323FA26827C2200565A0F /* AvailableJobsViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -586,7 +734,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9EDA44D26824F6800F26634 /* AddWorkLocation.storyboard in Resources */,
+				A9EDA45226824F6800F26634 /* AddAddress.storyboard in Resources */,
 				A9776BC2267BBB8D00E9B80B /* SignUpViewControllerD.storyboard in Resources */,
+				A9EDA44E26824F6800F26634 /* MyWorkLocations.storyboard in Resources */,
 				A9BBD80B2680AB9300197447 /* Launch.storyboard in Resources */,
 				A9776A9D267B6EEF00E9B80B /* LeftMessageCustomCell.xib in Resources */,
 				A92E65B42680C30400C80E45 /* ProfileScreenStoryboard.storyboard in Resources */,
@@ -601,6 +752,7 @@
 				A9776AA9267B716100E9B80B /* Registration.storyboard in Resources */,
 				A9776BB9267BBB3500E9B80B /* SignUpViewControllerA.storyboard in Resources */,
 				A9D52362267664DC00B9C136 /* GoogleService-Info.plist in Resources */,
+				A9EDA45126824F6800F26634 /* Map.storyboard in Resources */,
 				A9776AAF267B71AF00E9B80B /* ChatLogs.storyboard in Resources */,
 				A9776BBC267BBB4C00E9B80B /* SignUpViewControllerB.storyboard in Resources */,
 				A9D523572676632800B9C136 /* Assets.xcassets in Resources */,
@@ -610,8 +762,11 @@
 				A9776BBF267BBB5F00E9B80B /* SignUpViewControllerC.storyboard in Resources */,
 				A92E65AC2680C30400C80E45 /* TabBarStoryboard.storyboard in Resources */,
 				A9776BE2267BD0F600E9B80B /* LogInViewController.storyboard in Resources */,
+				A9EDA45C268277FD00F26634 /* MyJobs.storyboard in Resources */,
 				A92E65B52680C30400C80E45 /* SettingsScreenStoryboard.storyboard in Resources */,
 				A9776AB2267B71D100E9B80B /* ChatInbox.storyboard in Resources */,
+				A9EDA45026824F6800F26634 /* MyAddresses.storyboard in Resources */,
+				A96324042682A40D00565A0F /* JobDetails.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -669,8 +824,10 @@
 				A962EF71267F945500A8420C /* FirestoreService.swift in Sources */,
 				A962EF65267F942900A8420C /* Technician.swift in Sources */,
 				A9E444F2267A4C68009DD6AE /* OngoingOrdersViewController.swift in Sources */,
+				A9EDA45326824F6800F26634 /* MyAddressesViewController.swift in Sources */,
 				A9D5234E2676632300B9C136 /* AppDelegate.swift in Sources */,
 				A92E65AD2680C30400C80E45 /* SettingsScreenTableViewController.swift in Sources */,
+				A96323F826827C0100565A0F /* CompletedJobsViewController.swift in Sources */,
 				A9D523502676632300B9C136 /* SceneDelegate.swift in Sources */,
 				A962EF62267F942900A8420C /* ContactInfo.swift in Sources */,
 				A9BBD8072680AB1B00197447 /* LaunchScreenViewController.swift in Sources */,
@@ -679,11 +836,15 @@
 				A9E1127A267FEC900043B827 /* Constants.swift in Sources */,
 				A9776B30267B9FCC00E9B80B /* SignUpViewControllerC.swift in Sources */,
 				A9776B07267B8C4700E9B80B /* SignUpViewControllerB.swift in Sources */,
+				A96323F226827B5F00565A0F /* MyJobsViewController.swift in Sources */,
+				A96323F526827BEB00565A0F /* OngoingJobsViewController.swift in Sources */,
 				A962EF67267F942900A8420C /* StringPair.swift in Sources */,
 				A9776A73267B6AB300E9B80B /* RegistrationViewController.swift in Sources */,
 				A962EF64267F942900A8420C /* ServiceItem.swift in Sources */,
 				A962EF63267F942900A8420C /* Details.swift in Sources */,
+				A9EDA44B26824F6800F26634 /* MyWorkLocationsTableViewCell.swift in Sources */,
 				A9776AA0267B6FCB00E9B80B /* RegistrationProtocol.swift in Sources */,
+				A9EDA44F26824F6800F26634 /* AddressProtocol.swift in Sources */,
 				A9776A7E267B6B3B00E9B80B /* SignUpViewController.swift in Sources */,
 				A9776B01267B8BB200E9B80B /* LogInViewController.swift in Sources */,
 				A92E65B32680C30400C80E45 /* ProfileTableViewController.swift in Sources */,
@@ -691,25 +852,32 @@
 				A9776AA3267B70D800E9B80B /* UITextField+isError.swift in Sources */,
 				A9776A93267B6E9000E9B80B /* ChatInboxViewController.swift in Sources */,
 				A9776AA6267B70EF00E9B80B /* UITextField+setBottomBorder.swift in Sources */,
+				A9EDA45526824F6800F26634 /* MyAddressesTableViewCell.swift in Sources */,
 				A9776B0D267B8CA100E9B80B /* SignUpViewControllerD.swift in Sources */,
 				A962EF66267F942900A8420C /* User.swift in Sources */,
+				A9EDA45626824F6800F26634 /* MapViewController.swift in Sources */,
+				A9EDA44C26824F6800F26634 /* MyWorkLocationViewController.swift in Sources */,
 				A9776A85267B6C9200E9B80B /* ImageCollectionViewCell.swift in Sources */,
 				A962EF68267F942900A8420C /* Extension.swift in Sources */,
 				A92E65AE2680C30400C80E45 /* SettingsViewController.swift in Sources */,
 				A9776B04267B8C3500E9B80B /* SignUpViewControllerA.swift in Sources */,
 				A9776A8F267B6E6200E9B80B /* ChatLogsCustomCell.swift in Sources */,
+				A9EDA44A26824F6800F26634 /* AddWorkLocationViewController.swift in Sources */,
 				A962EF6C267F942900A8420C /* Person.swift in Sources */,
 				A9776A8A267B6E2A00E9B80B /* ChatLogsTableViewController.swift in Sources */,
 				A9776A6E267B698A00E9B80B /* GradientView.swift in Sources */,
 				A9776A97267B6EC700E9B80B /* RightMessageCustomCell.swift in Sources */,
 				A9D5234E2676632300B9C136 /* AppDelegate.swift in Sources */,
+				A96324002682A3DD00565A0F /* JobDetailsViewController.swift in Sources */,
 				A962EF6B267F942900A8420C /* Comment.swift in Sources */,
 				A92E65A82680C30400C80E45 /* HomeScreenViewController.swift in Sources */,
 				A9D523502676632300B9C136 /* SceneDelegate.swift in Sources */,
+				A96323FB26827C2200565A0F /* AvailableJobsViewController.swift in Sources */,
 				A92E65A72680C30400C80E45 /* ServiceCollectionViewCell.swift in Sources */,
 				A9776A9C267B6EEF00E9B80B /* LeftMessageCustomCell.swift in Sources */,
 				A962EF69267F942900A8420C /* ChatMessage.swift in Sources */,
 				A92E65A62680C30400C80E45 /* CardView.swift in Sources */,
+				A9EDA45426824F6800F26634 /* AddAddressViewController.swift in Sources */,
 				A962EF6A267F942900A8420C /* Job.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

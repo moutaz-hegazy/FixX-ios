@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8zO-Og-HTM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="F2G-ph-0HU">
+            <objects>
+                <viewController id="8zO-Og-HTM" customClass="MapViewController" customModule="FixX_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hmN-GO-zsc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pVm-28-Owu">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <gestureRecognizers/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xOZ-w8-ax0">
+                                <rect key="frame" x="358" y="104" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="1Ur-bi-gWJ"/>
+                                    <constraint firstAttribute="width" constant="40" id="hCU-N1-On5"/>
+                                </constraints>
+                                <state key="normal" image="location.fill.viewfinder" catalog="system"/>
+                                <connections>
+                                    <action selector="myLocationBtn:" destination="8zO-Og-HTM" eventType="touchUpInside" id="YsC-Uk-3Mi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDi-tu-ArW">
+                                <rect key="frame" x="50" y="776" width="314" height="36"/>
+                                <color key="backgroundColor" red="0.50034951809999995" green="0.1570959904" blue="0.59121192889999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Add Address">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addAddressActionBtn:" destination="8zO-Og-HTM" eventType="touchUpInside" id="dTc-wZ-Pgn"/>
+                                </connections>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lit-jb-O5n">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <color key="barTintColor" red="0.50034951809999995" green="0.1570959904" blue="0.59121192889999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <navigationItem id="cWl-RY-dci">
+                                        <barButtonItem key="leftBarButtonItem" image="chevron.backward" catalog="system" id="YBg-Xn-vHN">
+                                            <connections>
+                                                <action selector="backActionBtn:" destination="8zO-Og-HTM" id="YJv-tq-LMQ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="B06-bt-Xrb">
+                                            <connections>
+                                                <action selector="searchBtn:" destination="8zO-Og-HTM" id="w15-FT-AUW"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="d6n-tq-ewY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="d6n-tq-ewY" firstAttribute="bottom" secondItem="bDi-tu-ArW" secondAttribute="bottom" constant="50" id="3ac-Gl-3am"/>
+                            <constraint firstItem="lit-jb-O5n" firstAttribute="top" secondItem="hmN-GO-zsc" secondAttribute="top" id="6J4-55-vQn"/>
+                            <constraint firstItem="bDi-tu-ArW" firstAttribute="leading" secondItem="d6n-tq-ewY" secondAttribute="leading" constant="50" id="8bY-pX-krM"/>
+                            <constraint firstItem="pVm-28-Owu" firstAttribute="top" secondItem="hmN-GO-zsc" secondAttribute="top" id="FcP-Fz-dYj"/>
+                            <constraint firstItem="lit-jb-O5n" firstAttribute="trailing" secondItem="d6n-tq-ewY" secondAttribute="trailing" id="hJk-qK-4Qr"/>
+                            <constraint firstAttribute="bottom" secondItem="pVm-28-Owu" secondAttribute="bottom" id="leC-QQ-dg9"/>
+                            <constraint firstItem="xOZ-w8-ax0" firstAttribute="top" secondItem="d6n-tq-ewY" secondAttribute="top" constant="60" id="mV6-Fi-9Wn"/>
+                            <constraint firstItem="d6n-tq-ewY" firstAttribute="trailing" secondItem="bDi-tu-ArW" secondAttribute="trailing" constant="50" id="pOE-4N-g9O"/>
+                            <constraint firstItem="pVm-28-Owu" firstAttribute="leading" secondItem="d6n-tq-ewY" secondAttribute="leading" id="rpv-h8-sBU"/>
+                            <constraint firstItem="d6n-tq-ewY" firstAttribute="trailing" secondItem="xOZ-w8-ax0" secondAttribute="trailing" constant="16" id="wxZ-SM-395"/>
+                            <constraint firstItem="pVm-28-Owu" firstAttribute="trailing" secondItem="d6n-tq-ewY" secondAttribute="trailing" id="x4F-B3-sfL"/>
+                            <constraint firstItem="lit-jb-O5n" firstAttribute="leading" secondItem="d6n-tq-ewY" secondAttribute="leading" id="zHi-Ya-f2k"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myMap" destination="pVm-28-Owu" id="e0q-pj-r6c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qOM-xB-fmN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1207.2463768115942" y="-1453.125"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
+        <image name="location.fill.viewfinder" catalog="system" width="128" height="115"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

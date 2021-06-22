@@ -72,7 +72,7 @@ struct FirestoreService{
     }
         
         
-    func fetchUserOnce(uid : String? = shared.auth.currentUser?.uid, onCompletion :@escaping (Any?) -> Void){
+    func fetchUserOnce(uid : String? = shared.auth.currentUser?.uid, onCompletion :@escaping (Person?) -> Void){
         if let uid = uid{
             db.collection("Users").document(uid).getDocument { (document, error) in
                 if let document = document, document.exists {
@@ -364,14 +364,15 @@ struct FirestoreService{
     }
     
     func loginWithEmailAndPassword(email : String, password : String, onSuccessHandler : @escaping (Person?)-> Void,
-                                   onFailHandler : @escaping ()-> Void,
-                                   passRegister : @escaping (ListenerRegistration) -> Void) {
+                                   onFailHandler : @escaping ()-> Void) {
         auth.signIn(withEmail: email, password: password) { authResult, error in
             if error != nil{
                onFailHandler()
             }else{
                 if email != "defaultaccount@default.com"{
-                    fetchUserFromDB(uid: auth.currentUser!.uid, onCompletion: onSuccessHandler, passRegister: passRegister)
+                    fetchUserOnce { (person) in
+                        onSuccessHandler(person)
+                    }
                 } else{
                     onFailHandler()
                 }

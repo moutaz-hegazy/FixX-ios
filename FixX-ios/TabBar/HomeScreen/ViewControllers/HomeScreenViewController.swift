@@ -12,54 +12,65 @@ import Firebase
 class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     static var USER_OBJECT : Person?
-    static var USER_OBSERVER : ListenerRegistration?
+//    static var USER_OBSERVER : ListenerRegistration?
     
     @IBOutlet weak var ServiceCollectionView : UICollectionView!
-
+    @IBOutlet weak var workIcon: UIImageView!
+    @IBOutlet weak var workBtn: UIButton!
+    
     var arrServices = [Service]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            
-        print("wezza >>> \(HomeScreenViewController.USER_OBJECT?.name)>>> \(HomeScreenViewController.USER_OBJECT?.email)")
         self.ServiceCollectionView?.backgroundView = backgroungImage
         
-        arrServices.append(Service(photo: UIImage(named: "painter")!, name: "Painter"))
-        arrServices.append(Service(photo: UIImage(named: "plumber")!, name: "Plumber"))
-        arrServices.append(Service(photo: UIImage(named: "electrician")!, name: "Electrician"))
-        arrServices.append(Service(photo: UIImage(named: "carpenter")!, name: "Carpenter"))
+        if let techAcc = HomeScreenViewController.USER_OBJECT as? Technician{
+            workIcon.isHidden = false
+            workBtn.isHidden = false
+        }
+        
+        arrServices.append(Service(photo: UIImage(named: "Painter")!, name: "Painter"))
+        arrServices.append(Service(photo: UIImage(named: "Plumber")!, name: "Plumber"))
+        arrServices.append(Service(photo: UIImage(named: "Electrician")!, name: "Electrician"))
+        arrServices.append(Service(photo: UIImage(named: "Carpenter")!, name: "Carpenter"))
 
-        arrServices.append(Service(photo: UIImage(named: "alumetal")!, name: "Alumetal"))
+        arrServices.append(Service(photo: UIImage(named: "Alumetal")!, name: "Alumetal"))
 
-        arrServices.append(Service(photo: UIImage(named: "airconditioner")!, name: "Air Conditioner"))
+        arrServices.append(Service(photo: UIImage(named: "Air Conditioner")!, name: "Air Conditioner"))
 
-        arrServices.append(Service(photo: UIImage(named: "curtains")!, name: "Curtains"))
+        arrServices.append(Service(photo: UIImage(named: "Curtains")!, name: "Curtains"))
 
-        arrServices.append(Service(photo: UIImage(named: "glass")!, name: "Glass"))
+        arrServices.append(Service(photo: UIImage(named: "Glass")!, name: "Glass"))
 
-        arrServices.append(Service(photo: UIImage(named: "gypsumworks")!, name: "Gypsum Works"))
+        arrServices.append(Service(photo: UIImage(named: "Gypsum Works")!, name: "Gypsum Works"))
 
-        arrServices.append(Service(photo: UIImage(named: "marbleandgranite")!, name: "Marble"))
+        arrServices.append(Service(photo: UIImage(named: "Marble")!, name: "Marble"))
 
-        arrServices.append(Service(photo: UIImage(named: "masondecorationstones")!, name: "Decoration Stones"))
+        arrServices.append(Service(photo: UIImage(named: "Decoration Stones")!, name: "Decoration Stones"))
 
-        arrServices.append(Service(photo: UIImage(named: "parquet")!, name: "Parquet"))
+        arrServices.append(Service(photo: UIImage(named: "Parquet")!, name: "Parquet"))
 
-        arrServices.append(Service(photo: UIImage(named: "pestcontrol")!, name: "Pest Control"))
+        arrServices.append(Service(photo: UIImage(named: "Pest Control")!, name: "Pest Control"))
 
-        arrServices.append(Service(photo: UIImage(named: "satellite")!, name: "Satellite"))
+        arrServices.append(Service(photo: UIImage(named: "Satellite")!, name: "Satellite"))
 
-        arrServices.append(Service(photo: UIImage(named: "smith")!, name: "Smith"))
+        arrServices.append(Service(photo: UIImage(named: "Smith")!, name: "Smith"))
 
-        arrServices.append(Service(photo: UIImage(named: "swimmingpool")!, name: "Pool maintain"))
+        arrServices.append(Service(photo: UIImage(named: "Pool maintain")!, name: "Pool maintain"))
 
-        arrServices.append(Service(photo: UIImage(named: "tileshandyman")!, name: "tiles handyman"))
+        arrServices.append(Service(photo: UIImage(named: "tiles handyman")!, name: "tiles handyman"))
 
-        arrServices.append(Service(photo: UIImage(named: "woodpainter")!, name: "wood painter"))
+        arrServices.append(Service(photo: UIImage(named: "wood painter")!, name: "wood painter"))
 
         
         
         // Do any additional setup after loading the view.
+    }
+    @IBAction func workBtnPressed(_ sender: Any) {
+        if let myJobsVC = UIStoryboard(name: "MyJobs", bundle: nil).instantiateViewController(identifier: "myJobsVC") as? MyJobsViewController{
+            
+            present(myJobsVC, animated: true, completion: nil)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

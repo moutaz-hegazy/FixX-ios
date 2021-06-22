@@ -19,16 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         return true
     }
-
-    func applicationWillResignActive(_ application: UIApplication) {
-        print("wezza >>> AY 7aGA")
-        if(HomeScreenViewController.USER_OBSERVER != nil){
-            print("wezza FOUND!!")
-            HomeScreenViewController.USER_OBSERVER?.remove()
-        }else{
-            print("wezza notFound!!!")
-        }
-    }
     // MARK: UISceneSession Lifecycle
 
     @available(iOS 13.0, *)

@@ -1,34 +1,33 @@
 //
-//  CompletedOrdersViewController.swift
+//  CompletedJobsViewController.swift
 //  FixX-ios
 //
-//  Created by moutaz hegazy on 6/16/21.
+//  Created by moutaz hegazy on 6/22/21.
 //  Copyright © 2021 moutaz_hegazy. All rights reserved.
 //
 
 import UIKit
 
-class CompletedOrdersViewController: UIViewController {
+class CompletedJobsViewController: UIViewController {
 
-    @IBOutlet weak var completedJobsTableView: UITableView!
+    @IBOutlet weak var completedTableView: UITableView!
     
     private var completedJobs = [Job]()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        FirestoreService.shared.fetchMyCompletedOrderedJobs { [weak self](jobs) in
+        
+        FirestoreService.shared.fetchMyCompletedWork { [weak self](jobs) in
             self?.completedJobs = jobs
-            self?.completedJobsTableView.reloadData()
+            self?.completedTableView.reloadData()
         } onFailHandler: {
             
         }
 
     }
-
 }
 
-
-extension CompletedOrdersViewController : UITableViewDelegate, UITableViewDataSource{
+extension CompletedJobsViewController: UITableViewDelegate, UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -44,8 +43,8 @@ extension CompletedOrdersViewController : UITableViewDelegate, UITableViewDataSo
         if let completedJobCell = cell as? CompletedTableViewCell{
             completedJobCell.viewJobOnCell(for: completedJobs[indexPath.row])
         }
+        
         return cell
     }
-    
     
 }

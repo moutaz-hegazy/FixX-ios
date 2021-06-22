@@ -32,13 +32,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneWillResignActive(_ scene: UIScene) {
-        print("wezza >>> AY 7aGA")
-        if(HomeScreenViewController.USER_OBSERVER != nil){
-            print("wezza FOUND!!")
-            HomeScreenViewController.USER_OBSERVER?.remove()
-        }else{
-            print("wezza notFound!!!")
-        }
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {

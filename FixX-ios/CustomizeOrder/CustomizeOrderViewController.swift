@@ -54,17 +54,29 @@ class CustomizeOrderViewController:
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        selectLocationMenu.optionArray = ["%Alex,montaza/", "Add New Location"] //HomeScreenViewController.USER_OBJECT?.locations ?? [] + ["Add New location"]
+        selectLocationMenu.optionArray = getUserLocations()
+        selectLocationMenu.optionArray += ["Add New location"]
         
         selectLocationMenu.didSelect { (loc, index, id) in
             if(index == self.selectLocationMenu.optionArray.count-1){
                 if let addAddressVC = UIStoryboard(name: "AddAddress", bundle: nil)
                     .instantiateViewController(identifier: "addAddressVC")
                 as? AddAddressViewController{
-                    addAddressVC.onLocationSelectedHanlder = {
+                    addAddressVC.onAddressAddedHandler = {
                         [weak self](address) in
-                        print(address)
+                        
+                        let subString = String(address[..<address.firstIndex(of: "%")!])
+                        if(subString.isEmpty){
+                            let loc = String(address[address.index(after: address.firstIndex(of: "%")!)...])
+                            self?.selectLocationMenu.optionArray.insert(loc, at: (self?.selectLocationMenu.optionArray.count ?? 1) - 1)
+                            self?.selectLocationMenu.text = loc
+                        }else{
+                            self?.selectLocationMenu.optionArray.insert(subString, at: (self?.selectLocationMenu.optionArray.count ?? 1) - 1)
+                            self?.selectLocationMenu.text = subString
+                        }
                     }
+                    addAddressVC.modalPresentationStyle = .fullScreen
+                    self.present(addAddressVC,animated: true)
                 }
             }else{
                 self.orderLocation = loc
@@ -115,9 +127,20 @@ class CustomizeOrderViewController:
     }
     
     
+    private func getUserLocations() -> [String]{
+        return HomeScreenViewController.USER_OBJECT?.locations?.map({ (address)-> String in
+            let subString = String(address[..<address.firstIndex(of: "%")!])
+            if(subString.isEmpty){
+                let loc = String(address[address.index(after: address.firstIndex(of: "%")!)...])
+                return loc
+            }else{
+                return subString
+            }
+        }) ?? []
+    }
 
     
-    //Mark: Image adding functions
+    //MARK: -Image adding functions
     @objc func imageTapped(gesture: UITapGestureRecognizer){
         if (gesture.view as? UIImageView) != nil{
             displayActionSheet()

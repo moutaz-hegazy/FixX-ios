@@ -16,14 +16,20 @@ class LaunchScreenViewController: UIViewController {
         let user = FirestoreService.shared.auth.currentUser
         
         if(user != nil && user?.email != Constants.defaultEmail){
-            FirestoreService.shared.fetchUserFromDB { [weak self](person) in
+            FirestoreService.shared.fetchUserOnce { [weak self](person) in
                 HomeScreenViewController.USER_OBJECT = person
                 self?.dismiss(animated: true, completion: {
                     self?.startHomeScreen()
                 })
-            } passRegister: { (observer) in
-                HomeScreenViewController.USER_OBSERVER = observer
             }
+//            FirestoreService.shared.fetchUserFromDB { [weak self](person) in
+//                HomeScreenViewController.USER_OBJECT = person
+//                self?.dismiss(animated: true, completion: {
+//                    self?.startHomeScreen()
+//                })
+//            } passRegister: { (observer) in
+//                HomeScreenViewController.USER_OBSERVER = observer
+//            }
 
         }else{
             FirestoreService.shared.logInWithDefault {

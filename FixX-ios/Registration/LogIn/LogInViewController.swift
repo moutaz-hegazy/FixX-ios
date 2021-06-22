@@ -78,8 +78,6 @@ class LogInViewController: UIViewController {
                 self?.startHomeScreen()
             } onFailHandler: {
                 
-            } passRegister: { (listener) in
-                
             }
         }
     }

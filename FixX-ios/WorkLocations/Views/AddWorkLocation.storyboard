@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vOa-uy-Ig2">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Work Location View Controller-->
+        <scene sceneID="eo7-nZ-LCy">
+            <objects>
+                <viewController id="vOa-uy-Ig2" customClass="AddWorkLocationViewController" customModule="FixX_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8un-NN-hCg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="750"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GZI-bZ-phx">
+                                <rect key="frame" x="0.0" y="88" width="414" height="662"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FhK-Ua-yqw" userLabel="ContentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="750"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sAM-XT-iKu">
+                                                <rect key="frame" x="50" y="350" width="314" height="36"/>
+                                                <color key="backgroundColor" red="0.50034951809999995" green="0.1570959904" blue="0.59121192889999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <state key="normal" title="Add Work Location">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="addWorkLoactionActionBtn:" destination="vOa-uy-Ig2" eventType="touchUpInside" id="obO-lD-18k"/>
+                                                </connections>
+                                            </button>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xdj-vw-uLV" customClass="DropDown" customModule="iOSDropDown">
+                                                <rect key="frame" x="20" y="60" width="374" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="86D-5b-0fw" customClass="DropDown" customModule="iOSDropDown">
+                                                <rect key="frame" x="20" y="114" width="374" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.88884387480000004" green="0.92395688929999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="Xdj-vw-uLV" firstAttribute="leading" secondItem="FhK-Ua-yqw" secondAttribute="leading" constant="20" id="630-8H-uJd"/>
+                                            <constraint firstAttribute="trailing" secondItem="86D-5b-0fw" secondAttribute="trailing" constant="20" id="Amh-Tm-uV6"/>
+                                            <constraint firstItem="Xdj-vw-uLV" firstAttribute="top" secondItem="FhK-Ua-yqw" secondAttribute="top" constant="60" id="Iv7-Hu-Ica"/>
+                                            <constraint firstAttribute="trailing" secondItem="sAM-XT-iKu" secondAttribute="trailing" constant="50" id="KH2-Q8-IrL"/>
+                                            <constraint firstItem="sAM-XT-iKu" firstAttribute="leading" secondItem="FhK-Ua-yqw" secondAttribute="leading" constant="50" id="WQg-MP-Ne5"/>
+                                            <constraint firstItem="86D-5b-0fw" firstAttribute="top" secondItem="Xdj-vw-uLV" secondAttribute="bottom" constant="20" id="ZX6-cw-DzT"/>
+                                            <constraint firstAttribute="height" constant="750" id="cL2-lI-py0"/>
+                                            <constraint firstAttribute="trailing" secondItem="Xdj-vw-uLV" secondAttribute="trailing" constant="20" id="dWc-HC-IIL"/>
+                                            <constraint firstItem="sAM-XT-iKu" firstAttribute="top" secondItem="FhK-Ua-yqw" secondAttribute="top" constant="350" id="k0X-Gd-qHK"/>
+                                            <constraint firstItem="86D-5b-0fw" firstAttribute="leading" secondItem="FhK-Ua-yqw" secondAttribute="leading" constant="20" id="wHy-4G-2yj"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.88884387480000004" green="0.92395688929999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="FhK-Ua-yqw" firstAttribute="top" secondItem="GZI-bZ-phx" secondAttribute="top" id="Ft0-if-vXl"/>
+                                    <constraint firstAttribute="trailing" secondItem="FhK-Ua-yqw" secondAttribute="trailing" id="dvf-Uv-SBr"/>
+                                    <constraint firstItem="FhK-Ua-yqw" firstAttribute="leading" secondItem="GZI-bZ-phx" secondAttribute="leading" id="g7P-Sc-y6s"/>
+                                    <constraint firstAttribute="bottom" secondItem="FhK-Ua-yqw" secondAttribute="bottom" id="zF3-i5-Ua8"/>
+                                </constraints>
+                            </scrollView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Kn-Tc-rUn">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <color key="barTintColor" red="0.50034951809999995" green="0.1570959904" blue="0.59121192889999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="My Work Locations" id="kdg-y6-faC">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.backward" catalog="system" id="As6-0C-fdG">
+                                            <connections>
+                                                <action selector="backActionBtn:" destination="vOa-uy-Ig2" id="QeJ-Bk-0Ru"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CBF-kz-SD7"/>
+                        <color key="backgroundColor" red="0.88884387480000004" green="0.92395688929999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="GZI-bZ-phx" firstAttribute="top" secondItem="CBF-kz-SD7" secondAttribute="top" constant="44" id="7bh-8k-nd1"/>
+                            <constraint firstItem="GZI-bZ-phx" firstAttribute="leading" secondItem="CBF-kz-SD7" secondAttribute="leading" id="8x1-Yh-2eL"/>
+                            <constraint firstAttribute="bottom" secondItem="GZI-bZ-phx" secondAttribute="bottom" id="TYk-Wo-xmh"/>
+                            <constraint firstItem="GZI-bZ-phx" firstAttribute="trailing" secondItem="CBF-kz-SD7" secondAttribute="trailing" id="bFZ-eH-LyA"/>
+                            <constraint firstItem="FhK-Ua-yqw" firstAttribute="width" secondItem="8un-NN-hCg" secondAttribute="width" id="hPy-gu-oQS"/>
+                            <constraint firstAttribute="trailing" secondItem="3Kn-Tc-rUn" secondAttribute="trailing" id="kBd-m7-yVf"/>
+                            <constraint firstItem="3Kn-Tc-rUn" firstAttribute="top" secondItem="8un-NN-hCg" secondAttribute="top" id="l25-dQ-11L"/>
+                            <constraint firstItem="3Kn-Tc-rUn" firstAttribute="leading" secondItem="8un-NN-hCg" secondAttribute="leading" id="mhb-1c-j5g"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="414" height="750"/>
+                    <connections>
+                        <outlet property="areaDropDown" destination="86D-5b-0fw" id="SDd-Cu-hZc"/>
+                        <outlet property="cityDropDown" destination="Xdj-vw-uLV" id="TiP-Jz-MDw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x2k-ix-4QW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1115.9420289855072" y="59.598214285714285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
+    </resources>
+</document>

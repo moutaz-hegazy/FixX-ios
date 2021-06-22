@@ -63,10 +63,6 @@ class MyOrdersViewController: UIViewController,
         }
     }
     
-    @IBAction func goBack(_ sender: Any) {
-        presentingViewController?.dismiss(animated: true, completion: nil)
-    }
-    
     private func addViewPager(){
         addChild(pagerVC)
         pagerContainerView.addSubview(pagerVC.view)
