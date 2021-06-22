@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Photos
 
-class ProfileTableViewController: UITableViewController {
+class ProfileTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
     @IBOutlet weak var myName: UILabel!
@@ -19,10 +20,14 @@ class ProfileTableViewController: UITableViewController {
     
     @IBOutlet weak var myPassword: UILabel!
     
-    @IBAction func chooseImage(_ sender: UIButton) {
+    @IBOutlet weak var profileImageView: UIImageView!
+    
+    @IBOutlet weak var chooseImage: UIImageView!
+    
+    var imagePicker = UIImagePickerController()
+    
         
-        
-    }
+
     @IBAction func EditName(_ sender: UIButton) {
         
         let editNameAlert = UIAlertController(title: "Edit Name", message: "Enter Your Name", preferredStyle: .alert)
@@ -117,12 +122,92 @@ class ProfileTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        imagePicker.delegate = self
+        let tapImage = UITapGestureRecognizer(target: self, action: #selector(ProfileTableViewController.imageTap(gesture:)))
+        chooseImage.addGestureRecognizer(tapImage)
+        chooseImage.isUserInteractionEnabled = true
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    @objc func imageTap(gesture: UITapGestureRecognizer){
+        if(gesture.view as? UIImageView) != nil {
+            displayBottomSheet()
+        }
+    }
+    
+    func displayBottomSheet(){
+       
+                let optionsMenu = UIAlertController(title: "Action Required", message: "Add images via", preferredStyle: .actionSheet)
+                let chooseCameraAction = UIAlertAction(title: "Camera", style: .default){
+                    
+                   _ in self.openCamera()}
+                let choosePhotosAction = UIAlertAction(title: "Photos", style: .default){
+                    _ in self.checkImagePermissions()
+                    self.openPhotos()}
+                let chooseCancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+              
+                optionsMenu.addAction(chooseCameraAction)
+                optionsMenu.addAction(choosePhotosAction)
+                optionsMenu.addAction(chooseCancelAction)
+                self.present(optionsMenu, animated: true, completion: nil)
+    }
+    
+    func checkImagePermissions(){
+            if PHPhotoLibrary.authorizationStatus() != PHAuthorizationStatus.authorized{
+                PHPhotoLibrary.requestAuthorization({(status: PHAuthorizationStatus) -> Void in ()
+                })
+            }
+            if PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.authorized{
+                //Nothing to do here
+            }else{
+                PHPhotoLibrary.requestAuthorization(requestAuthorizationHandler)
+            }
+        }
+    
+    func requestAuthorizationHandler(status: PHAuthorizationStatus){
+            if PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.authorized{
+                print("AUTHORZIED")
+            }else{
+                print("NOT AUTHORZIED")
+            }
+        }
+    
+    func openCamera(){
+            let imagePicker = UIImagePickerController()
+            imagePicker.sourceType = .camera
+            imagePicker.allowsEditing = true
+            imagePicker.delegate = self
+            present(imagePicker, animated: true)
+        }
+        
+        
+        
+        
+        //Mark: Image adding functions
+        func openPhotos(){
+            self.imagePicker.sourceType = .photoLibrary
+            self.present(self.imagePicker, animated: true, completion: nil)
+        }
+        
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            if imagePicker.sourceType == .camera{
+                var cameraImage = UIImage()
+                cameraImage = info[UIImagePickerController.InfoKey.editedImage] as! UIImage
+                
+                
+            }else{
+                var galleryImage = UIImage()
+                galleryImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+                
+                profileImageView.image =  galleryImage
+                
+            }
+                    imagePicker.dismiss(animated: true, completion: nil)
+        }
 
     // MARK: - Table view data source
     /*
