@@ -58,7 +58,14 @@ class CustomizeOrderViewController:
         
         selectLocationMenu.didSelect { (loc, index, id) in
             if(index == self.selectLocationMenu.optionArray.count-1){
-                // add new location
+                if let addAddressVC = UIStoryboard(name: "AddAddress", bundle: nil)
+                    .instantiateViewController(identifier: "addAddressVC")
+                as? AddAddressViewController{
+                    addAddressVC.onLocationSelectedHanlder = {
+                        [weak self](address) in
+                        print(address)
+                    }
+                }
             }else{
                 self.orderLocation = loc
             }

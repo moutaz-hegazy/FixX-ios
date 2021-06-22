@@ -34,8 +34,6 @@
 		A962EF6B267F942900A8420C /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A962EF60267F942800A8420C /* Comment.swift */; };
 		A962EF6C267F942900A8420C /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A962EF61267F942800A8420C /* Person.swift */; };
 		A962EF71267F945500A8420C /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A962EF70267F945400A8420C /* FirestoreService.swift */; };
-		A962F058267FD2DF00A8420C /* Views in Resources */ = {isa = PBXBuildFile; fileRef = A962F056267FD2DE00A8420C /* Views */; };
-		A962F059267FD2DF00A8420C /* ViewControllers in Resources */ = {isa = PBXBuildFile; fileRef = A962F057267FD2DF00A8420C /* ViewControllers */; };
 		A9776A6E267B698A00E9B80B /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776A6D267B698900E9B80B /* GradientView.swift */; };
 		A9776A73267B6AB300E9B80B /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776A72267B6AB300E9B80B /* RegistrationViewController.swift */; };
 		A9776A7E267B6B3B00E9B80B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776A7C267B6B3B00E9B80B /* SignUpViewController.swift */; };
@@ -113,8 +111,6 @@
 		A962EF60267F942800A8420C /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		A962EF61267F942800A8420C /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		A962EF70267F945400A8420C /* FirestoreService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
-		A962F056267FD2DE00A8420C /* Views */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Views; sourceTree = "<group>"; };
-		A962F057267FD2DF00A8420C /* ViewControllers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ViewControllers; sourceTree = "<group>"; };
 		A9776A6D267B698900E9B80B /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		A9776A72267B6AB300E9B80B /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		A9776A7C267B6B3B00E9B80B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -336,15 +332,6 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
-		A962F055267FD2C900A8420C /* ShowTechnicians */ = {
-			isa = PBXGroup;
-			children = (
-				A962F057267FD2DF00A8420C /* ViewControllers */,
-				A962F056267FD2DE00A8420C /* Views */,
-			);
-			path = ShowTechnicians;
-			sourceTree = "<group>";
-		};
 		A9776A63267B686800E9B80B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -489,7 +476,6 @@
 			children = (
 				A9BBD8092680AB6800197447 /* LaunchScreen */,
 				A9E11278267FEC760043B827 /* Constants */,
-				A962F055267FD2C900A8420C /* ShowTechnicians */,
 				A962F049267FD27C00A8420C /* TabBar */,
 				A962EF6E267F943400A8420C /* Support */,
 				A962EF55267F93D600A8420C /* POJOs */,
@@ -624,10 +610,8 @@
 				A9776BBF267BBB5F00E9B80B /* SignUpViewControllerC.storyboard in Resources */,
 				A92E65AC2680C30400C80E45 /* TabBarStoryboard.storyboard in Resources */,
 				A9776BE2267BD0F600E9B80B /* LogInViewController.storyboard in Resources */,
-				A962F059267FD2DF00A8420C /* ViewControllers in Resources */,
 				A92E65B52680C30400C80E45 /* SettingsScreenStoryboard.storyboard in Resources */,
 				A9776AB2267B71D100E9B80B /* ChatInbox.storyboard in Resources */,
-				A962F058267FD2DF00A8420C /* Views in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
