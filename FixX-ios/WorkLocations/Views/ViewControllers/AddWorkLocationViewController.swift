@@ -100,7 +100,7 @@ class AddWorkLocationViewController: UIViewController {
         }else if areaDropDown.text == "Area"{
             self.showToast(message: "Please Choose Area", font: .systemFont(ofSize: 12.0))
         }else{
-            self.navigationController?.popViewController(animated: true)
+            self.dismiss(animated: true, completion: nil)
         }
      }
     
@@ -132,5 +132,8 @@ class AddWorkLocationViewController: UIViewController {
         }
     }
     
-
+    @IBAction func backActionBtn(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }

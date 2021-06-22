@@ -86,7 +86,12 @@ class MyWorkLocationViewController: UIViewController, UITableViewDelegate, UITab
         
         let addWorkLocationVC = self.storyboard?.instantiateViewController(identifier: "AWLVC") as! AddWorkLocationViewController
         
-        self.navigationController?.pushViewController(addWorkLocationVC, animated: true)
+        self.present(addWorkLocationVC, animated: true, completion: nil)
     }
 
+    @IBAction func backActionBtn(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }

@@ -83,13 +83,16 @@ class MyAddressesViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
    
+    @IBAction func backActionBtn(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
   
     
     @IBAction func addAddressActionBtn(_ sender: Any) {
         let addAddressVC = self.storyboard?.instantiateViewController(identifier: "ADVC") as! AddAddressViewController
         
-        self.navigationController?.pushViewController(addAddressVC, animated: true)
+        self.present(addAddressVC, animated: true, completion: nil)
     }
     
 }

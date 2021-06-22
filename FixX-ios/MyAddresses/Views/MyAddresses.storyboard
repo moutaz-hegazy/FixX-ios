@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wbe-c7-FYc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EOB-Pu-MZV">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -26,7 +26,7 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mCL-YE-4vA">
-                                <rect key="frame" x="0.0" y="88" width="414" height="712"/>
+                                <rect key="frame" x="0.0" y="89" width="414" height="711"/>
                                 <color key="backgroundColor" red="0.88884387480000004" green="0.92395688929999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexTrackingBackgroundColor" systemColor="systemIndigoColor"/>
                                 <prototypes>
@@ -83,16 +83,35 @@
                                     <action selector="addAddressActionBtn:" destination="EOB-Pu-MZV" eventType="touchUpInside" id="7tZ-P1-HYI"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E65-tY-iqd">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="barTintColor" red="0.50034951809999995" green="0.1570959904" blue="0.59121192889999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="My Addresses" id="tiy-Rl-hW2">
+                                        <barButtonItem key="leftBarButtonItem" image="chevron.backward" catalog="system" id="6mc-eQ-N8F">
+                                            <connections>
+                                                <action selector="backActionBtn:" destination="EOB-Pu-MZV" id="xUb-Yu-VwN"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JSX-sV-lTB"/>
                         <color key="backgroundColor" red="0.88884387480000004" green="0.92395688929999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="JSX-sV-lTB" firstAttribute="bottom" secondItem="kqv-bN-iBq" secondAttribute="bottom" constant="16" id="6Ye-1o-bRI"/>
                             <constraint firstItem="kqv-bN-iBq" firstAttribute="leading" secondItem="JSX-sV-lTB" secondAttribute="leading" constant="16" id="9Xd-Q9-slh"/>
+                            <constraint firstItem="mCL-YE-4vA" firstAttribute="top" secondItem="JSX-sV-lTB" secondAttribute="top" constant="45" id="YiX-jK-OED"/>
+                            <constraint firstItem="E65-tY-iqd" firstAttribute="trailing" secondItem="JSX-sV-lTB" secondAttribute="trailing" id="Zvf-Ky-Fao"/>
                             <constraint firstItem="JSX-sV-lTB" firstAttribute="trailing" secondItem="kqv-bN-iBq" secondAttribute="trailing" constant="16" id="aGt-on-XdW"/>
                             <constraint firstItem="mCL-YE-4vA" firstAttribute="trailing" secondItem="JSX-sV-lTB" secondAttribute="trailing" id="euX-Yu-Dxl"/>
-                            <constraint firstItem="mCL-YE-4vA" firstAttribute="top" secondItem="JSX-sV-lTB" secondAttribute="top" id="lTj-SK-76E"/>
+                            <constraint firstItem="E65-tY-iqd" firstAttribute="top" secondItem="JSX-sV-lTB" secondAttribute="top" id="gzt-O3-LLX"/>
                             <constraint firstItem="kqv-bN-iBq" firstAttribute="top" secondItem="mCL-YE-4vA" secondAttribute="bottom" constant="10" id="nlt-BC-oFs"/>
+                            <constraint firstItem="E65-tY-iqd" firstAttribute="leading" secondItem="JSX-sV-lTB" secondAttribute="leading" id="puE-Iu-ogu"/>
                             <constraint firstItem="mCL-YE-4vA" firstAttribute="leading" secondItem="JSX-sV-lTB" secondAttribute="leading" id="yJV-Ba-ZeW"/>
                         </constraints>
                     </view>
@@ -115,26 +134,9 @@
             </objects>
             <point key="canvasLocation" x="1465.217391304348" y="279.91071428571428"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="mGN-Yw-vxs">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wbe-c7-FYc" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TdJ-D9-0Nx">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="EOB-Pu-MZV" kind="relationship" relationship="rootViewController" id="7f0-bo-NcZ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jQK-zk-jmc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-4.3478260869565224" y="91.741071428571431"/>
-        </scene>
     </scenes>
     <resources>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

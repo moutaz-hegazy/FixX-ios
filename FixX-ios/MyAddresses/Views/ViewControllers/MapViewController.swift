@@ -234,11 +234,14 @@ MKMapViewDelegate, UIGestureRecognizerDelegate {
        }
        
        
-
+    @IBAction func backActionBtn(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
        @IBAction func addAddressActionBtn(_ sender: Any) {
         
         delegete?.sendAddressBack(city: city, area: area, subArea: subArea)
-           self.navigationController?.popViewController(animated: true)
+           self.dismiss(animated: true, completion: nil)
        }
 
 }

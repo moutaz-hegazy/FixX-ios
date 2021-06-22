@@ -115,9 +115,12 @@ class AddAddressViewController: UIViewController, AddressProtocol {
         
         let mapVC = self.storyboard?.instantiateViewController(identifier: "MVC") as! MapViewController
         mapVC.delegete = self
-       self.navigationController?.pushViewController(mapVC, animated: true)
+       self.present(mapVC, animated: true, completion: nil)
     }
     
+    @IBAction func backActionBtn(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func addAddressActionBtn(_ sender: Any) {
     
@@ -126,7 +129,7 @@ class AddAddressViewController: UIViewController, AddressProtocol {
         }else if areaDropDown.text == "Area"{
             self.showToast(message: "Please Choose Area", font: .systemFont(ofSize: 12.0))
         }else{
-            self.navigationController?.popViewController(animated: true)
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
