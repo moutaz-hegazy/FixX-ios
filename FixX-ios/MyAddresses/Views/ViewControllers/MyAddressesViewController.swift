@@ -15,14 +15,20 @@ class MyAddressesViewController: UIViewController, UITableViewDelegate, UITableV
     var addresses = [String]()
     var titles = [String]()
     
+    override func viewWillAppear(_ animated: Bool) {
+        HomeScreenViewController.USER_OBJECT?.locations?.forEach({address in
+            let subString = String(address[..<address.firstIndex(of: "%")!])
+            if(subString.isEmpty){
+                titles.append("")
+            } else{
+                titles.append(subString)
+            }
+            addresses.append(String(address[address.index(after: address.firstIndex(of: "%")!)...]))
+        })
+        myAddressesTableView.reloadData()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        addresses.append("add1")
-        addresses.append("add2")
-        titles.append("title1")
-        titles.append("title2")
-
         // Do any additional setup after loading the view.
     }
     
@@ -92,6 +98,19 @@ class MyAddressesViewController: UIViewController, UITableViewDelegate, UITableV
     @IBAction func addAddressActionBtn(_ sender: Any) {
         let addAddressVC = self.storyboard?.instantiateViewController(identifier: "ADVC") as! AddAddressViewController
         
+        addAddressVC.onAddressAddedHandler = {
+            [weak self](address) in
+            print(address)
+            let subString = String(address[..<address.firstIndex(of: "%")!])
+            print(subString)
+            if(subString.isEmpty){
+                self?.titles.append("")
+            } else{
+                self?.titles.append(subString)
+            }
+            self?.addresses.append(String(address[address.index(after: address.firstIndex(of: "%")!)...]))
+            self?.myAddressesTableView.reloadData()
+        }
         self.present(addAddressVC, animated: true, completion: nil)
     }
     

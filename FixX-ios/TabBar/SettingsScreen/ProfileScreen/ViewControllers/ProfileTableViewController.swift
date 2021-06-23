@@ -117,11 +117,9 @@ class ProfileTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        myName.text = HomeScreenViewController.USER_OBJECT?.name
+        myEmail.text = HomeScreenViewController.USER_OBJECT?.email
+        myPhone.text = HomeScreenViewController.USER_OBJECT?.phoneNumber
     }
 
     // MARK: - Table view data source

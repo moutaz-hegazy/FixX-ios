@@ -11,7 +11,7 @@
         <!--Profile-->
         <scene sceneID="Gvn-38-nSV">
             <objects>
-                <tableViewController id="i3f-6q-nC5" customClass="ProfileTableViewController" customModule="Graduation_Project" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="profileScreenVC" id="i3f-6q-nC5" customClass="ProfileTableViewController" customModule="FixX_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9vf-BQ-dFu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

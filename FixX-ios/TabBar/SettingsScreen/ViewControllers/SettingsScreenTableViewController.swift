@@ -7,28 +7,42 @@
 //
 
 import UIKit
+import Firebase
 
 class SettingsScreenTableViewController: UITableViewController {
     
     
     @IBOutlet weak var Name: UILabel!
-    
-//    var str : String?
+    @IBOutlet weak var profileImage: UIImageView!
+    //    var str : String?
 //    override func viewDidAppear(_ animated: Bool) {
 //        Name.text = str
         
-    
-    
+    private var settings = [UIViewController]()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        Name.text = HomeScreenViewController.USER_OBJECT?.name
+        
+        if let profileScreenVC = UIStoryboard(name: "ProfileScreenStoryboard", bundle: nil)
+            .instantiateViewController(identifier: "profileScreenVC")
+        as? ProfileTableViewController{
+            settings.append(profileScreenVC)
+        }
+        
+        if let chatLogsVC = UIStoryboard(name: "ChatLogs", bundle: nil)
+            .instantiateViewController(identifier: "chatLogsVC")
+        as? ChatLogsTableViewController{
+            settings.append(chatLogsVC)
+        }
+    
+        if let myAddressesVC = UIStoryboard(name: "MyAddresses", bundle: nil)
+            .instantiateViewController(identifier: "myAddressesVC")
+        as? MyAddressesViewController{
+            settings.append(myAddressesVC)
+        }
     }
 
     // MARK: - Table view data source
@@ -48,7 +62,23 @@ class SettingsScreenTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         print("you selected \(indexPath.row)")
-        
+        if let myAddressesVC = UIStoryboard(name: "MyAddresses", bundle: nil)
+            .instantiateViewController(identifier: "myAddressesVC")
+        as? MyAddressesViewController{
+            myAddressesVC.modalPresentationStyle = .fullScreen
+            self.present(myAddressesVC,animated: true)
+        }
+//        if(indexPath.row == settings.count){
+//            let firebaseAuth = Auth.auth()
+//            do {
+//              try firebaseAuth.signOut()
+//            } catch let signOutError as NSError {
+//                print ("Error signing out: %@", signOutError)
+//            }
+//        } else{
+//            settings[indexPath.row].modalPresentationStyle = .fullScreen
+//            self.present(settings[indexPath.row],animated: true)
+//        }
     }
 
     /*
