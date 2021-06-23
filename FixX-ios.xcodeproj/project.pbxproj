@@ -43,6 +43,9 @@
 		A96775242683816B00BD6AC0 /* ShowTechnicianTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96775202683816B00BD6AC0 /* ShowTechnicianTableViewController.swift */; };
 		A96775252683816B00BD6AC0 /* ShowTechnicianTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96775212683816B00BD6AC0 /* ShowTechnicianTableViewCell.swift */; };
 		A96775262683816B00BD6AC0 /* ShowTechnicianScreenStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A96775232683816B00BD6AC0 /* ShowTechnicianScreenStoryboard.storyboard */; };
+		A967759F2683DF8F00BD6AC0 /* ReviewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A967759B2683DF8F00BD6AC0 /* ReviewsTableViewCell.swift */; };
+		A96775A02683DF8F00BD6AC0 /* TechnicianProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A967759C2683DF8F00BD6AC0 /* TechnicianProfileViewController.swift */; };
+		A96775A12683DF8F00BD6AC0 /* TechnicianProfileStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A967759E2683DF8F00BD6AC0 /* TechnicianProfileStoryboard.storyboard */; };
 		A9776A6E267B698A00E9B80B /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776A6D267B698900E9B80B /* GradientView.swift */; };
 		A9776A73267B6AB300E9B80B /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776A72267B6AB300E9B80B /* RegistrationViewController.swift */; };
 		A9776A7E267B6B3B00E9B80B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776A7C267B6B3B00E9B80B /* SignUpViewController.swift */; };
@@ -74,6 +77,7 @@
 		A9776BBF267BBB5F00E9B80B /* SignUpViewControllerC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9776BBE267BBB5F00E9B80B /* SignUpViewControllerC.storyboard */; };
 		A9776BC2267BBB8D00E9B80B /* SignUpViewControllerD.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9776BC1267BBB8D00E9B80B /* SignUpViewControllerD.storyboard */; };
 		A9776BE2267BD0F600E9B80B /* LogInViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9776BE1267BD0F600E9B80B /* LogInViewController.storyboard */; };
+		A998D7A32683FB8600F71371 /* BidderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A998D7A22683FB8600F71371 /* BidderTableViewCell.swift */; };
 		A9BBD8072680AB1B00197447 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BBD8062680AB1B00197447 /* LaunchScreenViewController.swift */; };
 		A9BBD80B2680AB9300197447 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9BBD80A2680AB9300197447 /* Launch.storyboard */; };
 		A9D5234E2676632300B9C136 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D5234D2676632300B9C136 /* AppDelegate.swift */; };
@@ -143,6 +147,9 @@
 		A96775202683816B00BD6AC0 /* ShowTechnicianTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTechnicianTableViewController.swift; sourceTree = "<group>"; };
 		A96775212683816B00BD6AC0 /* ShowTechnicianTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTechnicianTableViewCell.swift; sourceTree = "<group>"; };
 		A96775232683816B00BD6AC0 /* ShowTechnicianScreenStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ShowTechnicianScreenStoryboard.storyboard; sourceTree = "<group>"; };
+		A967759B2683DF8F00BD6AC0 /* ReviewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsTableViewCell.swift; sourceTree = "<group>"; };
+		A967759C2683DF8F00BD6AC0 /* TechnicianProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TechnicianProfileViewController.swift; sourceTree = "<group>"; };
+		A967759E2683DF8F00BD6AC0 /* TechnicianProfileStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TechnicianProfileStoryboard.storyboard; sourceTree = "<group>"; };
 		A9776A6D267B698900E9B80B /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		A9776A72267B6AB300E9B80B /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		A9776A7C267B6B3B00E9B80B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +181,7 @@
 		A9776BBE267BBB5F00E9B80B /* SignUpViewControllerC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpViewControllerC.storyboard; sourceTree = "<group>"; };
 		A9776BC1267BBB8D00E9B80B /* SignUpViewControllerD.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpViewControllerD.storyboard; sourceTree = "<group>"; };
 		A9776BE1267BD0F600E9B80B /* LogInViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogInViewController.storyboard; sourceTree = "<group>"; };
+		A998D7A22683FB8600F71371 /* BidderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidderTableViewCell.swift; sourceTree = "<group>"; };
 		A9BBD8062680AB1B00197447 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		A9BBD80A2680AB9300197447 /* Launch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 		A9D5234A2676632200B9C136 /* FixX-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FixX-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -391,6 +399,7 @@
 			children = (
 				A96323FF2682A3DD00565A0F /* JobDetailsViewController.swift */,
 				A96324032682A40D00565A0F /* JobDetails.storyboard */,
+				A998D7A22683FB8600F71371 /* BidderTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -398,6 +407,7 @@
 		A967751E2683816B00BD6AC0 /* ShowTechnician */ = {
 			isa = PBXGroup;
 			children = (
+				A96775992683DF8F00BD6AC0 /* TechnicianProfile */,
 				A967751F2683816B00BD6AC0 /* ViewControllers */,
 				A96775222683816B00BD6AC0 /* Views */,
 			);
@@ -417,6 +427,32 @@
 			isa = PBXGroup;
 			children = (
 				A96775232683816B00BD6AC0 /* ShowTechnicianScreenStoryboard.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A96775992683DF8F00BD6AC0 /* TechnicianProfile */ = {
+			isa = PBXGroup;
+			children = (
+				A967759A2683DF8F00BD6AC0 /* ViewControllers */,
+				A967759D2683DF8F00BD6AC0 /* Views */,
+			);
+			path = TechnicianProfile;
+			sourceTree = "<group>";
+		};
+		A967759A2683DF8F00BD6AC0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A967759B2683DF8F00BD6AC0 /* ReviewsTableViewCell.swift */,
+				A967759C2683DF8F00BD6AC0 /* TechnicianProfileViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A967759D2683DF8F00BD6AC0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A967759E2683DF8F00BD6AC0 /* TechnicianProfileStoryboard.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -801,6 +837,7 @@
 				A9776AB2267B71D100E9B80B /* ChatInbox.storyboard in Resources */,
 				A9EDA45026824F6800F26634 /* MyAddresses.storyboard in Resources */,
 				A96324042682A40D00565A0F /* JobDetails.storyboard in Resources */,
+				A96775A12683DF8F00BD6AC0 /* TechnicianProfileStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -855,9 +892,12 @@
 			files = (
 				A9DC5DF6267AA73E0084948C /* OngoingTableViewCell.swift in Sources */,
 				A9E444F6267A4D12009DD6AE /* CompletedOrdersViewController.swift in Sources */,
+				A967759F2683DF8F00BD6AC0 /* ReviewsTableViewCell.swift in Sources */,
 				A962EF71267F945500A8420C /* FirestoreService.swift in Sources */,
 				A962EF65267F942900A8420C /* Technician.swift in Sources */,
 				A9E444F2267A4C68009DD6AE /* OngoingOrdersViewController.swift in Sources */,
+				A998D7A32683FB8600F71371 /* BidderTableViewCell.swift in Sources */,
+				A96775A02683DF8F00BD6AC0 /* TechnicianProfileViewController.swift in Sources */,
 				A9EDA45326824F6800F26634 /* MyAddressesViewController.swift in Sources */,
 				A9D5234E2676632300B9C136 /* AppDelegate.swift in Sources */,
 				A92E65AD2680C30400C80E45 /* SettingsScreenTableViewController.swift in Sources */,
