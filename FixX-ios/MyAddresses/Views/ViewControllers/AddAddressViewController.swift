@@ -119,9 +119,6 @@ class AddAddressViewController: UIViewController, AddressProtocol {
        self.present(mapVC, animated: true, completion: nil)
     }
     
-    @IBAction func backActionBtn(_ sender: Any) {
-        presentingViewController?.dismiss(animated: true, completion: nil)
-    }
     
     @IBAction func addAddressActionBtn(_ sender: Any) {
     
@@ -152,7 +149,7 @@ class AddAddressViewController: UIViewController, AddressProtocol {
                 }else{
                     HomeScreenViewController.USER_OBJECT?.locations = [address]
                 }
-                self?.presentingViewController?.dismiss(animated: true, completion: nil)
+                self?.navigationController?.popViewController(animated: true)
             } onFailHandler: {
             }
         }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KnW-ap-eZd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0bH-b1-gXo">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -18,18 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DxM-xh-b5a">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <items>
-                                    <navigationItem title="Title" id="f2b-ie-dih">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" image="backIcon" id="EZr-Xl-KIe">
-                                            <connections>
-                                                <action selector="backBtnPressed:" destination="KnW-ap-eZd" id="sby-kG-iFh"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="70X-eK-QBi">
                                 <rect key="frame" x="0.0" y="88" width="414" height="778"/>
                                 <subviews>
@@ -331,14 +319,17 @@
                         <constraints>
                             <constraint firstItem="70X-eK-QBi" firstAttribute="bottom" secondItem="ic2-ga-PIj" secondAttribute="bottom" id="Aej-IF-Zd6"/>
                             <constraint firstItem="70X-eK-QBi" firstAttribute="leading" secondItem="ic2-ga-PIj" secondAttribute="leading" id="V42-lc-3JA"/>
-                            <constraint firstItem="70X-eK-QBi" firstAttribute="top" secondItem="DxM-xh-b5a" secondAttribute="bottom" id="dCT-fN-Rtb"/>
-                            <constraint firstItem="ic2-ga-PIj" firstAttribute="trailing" secondItem="DxM-xh-b5a" secondAttribute="trailing" id="hun-4l-lbl"/>
+                            <constraint firstItem="70X-eK-QBi" firstAttribute="top" secondItem="ic2-ga-PIj" secondAttribute="top" id="j9O-El-bTJ"/>
                             <constraint firstItem="70X-eK-QBi" firstAttribute="trailing" secondItem="ic2-ga-PIj" secondAttribute="trailing" id="lTE-wY-WYH"/>
-                            <constraint firstItem="DxM-xh-b5a" firstAttribute="top" secondItem="ic2-ga-PIj" secondAttribute="top" id="wbd-bZ-vRl"/>
-                            <constraint firstItem="DxM-xh-b5a" firstAttribute="leading" secondItem="ic2-ga-PIj" secondAttribute="leading" id="wkH-iJ-gwj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="UKK-N0-12c"/>
+                    <navigationItem key="navigationItem" id="UKK-N0-12c">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="backIcon" id="EQV-xb-cST">
+                            <connections>
+                                <action selector="backBtnPressed:" destination="KnW-ap-eZd" id="31C-Jc-nbH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <size key="freeformSize" width="414" height="900"/>
                     <connections>
                         <outlet property="dateButton" destination="XwG-hj-hNV" id="GmP-0M-kRI"/>
@@ -347,7 +338,7 @@
                         <outlet property="endTimeButton" destination="gW2-1z-3IC" id="GIr-it-c9K"/>
                         <outlet property="endTimeLabel" destination="G6f-nn-o79" id="bEH-oD-qiB"/>
                         <outlet property="imageAdder" destination="UZf-Il-wAW" id="S8U-yz-M3v"/>
-                        <outlet property="navBarItem" destination="f2b-ie-dih" id="XiW-fA-8i0"/>
+                        <outlet property="navBarItem" destination="UKK-N0-12c" id="YRS-fk-7ks"/>
                         <outlet property="orderImagesCollectionView" destination="BPY-fZ-Isi" id="4GA-4G-8sl"/>
                         <outlet property="publishOrderButton" destination="Fvj-jh-Cn3" id="hUy-Vp-fih"/>
                         <outlet property="selectLocationMenu" destination="RPl-O6-I6B" id="pXC-7p-kzD"/>
@@ -357,6 +348,25 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="92t-Rl-7Zi" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1789.8550724637682" y="868.52678571428567"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cwe-4J-7k7">
+            <objects>
+                <navigationController storyboardIdentifier="navVC" automaticallyAdjustsScrollViewInsets="NO" id="0bH-b1-gXo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="g9z-WQ-cAa">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.32156862745098036" green="0.10588235294117647" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="KnW-ap-eZd" kind="relationship" relationship="rootViewController" id="v99-FV-Tkb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UXX-Sy-LI7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="879.71014492753625" y="868.52678571428567"/>
         </scene>

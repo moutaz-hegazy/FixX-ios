@@ -64,7 +64,7 @@ class CustomizeOrderViewController:
                 as? AddAddressViewController{
                     addAddressVC.onAddressAddedHandler = {
                         [weak self](address) in
-                        
+                        self?.orderLocation = address
                         let subString = String(address[..<address.firstIndex(of: "%")!])
                         if(subString.isEmpty){
                             let loc = String(address[address.index(after: address.firstIndex(of: "%")!)...])
@@ -76,10 +76,10 @@ class CustomizeOrderViewController:
                         }
                     }
                     addAddressVC.modalPresentationStyle = .fullScreen
-                    self.present(addAddressVC,animated: true)
+                    self.navigationController?.pushViewController(addAddressVC, animated: true)
                 }
             }else{
-                self.orderLocation = loc
+                self.orderLocation = HomeScreenViewController.USER_OBJECT?.locations?[index]
             }
         }
 
@@ -246,7 +246,7 @@ class CustomizeOrderViewController:
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ImageCollectionViewCell
-        cell.attachedImage.image = orderImages?[indexPath.row] as? UIImage
+        cell.attachedImage.image = orderImages?[indexPath.row]
         cell.attachedImage.contentMode = UIView.ContentMode.scaleAspectFit
         return cell
     }
@@ -384,6 +384,15 @@ class CustomizeOrderViewController:
     @IBAction func selectTechnician(_ sender: UIButton) {
         print("Select Technician")
         let job = getOrderData(isPrivate: true)
+        if let showTechsVC = UIStoryboard(name: "ShowTechnicianScreenStoryboard", bundle: nil).instantiateViewController(identifier: "showTechVC") as? ShowTechnicianTableViewController{
+            
+            showTechsVC.job = job
+            showTechsVC.onTechSelectedHandler = {
+                self.presentingViewController?.dismiss(animated: true, completion:  nil)
+            }
+            
+            navigationController?.pushViewController(showTechsVC, animated: true)
+        }
     }
     
     
@@ -402,7 +411,6 @@ class CustomizeOrderViewController:
     
     
     func getOrderData(isPrivate : Bool)-> Job?{
-        orderLocation = selectLocationMenu.text
         orderDate = dateLabel.text
         orderStartTime = startTimeLabel.text
         orderEndTime = endTimeLabel.text

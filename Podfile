@@ -3,6 +3,8 @@
 
 target 'FixX-ios' do
   use_frameworks!
+  pod 'Alamofire', '5.0'
+  pod 'SDWebImage'
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'

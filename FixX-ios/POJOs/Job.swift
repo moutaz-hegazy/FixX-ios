@@ -56,7 +56,7 @@ class Job : Codable{
         self.images = images
         self.privateRequest = privateRequest
         self.location = location
-        
+        print("location  >>>> \(location)")
         areaLocation = String(location![location!.firstIndex(of: "%")! ..< location!.firstIndex(of: "/")!])
         areaLocation?.removeFirst()
     }

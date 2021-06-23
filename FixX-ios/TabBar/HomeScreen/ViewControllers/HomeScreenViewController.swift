@@ -108,14 +108,15 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     private func startCustomizeOrderScreen(for jobtype : String){
-        if let customizeOrderVC = UIStoryboard(name: "CustomizeOrder", bundle: nil)
-            .instantiateViewController(identifier: "customizeOrderVC") as? CustomizeOrderViewController{
-            print("wezza >>> here 11")
-            customizeOrderVC.jobType = jobtype
-            print("wezza >>> here 12")
-            customizeOrderVC.modalPresentationStyle = .fullScreen
-            print("wezza >>> here 13")
-            present(customizeOrderVC, animated: true, completion: nil)
+        if let navVC = UIStoryboard(name: "CustomizeOrder", bundle: nil)
+            .instantiateViewController(identifier: "navVC") as? UINavigationController{
+            navVC.modalPresentationStyle = .fullScreen
+            
+            if let customizeVC = navVC.children.first as? CustomizeOrderViewController{
+                customizeVC.jobType = jobtype
+            }
+
+            present(navVC, animated: true, completion: nil)
         }
     }
 

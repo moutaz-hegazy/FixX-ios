@@ -40,6 +40,9 @@
 		A96323FB26827C2200565A0F /* AvailableJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96323FA26827C2200565A0F /* AvailableJobsViewController.swift */; };
 		A96324002682A3DD00565A0F /* JobDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96323FF2682A3DD00565A0F /* JobDetailsViewController.swift */; };
 		A96324042682A40D00565A0F /* JobDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A96324032682A40D00565A0F /* JobDetails.storyboard */; };
+		A96775242683816B00BD6AC0 /* ShowTechnicianTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96775202683816B00BD6AC0 /* ShowTechnicianTableViewController.swift */; };
+		A96775252683816B00BD6AC0 /* ShowTechnicianTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96775212683816B00BD6AC0 /* ShowTechnicianTableViewCell.swift */; };
+		A96775262683816B00BD6AC0 /* ShowTechnicianScreenStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A96775232683816B00BD6AC0 /* ShowTechnicianScreenStoryboard.storyboard */; };
 		A9776A6E267B698A00E9B80B /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776A6D267B698900E9B80B /* GradientView.swift */; };
 		A9776A73267B6AB300E9B80B /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776A72267B6AB300E9B80B /* RegistrationViewController.swift */; };
 		A9776A7E267B6B3B00E9B80B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9776A7C267B6B3B00E9B80B /* SignUpViewController.swift */; };
@@ -137,6 +140,9 @@
 		A96323FA26827C2200565A0F /* AvailableJobsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableJobsViewController.swift; sourceTree = "<group>"; };
 		A96323FF2682A3DD00565A0F /* JobDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailsViewController.swift; sourceTree = "<group>"; };
 		A96324032682A40D00565A0F /* JobDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JobDetails.storyboard; sourceTree = "<group>"; };
+		A96775202683816B00BD6AC0 /* ShowTechnicianTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTechnicianTableViewController.swift; sourceTree = "<group>"; };
+		A96775212683816B00BD6AC0 /* ShowTechnicianTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTechnicianTableViewCell.swift; sourceTree = "<group>"; };
+		A96775232683816B00BD6AC0 /* ShowTechnicianScreenStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ShowTechnicianScreenStoryboard.storyboard; sourceTree = "<group>"; };
 		A9776A6D267B698900E9B80B /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		A9776A72267B6AB300E9B80B /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		A9776A7C267B6B3B00E9B80B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -389,6 +395,32 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		A967751E2683816B00BD6AC0 /* ShowTechnician */ = {
+			isa = PBXGroup;
+			children = (
+				A967751F2683816B00BD6AC0 /* ViewControllers */,
+				A96775222683816B00BD6AC0 /* Views */,
+			);
+			path = ShowTechnician;
+			sourceTree = "<group>";
+		};
+		A967751F2683816B00BD6AC0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A96775202683816B00BD6AC0 /* ShowTechnicianTableViewController.swift */,
+				A96775212683816B00BD6AC0 /* ShowTechnicianTableViewCell.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A96775222683816B00BD6AC0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A96775232683816B00BD6AC0 /* ShowTechnicianScreenStoryboard.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A9776A63267B686800E9B80B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -531,6 +563,7 @@
 		A9D5234C2676632200B9C136 /* FixX-ios */ = {
 			isa = PBXGroup;
 			children = (
+				A967751E2683816B00BD6AC0 /* ShowTechnician */,
 				A96323FD2682A36100565A0F /* JobDetailsScreen */,
 				A9EDA459268277C000F26634 /* MyJobsScreen */,
 				A9EDA43E26824F6800F26634 /* MyAddresses */,
@@ -738,6 +771,7 @@
 				A9EDA45226824F6800F26634 /* AddAddress.storyboard in Resources */,
 				A9776BC2267BBB8D00E9B80B /* SignUpViewControllerD.storyboard in Resources */,
 				A9EDA44E26824F6800F26634 /* MyWorkLocations.storyboard in Resources */,
+				A96775262683816B00BD6AC0 /* ShowTechnicianScreenStoryboard.storyboard in Resources */,
 				A9BBD80B2680AB9300197447 /* Launch.storyboard in Resources */,
 				A9776A9D267B6EEF00E9B80B /* LeftMessageCustomCell.xib in Resources */,
 				A92E65B42680C30400C80E45 /* ProfileScreenStoryboard.storyboard in Resources */,
@@ -843,6 +877,7 @@
 				A962EF64267F942900A8420C /* ServiceItem.swift in Sources */,
 				A962EF63267F942900A8420C /* Details.swift in Sources */,
 				A9EDA44B26824F6800F26634 /* MyWorkLocationsTableViewCell.swift in Sources */,
+				A96775252683816B00BD6AC0 /* ShowTechnicianTableViewCell.swift in Sources */,
 				A9776AA0267B6FCB00E9B80B /* RegistrationProtocol.swift in Sources */,
 				A9EDA44F26824F6800F26634 /* AddressProtocol.swift in Sources */,
 				A9776A7E267B6B3B00E9B80B /* SignUpViewController.swift in Sources */,
@@ -859,6 +894,7 @@
 				A9EDA44C26824F6800F26634 /* MyWorkLocationViewController.swift in Sources */,
 				A9776A85267B6C9200E9B80B /* ImageCollectionViewCell.swift in Sources */,
 				A962EF68267F942900A8420C /* Extension.swift in Sources */,
+				A96775242683816B00BD6AC0 /* ShowTechnicianTableViewController.swift in Sources */,
 				A92E65AE2680C30400C80E45 /* SettingsViewController.swift in Sources */,
 				A9776B04267B8C3500E9B80B /* SignUpViewControllerA.swift in Sources */,
 				A9776A8F267B6E6200E9B80B /* ChatLogsCustomCell.swift in Sources */,

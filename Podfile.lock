@@ -212,6 +212,7 @@ PODS:
     - abseil/base/base_internal
     - abseil/base/config
     - abseil/meta/type_traits
+  - Alamofire (5.0.0)
   - BoringSSL-GRPC (0.0.7):
     - BoringSSL-GRPC/Implementation (= 0.0.7)
     - BoringSSL-GRPC/Interface (= 0.0.7)
@@ -346,9 +347,13 @@ PODS:
   - nanopb/decode (1.30906.0)
   - nanopb/encode (1.30906.0)
   - PromisesObjC (1.2.12)
+  - SDWebImage (5.11.1):
+    - SDWebImage/Core (= 5.11.1)
+  - SDWebImage/Core (5.11.1)
   - Toaster (2.3.0)
 
 DEPENDENCIES:
+  - Alamofire (= 5.0)
   - Cosmos
   - Firebase/Analytics
   - Firebase/Auth
@@ -357,11 +362,13 @@ DEPENDENCIES:
   - Firebase/Storage
   - FirebaseFirestoreSwift
   - iOSDropDown
+  - SDWebImage
   - Toaster
 
 SPEC REPOS:
   trunk:
     - abseil
+    - Alamofire
     - BoringSSL-GRPC
     - Cosmos
     - Firebase
@@ -384,10 +391,12 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - PromisesObjC
+    - SDWebImage
     - Toaster
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
+  Alamofire: 58ff2bfb8daaacaa233d5c36e37b10a5248f59b1
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
   Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
   Firebase: c23a36d9e4cdf7877dfcba8dd0c58add66358999
@@ -410,8 +419,9 @@ SPEC CHECKSUMS:
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   Toaster: c3473963c78e8cabbf6ea6f11ad0fdaae6f54987
 
-PODFILE CHECKSUM: e86cc5d63e5b28b6bb2681c23591bd0d1edce1ae
+PODFILE CHECKSUM: 647385490747e87d6b7e1d3e87c79f3f2d9622b7
 
 COCOAPODS: 1.10.1

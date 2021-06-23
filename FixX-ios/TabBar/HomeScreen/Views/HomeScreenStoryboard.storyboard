@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="T7E-wq-A7O">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jXO-ET-sbi">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home-->
+        <!--Select Service-->
         <scene sceneID="JFW-tz-Rp2">
             <objects>
                 <viewController storyboardIdentifier="homeVC" id="T7E-wq-A7O" customClass="HomeScreenViewController" customModule="FixX_ios" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,16 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DQf-HR-r2j">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <color key="barTintColor" red="0.3222330511" green="0.1059065834" blue="0.57319045069999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Select Service" id="LE8-Lc-cNa"/>
-                                </items>
-                            </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="55t-CV-gHk">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -138,22 +128,17 @@
                         <viewLayoutGuide key="safeArea" id="EEo-kP-tHK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="55t-CV-gHk" firstAttribute="top" secondItem="EEo-kP-tHK" secondAttribute="top" id="311-7s-8kc"/>
                             <constraint firstItem="EEo-kP-tHK" firstAttribute="bottom" secondItem="x71-rJ-W2K" secondAttribute="bottom" constant="20" id="EdC-Pc-wys"/>
-                            <constraint firstItem="DQf-HR-r2j" firstAttribute="leading" secondItem="55t-CV-gHk" secondAttribute="leading" id="Iza-OW-DwB"/>
-                            <constraint firstItem="DQf-HR-r2j" firstAttribute="trailing" secondItem="55t-CV-gHk" secondAttribute="trailing" id="JSr-I7-WCO"/>
                             <constraint firstItem="55t-CV-gHk" firstAttribute="bottom" secondItem="EEo-kP-tHK" secondAttribute="bottom" id="T6j-Ju-cCX"/>
-                            <constraint firstItem="55t-CV-gHk" firstAttribute="top" secondItem="DQf-HR-r2j" secondAttribute="bottom" symbolic="YES" id="VsY-J5-m9Z"/>
                             <constraint firstItem="55t-CV-gHk" firstAttribute="leading" secondItem="EEo-kP-tHK" secondAttribute="leading" id="Yni-yS-7fR"/>
                             <constraint firstItem="55t-CV-gHk" firstAttribute="trailing" secondItem="EEo-kP-tHK" secondAttribute="trailing" id="ZUt-Au-N1O"/>
-                            <constraint firstItem="DQf-HR-r2j" firstAttribute="top" secondItem="EEo-kP-tHK" secondAttribute="top" id="fg2-ur-pTp"/>
                             <constraint firstItem="EEo-kP-tHK" firstAttribute="bottom" secondItem="x4N-BL-GYR" secondAttribute="bottom" constant="20" id="l6S-NQ-pIS"/>
                             <constraint firstItem="EEo-kP-tHK" firstAttribute="trailing" secondItem="x4N-BL-GYR" secondAttribute="trailing" constant="20" id="lNv-VU-Fn8"/>
                             <constraint firstItem="EEo-kP-tHK" firstAttribute="trailing" secondItem="x71-rJ-W2K" secondAttribute="trailing" constant="20" id="nWI-qe-xWX"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="DdN-X9-cYQ">
-                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" title="Select Service" id="WeM-zM-KE8"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="ServiceCollectionView" destination="55t-CV-gHk" id="Azg-CR-0ED"/>
@@ -162,6 +147,29 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LvD-5o-fDG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1276.8115942028987" y="-237.05357142857142"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="1Fe-Di-GS4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jXO-ET-sbi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="DdN-X9-cYQ">
+                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ex0-9H-Pcz">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="barTintColor" red="0.32156862745098036" green="0.10588235294117647" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="T7E-wq-A7O" kind="relationship" relationship="rootViewController" id="Pdm-Uz-dVf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q7I-Af-oL5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="366.66666666666669" y="-237.05357142857142"/>
         </scene>

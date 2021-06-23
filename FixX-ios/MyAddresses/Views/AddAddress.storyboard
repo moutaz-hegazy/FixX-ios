@@ -121,34 +121,15 @@
                                     <constraint firstItem="55G-iN-Wq3" firstAttribute="top" secondItem="xVD-oc-U2j" secondAttribute="top" id="bdG-C7-txr"/>
                                 </constraints>
                             </scrollView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Iq-9Y-Ct4">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                <color key="barTintColor" red="0.50034951809999995" green="0.1570959904" blue="0.59121192889999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Add Address" id="jsM-Ri-Gwn">
-                                        <barButtonItem key="leftBarButtonItem" image="backIcon" id="IEB-DJ-k6f">
-                                            <connections>
-                                                <action selector="backActionBtn:" destination="Jjg-WC-f9E" id="Afe-CS-GdW"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KVi-oN-ba6"/>
                         <color key="backgroundColor" red="0.88884387480000004" green="0.92395688929999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="1Iq-9Y-Ct4" secondAttribute="trailing" id="FU7-EF-7rB"/>
                             <constraint firstItem="55G-iN-Wq3" firstAttribute="width" secondItem="MkG-6s-HXE" secondAttribute="width" id="J9p-Ku-Vhb"/>
                             <constraint firstItem="xVD-oc-U2j" firstAttribute="top" secondItem="KVi-oN-ba6" secondAttribute="top" constant="44" id="POz-cc-AbK"/>
                             <constraint firstItem="xVD-oc-U2j" firstAttribute="trailing" secondItem="KVi-oN-ba6" secondAttribute="trailing" id="WFq-br-d8A"/>
                             <constraint firstItem="xVD-oc-U2j" firstAttribute="leading" secondItem="KVi-oN-ba6" secondAttribute="leading" id="aar-gb-rH4"/>
                             <constraint firstAttribute="bottom" secondItem="xVD-oc-U2j" secondAttribute="bottom" id="oA0-ff-yQG"/>
-                            <constraint firstItem="1Iq-9Y-Ct4" firstAttribute="top" secondItem="MkG-6s-HXE" secondAttribute="top" id="oaD-3g-jt5"/>
-                            <constraint firstItem="1Iq-9Y-Ct4" firstAttribute="leading" secondItem="MkG-6s-HXE" secondAttribute="leading" id="qy8-OM-qYV"/>
                         </constraints>
                     </view>
                     <size key="freeformSize" width="414" height="750"/>
@@ -175,7 +156,4 @@
             <point key="canvasLocation" x="1697.1014492753625" y="274.55357142857139"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="backIcon" width="40" height="40"/>
-    </resources>
 </document>
