@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0B280B398BCF09D60B16C694 /* Pods_FixX_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 340E1495788B01B062447DB0 /* Pods_FixX_ios.framework */; };
 		A995047E267D6FBF00701979 /* ShowTechnicianTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A995047C267D6FBB00701979 /* ShowTechnicianTableViewCell.swift */; };
-		A995047F267D6FBF00701979 /* ShowTechnicianTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A995047D267D6FBF00701979 /* ShowTechnicianTableViewController.swift */; };
 		A9950482267D6FD800701979 /* ShowTechnicianScreenStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9950481267D6FD800701979 /* ShowTechnicianScreenStoryboard.storyboard */; };
 		A995048A267D73E700701979 /* TabBarStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9950489267D73E700701979 /* TabBarStoryboard.storyboard */; };
 		A9AE84B0268349EF00096BD2 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AE84AF268349EF00096BD2 /* MyProfileViewController.swift */; };
@@ -19,6 +18,7 @@
 		A9C37DA92682BBD300075E0F /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C37DA82682BBD300075E0F /* AboutUsViewController.swift */; };
 		A9C37DAC2682BBF900075E0F /* SafetyTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C37DAB2682BBF900075E0F /* SafetyTipsViewController.swift */; };
 		A9C37DAF2682BC1C00075E0F /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C37DAE2682BC1C00075E0F /* TermsViewController.swift */; };
+		A9CBF14926836385009F3552 /* ShowTechnicianViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CBF14826836385009F3552 /* ShowTechnicianViewController.swift */; };
 		A9D5234E2676632300B9C136 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D5234D2676632300B9C136 /* AppDelegate.swift */; };
 		A9D523502676632300B9C136 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D5234F2676632300B9C136 /* SceneDelegate.swift */; };
 		A9D523522676632300B9C136 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D523512676632300B9C136 /* ViewController.swift */; };
@@ -49,7 +49,6 @@
 		5B063103FF19EC01A2BE70B2 /* Pods-FixX-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FixX-ios.debug.xcconfig"; path = "Target Support Files/Pods-FixX-ios/Pods-FixX-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		7347986CDE791043ADD668A0 /* Pods-FixX-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FixX-ios.release.xcconfig"; path = "Target Support Files/Pods-FixX-ios/Pods-FixX-ios.release.xcconfig"; sourceTree = "<group>"; };
 		A995047C267D6FBB00701979 /* ShowTechnicianTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTechnicianTableViewCell.swift; sourceTree = "<group>"; };
-		A995047D267D6FBF00701979 /* ShowTechnicianTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTechnicianTableViewController.swift; sourceTree = "<group>"; };
 		A9950481267D6FD800701979 /* ShowTechnicianScreenStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ShowTechnicianScreenStoryboard.storyboard; sourceTree = "<group>"; };
 		A9950489267D73E700701979 /* TabBarStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabBarStoryboard.storyboard; sourceTree = "<group>"; };
 		A9AE84AF268349EF00096BD2 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +58,7 @@
 		A9C37DA82682BBD300075E0F /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		A9C37DAB2682BBF900075E0F /* SafetyTipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafetyTipsViewController.swift; sourceTree = "<group>"; };
 		A9C37DAE2682BC1C00075E0F /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
+		A9CBF14826836385009F3552 /* ShowTechnicianViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTechnicianViewController.swift; sourceTree = "<group>"; };
 		A9D5234A2676632200B9C136 /* FixX-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FixX-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D5234D2676632300B9C136 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9D5234F2676632300B9C136 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				A995047C267D6FBB00701979 /* ShowTechnicianTableViewCell.swift */,
-				A995047D267D6FBF00701979 /* ShowTechnicianTableViewController.swift */,
+				A9CBF14826836385009F3552 /* ShowTechnicianViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -490,9 +490,9 @@
 				A9EFFAD8267D776F00EF9920 /* ServiceCollectionViewCell.swift in Sources */,
 				A9BF404D2680FB3800AE3177 /* TechnicianProfileViewController.swift in Sources */,
 				A9D523522676632300B9C136 /* ViewController.swift in Sources */,
+				A9CBF14926836385009F3552 /* ShowTechnicianViewController.swift in Sources */,
 				A9D5234E2676632300B9C136 /* AppDelegate.swift in Sources */,
 				A9DCA2BC26829CE5009929E6 /* HelpViewController.swift in Sources */,
-				A995047F267D6FBF00701979 /* ShowTechnicianTableViewController.swift in Sources */,
 				A995047E267D6FBF00701979 /* ShowTechnicianTableViewCell.swift in Sources */,
 				A9EFFAD7267D776F00EF9920 /* HomeScreenViewController.swift in Sources */,
 				A9EFFACD267D771800EF9920 /* TabBarViewController.swift in Sources */,

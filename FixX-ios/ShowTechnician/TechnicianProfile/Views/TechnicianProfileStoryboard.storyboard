@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EvL-7g-Xx5">
-                                <rect key="frame" x="123" y="81" width="168" height="127"/>
+                                <rect key="frame" x="123" y="94" width="168" height="114"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="168" id="gLx-MG-6B3"/>
                                 </constraints>
@@ -165,6 +165,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ShU-Hn-vM0">
+                                <rect key="frame" x="0.0" y="37" width="414" height="44"/>
+                                <color key="barTintColor" red="0.3222330511" green="0.1059065834" blue="0.57319045069999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <navigationItem id="ety-Ju-3Zf">
+                                        <barButtonItem key="leftBarButtonItem" image="chevron.backward" catalog="system" id="wkp-NY-7IL">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="backButtonAction:" destination="cKQ-6z-6ZI" id="G4t-5T-9uF"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="f2S-73-Kui"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -181,12 +195,15 @@
                             <constraint firstItem="HW8-aW-ANE" firstAttribute="bottom" secondItem="f2S-73-Kui" secondAttribute="bottom" id="HnK-ch-YNV"/>
                             <constraint firstItem="5UJ-3r-iLD" firstAttribute="top" secondItem="f2S-73-Kui" secondAttribute="top" constant="418" id="JYM-V8-DQ5"/>
                             <constraint firstItem="VWp-35-jum" firstAttribute="centerX" secondItem="BZO-JL-8dI" secondAttribute="centerX" constant="7.5" id="Pxc-bR-228"/>
+                            <constraint firstItem="ShU-Hn-vM0" firstAttribute="leading" secondItem="f2S-73-Kui" secondAttribute="leading" id="Ue2-sJ-J15"/>
+                            <constraint firstItem="ShU-Hn-vM0" firstAttribute="top" secondItem="sBl-1S-WKo" secondAttribute="top" constant="37" id="VFb-3A-n14"/>
                             <constraint firstItem="CHb-Om-HGC" firstAttribute="trailing" secondItem="EvL-7g-Xx5" secondAttribute="trailing" id="VT4-2O-47J"/>
                             <constraint firstItem="f2S-73-Kui" firstAttribute="trailing" secondItem="HW8-aW-ANE" secondAttribute="trailing" constant="20" id="WSX-hO-qMe"/>
                             <constraint firstItem="5UJ-3r-iLD" firstAttribute="top" secondItem="VWp-35-jum" secondAttribute="bottom" constant="39" id="Ylc-OO-F7u"/>
                             <constraint firstItem="VWp-35-jum" firstAttribute="leading" secondItem="f2S-73-Kui" secondAttribute="leading" constant="104" id="aXV-GD-WKM"/>
+                            <constraint firstItem="ShU-Hn-vM0" firstAttribute="trailing" secondItem="f2S-73-Kui" secondAttribute="trailing" id="ajj-tQ-BLf"/>
                             <constraint firstItem="VWp-35-jum" firstAttribute="top" secondItem="BZO-JL-8dI" secondAttribute="bottom" constant="23" id="dPg-MH-LCk"/>
-                            <constraint firstItem="EvL-7g-Xx5" firstAttribute="top" secondItem="f2S-73-Kui" secondAttribute="top" constant="37" id="eUm-bk-gY4"/>
+                            <constraint firstItem="EvL-7g-Xx5" firstAttribute="top" secondItem="f2S-73-Kui" secondAttribute="top" constant="50" id="eUm-bk-gY4"/>
                             <constraint firstItem="VWp-35-jum" firstAttribute="centerY" secondItem="YGf-jz-DbF" secondAttribute="centerY" id="erT-2i-NoD"/>
                             <constraint firstItem="CHb-Om-HGC" firstAttribute="centerX" secondItem="YGf-jz-DbF" secondAttribute="centerX" id="fdu-AL-D60"/>
                             <constraint firstItem="Q5E-j8-Qgl" firstAttribute="top" secondItem="FYz-5d-Wae" secondAttribute="bottom" constant="5" id="jLg-0L-Jyb"/>
@@ -222,6 +239,7 @@
         </designable>
     </designables>
     <resources>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

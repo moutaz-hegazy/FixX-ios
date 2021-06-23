@@ -21,7 +21,11 @@ class TechnicianProfileViewController: UIViewController,UITableViewDataSource,UI
     var rating : Double?
     var noOfJobs : String?
     var noOfReviews : String?
-        
+    
+    @IBAction func backButtonAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBOutlet weak var techImageView: UIImageView!
     
     @IBOutlet weak var techNameLabel: UILabel!
