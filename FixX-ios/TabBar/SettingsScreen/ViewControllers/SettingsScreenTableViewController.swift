@@ -47,8 +47,22 @@ class SettingsScreenTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        print("you selected \(indexPath.row)")
+        if (indexPath.row == 0){
+            let myProfile = self.storyboard?.instantiateViewController(identifier: "MyProfileVC") as! MyProfileViewController
+            self.present(myProfile, animated: true, completion: nil)
+        }
+        //chat view
+        if (indexPath.row == 1 ){
+        }
         
+        // address view
+        if (indexPath.row == 2){
+        }
+        
+        if (indexPath.row == 3 ){
+            let help = self.storyboard?.instantiateViewController(identifier: "HelpVC") as! HelpViewController
+            self.present(help, animated: true, completion: nil)
+        }
     }
 
     /*

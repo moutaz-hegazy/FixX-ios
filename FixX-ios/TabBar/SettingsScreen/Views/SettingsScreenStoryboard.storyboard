@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8lr-g3-6qI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wZS-HA-FWF">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -53,9 +53,6 @@
                                                 <constraint firstItem="3ek-u5-Mu6" firstAttribute="leading" secondItem="Ss8-4l-Fua" secondAttribute="trailing" constant="15" id="tz1-5N-7uE"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="xKn-XN-Kdt" kind="push" id="8Ai-37-MPN"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="82" id="dWs-Xz-0PI">
                                         <rect key="frame" x="0.0" y="154" width="414" height="82"/>
@@ -154,9 +151,6 @@
                                                 <constraint firstItem="vHi-xD-vqh" firstAttribute="leading" secondItem="JTH-du-0gv" secondAttribute="trailing" constant="26" id="rk2-ya-P6o"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="zLL-38-5Sw" kind="push" id="43k-h6-EBU"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="82" id="aw1-eT-Igl">
                                         <rect key="frame" x="0.0" y="400" width="414" height="82"/>
@@ -226,6 +220,9 @@
                             <outlet property="delegate" destination="wZS-HA-FWF" id="HhI-7O-ZZ9"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Settings" image="list.dash" catalog="system" id="2SJ-6B-JJ2">
+                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" title="Settings" id="dQf-Xh-gec"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -239,7 +236,7 @@
         <!--ProfileScreenStoryboard-->
         <scene sceneID="iIG-c0-TkB">
             <objects>
-                <viewControllerPlaceholder storyboardName="ProfileScreenStoryboard" id="xKn-XN-Kdt" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="MyProfileVC" storyboardName="ProfileScreenStoryboard" id="xKn-XN-Kdt" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="K5p-9N-dwF"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="idn-hR-d5L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -249,36 +246,12 @@
         <!--HelpScreenStoryboard-->
         <scene sceneID="s9R-xD-17h">
             <objects>
-                <viewControllerPlaceholder storyboardName="HelpScreenStoryboard" id="zLL-38-5Sw" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="HelpVC" storyboardName="HelpScreenStoryboard" id="zLL-38-5Sw" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="4WG-n8-S22"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="orf-tC-EY6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3330" y="-80"/>
-        </scene>
-        <!--Settings-->
-        <scene sceneID="j38-lL-FsZ">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8lr-g3-6qI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="list.dash" catalog="system" id="kLf-El-1Yc"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ja7-kt-Zo9">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.3222330511" green="0.1059065834" blue="0.57319045069999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="wZS-HA-FWF" kind="relationship" relationship="rootViewController" id="cdE-Fc-TA9"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="d3n-o6-ta0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1873.913043478261" y="-94.419642857142847"/>
         </scene>
     </scenes>
     <resources>
