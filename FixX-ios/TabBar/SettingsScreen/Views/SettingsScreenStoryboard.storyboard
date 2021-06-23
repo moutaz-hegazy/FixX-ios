@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -30,7 +31,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="Ss8-4l-Fua">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ss8-4l-Fua">
                                                     <rect key="frame" x="20" y="11" width="80" height="96"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="80" id="4ri-oD-Msc"/>
@@ -43,14 +44,25 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NjY-IL-0eI">
+                                                    <rect key="frame" x="20" y="11" width="80" height="96"/>
+                                                    <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="NjY-IL-0eI" firstAttribute="top" secondItem="Ss8-4l-Fua" secondAttribute="top" id="29F-9s-JhY"/>
                                                 <constraint firstItem="RYh-VP-90d" firstAttribute="top" secondItem="CcS-yf-rhR" secondAttribute="topMargin" constant="5" id="6ZM-Zd-iLe"/>
                                                 <constraint firstItem="Ss8-4l-Fua" firstAttribute="leading" secondItem="CcS-yf-rhR" secondAttribute="leadingMargin" id="AZi-lI-DDT"/>
                                                 <constraint firstItem="RYh-VP-90d" firstAttribute="leading" secondItem="Ss8-4l-Fua" secondAttribute="trailing" constant="18" id="Czj-tL-tbh"/>
+                                                <constraint firstItem="NjY-IL-0eI" firstAttribute="width" secondItem="Ss8-4l-Fua" secondAttribute="width" id="LUq-U5-A3O"/>
                                                 <constraint firstItem="Ss8-4l-Fua" firstAttribute="top" secondItem="CcS-yf-rhR" secondAttribute="topMargin" id="OMI-s9-VFj"/>
+                                                <constraint firstItem="NjY-IL-0eI" firstAttribute="height" secondItem="Ss8-4l-Fua" secondAttribute="height" id="eDY-iC-Vfu"/>
                                                 <constraint firstItem="3ek-u5-Mu6" firstAttribute="top" secondItem="RYh-VP-90d" secondAttribute="bottom" constant="16.5" id="giC-b4-HYI"/>
                                                 <constraint firstItem="3ek-u5-Mu6" firstAttribute="leading" secondItem="Ss8-4l-Fua" secondAttribute="trailing" constant="15" id="tz1-5N-7uE"/>
+                                                <constraint firstItem="NjY-IL-0eI" firstAttribute="leading" secondItem="Ss8-4l-Fua" secondAttribute="leading" id="xoW-AO-N06"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -231,6 +243,7 @@
                     <connections>
                         <outlet property="Name" destination="RYh-VP-90d" id="Rl2-iW-aqK"/>
                         <outlet property="profileImage" destination="Ss8-4l-Fua" id="rNP-Xo-q6x"/>
+                        <outlet property="profileLbl" destination="NjY-IL-0eI" id="ncN-yf-rxF"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gcj-Cb-YKO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -287,7 +300,9 @@
         <image name="location.fill" catalog="system" width="128" height="121"/>
         <image name="message.fill" catalog="system" width="128" height="113"/>
         <image name="power" catalog="system" width="128" height="124"/>
-        <image name="profile" width="929" height="700"/>
         <image name="questionmark.circle.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

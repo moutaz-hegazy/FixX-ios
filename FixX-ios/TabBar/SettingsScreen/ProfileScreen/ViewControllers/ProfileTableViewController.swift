@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ProfileTableViewController: UITableViewController {
     
@@ -18,6 +19,10 @@ class ProfileTableViewController: UITableViewController {
     @IBOutlet weak var myPhone: UILabel!
     
     @IBOutlet weak var myPassword: UILabel!
+    
+    @IBOutlet weak var myProfileImage: UIImageView!
+    
+    @IBOutlet weak var myImageLbl: UILabel!
     
     @IBAction func chooseImage(_ sender: UIButton) {
         
@@ -116,7 +121,14 @@ class ProfileTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    
+        if let pic = HomeScreenViewController.USER_OBJECT?.profilePicture, !pic.second.isEmpty{
+            myImageLbl.isHidden = true
+            myProfileImage.sd_setImage(with: URL(string: pic.second), placeholderImage: UIImage(named: "placeholder.png"))
+        }else{
+            print("no image")
+            myImageLbl.text = HomeScreenViewController.USER_OBJECT?.name.first?.uppercased()
+        }
         myName.text = HomeScreenViewController.USER_OBJECT?.name
         myEmail.text = HomeScreenViewController.USER_OBJECT?.email
         myPhone.text = HomeScreenViewController.USER_OBJECT?.phoneNumber

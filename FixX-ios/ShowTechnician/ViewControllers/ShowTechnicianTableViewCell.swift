@@ -17,16 +17,17 @@ class ShowTechnicianTableViewCell: UITableViewCell {
     @IBOutlet weak var techNoOfJobs: UILabel!
     @IBOutlet weak var techNoOfReviews: UILabel!
     @IBOutlet weak var techRating: CosmosView!
-    
+    @IBOutlet weak var techImageLbl: UILabel!
     
     var techSelectedHandle : (()->())?
     
     func displayTechData(tech : Technician){
         
         if let pic = tech.profilePicture, !pic.second.isEmpty{
+            techImageLbl.isHidden = true
             techImage.sd_setImage(with: URL(string: pic.second), placeholderImage: UIImage(named: "placeholder.png"))
         }else{
-            // here image lbl.
+            techImageLbl.text = tech.name.first?.uppercased()
         }
         techName.text = tech.name
         techNoOfJobs.text = String(tech.jobsCount)

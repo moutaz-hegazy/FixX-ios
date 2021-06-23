@@ -78,7 +78,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WYO-Tt-px2" customClass="CosmosView" customModule="Cosmos">
+                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WYO-Tt-px2" customClass="CosmosView" customModule="Cosmos">
                                             <rect key="frame" x="119" y="62" width="120" height="20"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <userDefinedRuntimeAttributes>
@@ -96,6 +96,13 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Az-DR-xh9">
+                                            <rect key="frame" x="20" y="30" width="91" height="90"/>
+                                            <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="ltQ-X2-NTG" firstAttribute="trailing" secondItem="8p7-jK-Njz" secondAttribute="trailingMargin" constant="9" id="0i6-X3-Uea"/>
@@ -105,6 +112,7 @@
                                         <constraint firstItem="1S5-jQ-DVf" firstAttribute="centerY" secondItem="ltQ-X2-NTG" secondAttribute="centerY" id="25q-uv-3Hi"/>
                                         <constraint firstItem="1S5-jQ-DVf" firstAttribute="leading" secondItem="WYO-Tt-px2" secondAttribute="leading" id="4o4-xc-h1d"/>
                                         <constraint firstItem="bxV-gU-B4f" firstAttribute="top" secondItem="8p7-jK-Njz" secondAttribute="topMargin" constant="19" id="7u5-uJ-DhJ"/>
+                                        <constraint firstItem="5Az-DR-xh9" firstAttribute="top" secondItem="QGP-iU-d9s" secondAttribute="top" id="Cch-Rr-5Qt"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="QGP-iU-d9s" secondAttribute="bottom" constant="19" id="D48-SK-kpt"/>
                                         <constraint firstItem="SiR-nO-YBA" firstAttribute="baseline" secondItem="ltQ-X2-NTG" secondAttribute="baseline" id="DpV-Cz-g5O"/>
                                         <constraint firstItem="WYO-Tt-px2" firstAttribute="leading" secondItem="QGP-iU-d9s" secondAttribute="trailing" constant="8" symbolic="YES" id="FEw-0X-tj0"/>
@@ -117,8 +125,11 @@
                                         <constraint firstItem="gGA-sQ-ai1" firstAttribute="top" secondItem="WYO-Tt-px2" secondAttribute="bottom" constant="16" id="NU9-jp-hIx"/>
                                         <constraint firstItem="1S5-jQ-DVf" firstAttribute="leading" secondItem="QGP-iU-d9s" secondAttribute="trailing" constant="8" symbolic="YES" id="Nqz-Uw-U0V"/>
                                         <constraint firstItem="bxV-gU-B4f" firstAttribute="leading" secondItem="QGP-iU-d9s" secondAttribute="trailing" constant="8" symbolic="YES" id="OLs-ge-Oaa"/>
+                                        <constraint firstItem="5Az-DR-xh9" firstAttribute="width" secondItem="QGP-iU-d9s" secondAttribute="width" id="RtG-3G-0LB"/>
+                                        <constraint firstItem="5Az-DR-xh9" firstAttribute="leading" secondItem="QGP-iU-d9s" secondAttribute="leading" id="aV4-xb-Pcs"/>
                                         <constraint firstItem="ltQ-X2-NTG" firstAttribute="leading" secondItem="SiR-nO-YBA" secondAttribute="trailing" constant="10" id="kYv-pE-i7C"/>
                                         <constraint firstItem="QGP-iU-d9s" firstAttribute="top" secondItem="8p7-jK-Njz" secondAttribute="topMargin" constant="19" id="wjr-8y-jA5"/>
+                                        <constraint firstItem="5Az-DR-xh9" firstAttribute="height" secondItem="QGP-iU-d9s" secondAttribute="height" id="y24-At-j2k"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -127,6 +138,7 @@
                                     <outlet property="TechNoOfJobs" destination="1S5-jQ-DVf" id="Bwe-WS-Mbv"/>
                                     <outlet property="TechNoOfReviews" destination="SiR-nO-YBA" id="ujz-XI-UqL"/>
                                     <outlet property="TechRating" destination="WYO-Tt-px2" id="2yN-O7-Jne"/>
+                                    <outlet property="techImageLbl" destination="5Az-DR-xh9" id="zLK-ha-wzi"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -141,17 +153,15 @@
             <point key="canvasLocation" x="350.72463768115944" y="10.714285714285714"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="WYO-Tt-px2">
-            <size key="intrinsicContentSize" width="120" height="20"/>
-        </designable>
-    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

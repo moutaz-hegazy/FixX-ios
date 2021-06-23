@@ -34,6 +34,13 @@
                                                         <constraint firstAttribute="height" constant="211" id="hE3-sp-OGx"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="N" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZd-MW-7CI">
+                                                    <rect key="frame" x="87" y="24" width="240" height="208"/>
+                                                    <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="65"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WN9-6N-hkr">
                                                     <rect key="frame" x="242" y="163" width="65" height="66"/>
                                                     <color key="backgroundColor" systemColor="systemIndigoColor"/>
@@ -49,10 +56,14 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="LZd-MW-7CI" firstAttribute="top" secondItem="yLk-gm-nYH" secondAttribute="top" id="4WG-Uo-AYD"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="WN9-6N-hkr" secondAttribute="trailing" constant="87" id="AEf-V0-dFs"/>
                                                 <constraint firstItem="yLk-gm-nYH" firstAttribute="leading" secondItem="eGR-8I-Tsd" secondAttribute="leadingMargin" constant="67" id="HbV-Ow-ryL"/>
+                                                <constraint firstItem="LZd-MW-7CI" firstAttribute="width" secondItem="yLk-gm-nYH" secondAttribute="width" id="L8a-a9-qbk"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="yLk-gm-nYH" secondAttribute="trailing" constant="67" id="WrL-zQ-Xld"/>
                                                 <constraint firstItem="WN9-6N-hkr" firstAttribute="top" secondItem="eGR-8I-Tsd" secondAttribute="topMargin" constant="152" id="cVU-VP-MzD"/>
+                                                <constraint firstItem="LZd-MW-7CI" firstAttribute="height" secondItem="yLk-gm-nYH" secondAttribute="height" id="iGn-4q-rar"/>
+                                                <constraint firstItem="LZd-MW-7CI" firstAttribute="leading" secondItem="yLk-gm-nYH" secondAttribute="leading" id="xkj-o8-fqF"/>
                                                 <constraint firstItem="yLk-gm-nYH" firstAttribute="top" secondItem="eGR-8I-Tsd" secondAttribute="topMargin" constant="15.5" id="yTL-8o-9Ki"/>
                                                 <constraint firstItem="yLk-gm-nYH" firstAttribute="centerY" secondItem="eGR-8I-Tsd" secondAttribute="centerY" id="zHm-zN-z5C"/>
                                             </constraints>
@@ -290,9 +301,11 @@
                     <navigationItem key="navigationItem" title="Profile" id="fdP-1J-gOt"/>
                     <connections>
                         <outlet property="myEmail" destination="zPX-kE-MRo" id="hls-gI-hKg"/>
+                        <outlet property="myImageLbl" destination="LZd-MW-7CI" id="FUj-Hj-gDe"/>
                         <outlet property="myName" destination="8YJ-wF-6de" id="yAm-h1-FLy"/>
                         <outlet property="myPassword" destination="Zeu-n6-m8x" id="IIV-tA-zwc"/>
                         <outlet property="myPhone" destination="Cpu-Uy-wWG" id="lxV-mb-5iv"/>
+                        <outlet property="myProfileImage" destination="yLk-gm-nYH" id="U4f-ve-Vhs"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v9C-me-7Qc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -312,6 +325,9 @@
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

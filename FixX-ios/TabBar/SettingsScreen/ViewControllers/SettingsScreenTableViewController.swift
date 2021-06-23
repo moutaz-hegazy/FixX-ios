@@ -8,12 +8,14 @@
 
 import UIKit
 import Firebase
+import SDWebImage
 
 class SettingsScreenTableViewController: UITableViewController {
     
     
     @IBOutlet weak var Name: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var profileLbl: UILabel!
     //    var str : String?
 //    override func viewDidAppear(_ animated: Bool) {
 //        Name.text = str
@@ -25,6 +27,14 @@ class SettingsScreenTableViewController: UITableViewController {
         super.viewDidLoad()
         
         Name.text = HomeScreenViewController.USER_OBJECT?.name
+        
+        if let pic = HomeScreenViewController.USER_OBJECT?.profilePicture, !pic.second.isEmpty{
+            profileLbl.isHidden = true
+            profileImage.sd_setImage(with: URL(string: pic.second), placeholderImage: UIImage(named: "placeholder.png"))
+        }else{
+            print("no image")
+            profileLbl.text = HomeScreenViewController.USER_OBJECT?.name.first?.uppercased()
+        }
         
         if let profileScreenVC = UIStoryboard(name: "ProfileScreenStoryboard", bundle: nil)
             .instantiateViewController(identifier: "profileScreenVC")
