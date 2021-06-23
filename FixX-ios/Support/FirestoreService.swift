@@ -79,15 +79,17 @@ struct FirestoreService{
                     let type = document.get("accountType") as? String
                     switch type {
                     case "User":
-                        print("It is a User")
-                        print("\(try? document.data(as: User.self)?.name)")
                         onCompletion(try? document.data(as: User.self))
                     case "Technician":
-                        print("It is a Technician")
-                        //let x = try? document.data(as: Technician.self)
-                        //print("\(document.get("reviewCount"))")
-                        //onCompletion(try? document.data(as: Technician.self))
-                        onCompletion(Technician(jobTitle: document.get("jobTitle") as? String, workLocations: document.get("workLocations") as? [String], rating: document.get("rating") as? Double, monthlyRating: document.get("monthlyRating") as? Int, jobsCount: document.get("jobsCount") as? Int ?? 0, reviewCount: document.get("reviewCount") as? Int ?? 0, phoneNumber: document.get("phoneNumber") as? String ?? "" , accountType: document.get("accountType") as? String ?? "", name: document.get("name") as? String ?? "", email: document.get("email") as? String ?? "", uid: document.get("uid") as? String, token: document.get("token") as? String, profilePicture: document.get("profilePicture") as? StringPair, locations: document.get("locations") as? [String]))
+                        let techData = try? document.data(as: Technician.self)
+                        techData?.jobTitle = document.get("jobTitle") as? String
+                        techData?.workLocations = document.get("workLocations") as? [String]
+                        techData?.rating = document.get("rating") as? Double
+                        techData?.monthlyRating = document.get("monthlyRating") as? Int
+                        techData?.jobsCount = document.get("jobsCount") as? Int ?? 0
+                        techData?.reviewCount = document.get("reviewCount") as? Int ?? 0
+                        onCompletion(techData)
+
                     case .none:
                         return
                     case .some(_):
@@ -124,23 +126,23 @@ struct FirestoreService{
     func addExtensionToJob(jobId : String, ext : Extension,
                            onSuccessHandler : @escaping (Extension) -> Void,
                            onFailHandler : @escaping ()-> Void){
-        let ref = db.collection("Jobs").document(jobId).collection("Extensions").document()
-        let id = ref.documentID
-           try? ref.setData(from: ext){ error in
-            if error != nil {
-                onFailHandler()
-            } else{
-                ref.updateData(["extId" : id]){
-                    error in
-                    if error != nil {
-                        onFailHandler()
-                    } else{
-                        ext.extId = id
-                        onSuccessHandler(ext)
-                    }
-                }
-            }
-        }
+//        let ref = db.collection("Jobs").document(jobId).collection("Extensions").document()
+//        let id = ref.documentID
+//           try? ref.setData(from: ext){ error in
+//            if error != nil {
+//                onFailHandler()
+//            } else{
+//                ref.updateData(["extId" : id]){
+//                    error in
+//                    if error != nil {
+//                        onFailHandler()
+//                    } else{
+//                        ext.extId = id
+//                        onSuccessHandler(ext)
+//                    }
+//                }
+//            }
+//        }
     }
     
     func updateExtensionPrice(jobId: String, extId : String,price : Int,
@@ -616,12 +618,19 @@ struct FirestoreService{
             .whereField("workLocations", arrayContains: location.components(separatedBy: "%")[0])
             .getDocuments(completion: {snapshot, error in
                 snapshot?.documents.forEach{ document in
-                    let tech = try? document.data(as: Technician.self)
-                    if let tech = tech{
+                    let techData = try? document.data(as: Technician.self)
+                    techData?.jobTitle = document.data()["jobTitle"] as? String
+                    techData?.workLocations = document.data()["workLocations"] as? [String]
+                    techData?.rating = document.data()["rating"] as? Double
+                    techData?.monthlyRating = document.data()["monthlyRating"] as? Int
+                    techData?.jobsCount = document.data()["jobsCount"] as? Int ?? 0
+                    techData?.reviewCount = document.data()["reviewCount"] as? Int ?? 0
+                    if let tech = techData{
                         if tech.uid != auth.currentUser!.uid{
                             techniciansList.append(tech)
                         }
                     }
+                    
                 }
                 callback(techniciansList)
             })

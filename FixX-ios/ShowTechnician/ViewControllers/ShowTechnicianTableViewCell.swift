@@ -19,10 +19,12 @@ class ShowTechnicianTableViewCell: UITableViewCell {
     @IBOutlet weak var techRating: CosmosView!
     @IBOutlet weak var techImageLbl: UILabel!
     
-    var techSelectedHandle : (()->())?
+    var techData : Technician?
+    
+    var techSelectedHandle : ((Technician?)->())?
     
     func displayTechData(tech : Technician){
-        
+        techData = tech
         if let pic = tech.profilePicture, !pic.second.isEmpty{
             techImageLbl.isHidden = true
             techImage.sd_setImage(with: URL(string: pic.second), placeholderImage: UIImage(named: "placeholder.png"))
@@ -36,6 +38,6 @@ class ShowTechnicianTableViewCell: UITableViewCell {
     }
 
     @IBAction func bookBtnPressed(_ sender: UIButton){
-        print("book pressed")
+        techSelectedHandle?(techData)
     }
 }

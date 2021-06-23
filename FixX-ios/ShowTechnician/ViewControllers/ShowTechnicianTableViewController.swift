@@ -28,6 +28,20 @@ class ShowTechnicianTableViewController: UITableViewController {
         }
         
     }
+    
+    private func bookTechnician(with techData: Technician){
+        if let jobRequested = job{
+            jobRequested.privateTechUid = techData.uid
+            FirestoreService.shared.saveJobDetails(job:jobRequested) { (job) in
+                self.onTechSelectedHandler?()
+                self.navigationController?.popViewController(animated: true)
+            } onFailHandler: {
+                
+            }
+
+        }
+    }
+    
 
     // MARK: - Table view data source
 
@@ -46,8 +60,16 @@ class ShowTechnicianTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TechCell", for: indexPath) as! ShowTechnicianTableViewCell
         
         cell.displayTechData(tech:technicians[indexPath.row])
-
-        // Configure the cell...
+        cell.techSelectedHandle = {
+            [weak self] (techData) in
+            guard let tech = techData else {
+                return
+            }
+            
+            self?.bookTechnician(with : tech)
+            
+        }
+        
 
         return cell
     }
