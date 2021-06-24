@@ -16,15 +16,18 @@ class CompletedOrdersViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        loadCompletedOrders()
+
+    }
+
+    private func loadCompletedOrders(){
         FirestoreService.shared.fetchMyCompletedOrderedJobs { [weak self](jobs) in
             self?.completedJobs = jobs
             self?.completedJobsTableView.reloadData()
         } onFailHandler: {
             
         }
-
     }
-
 }
 
 
@@ -47,5 +50,16 @@ extension CompletedOrdersViewController : UITableViewDelegate, UITableViewDataSo
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let jobDetailsVC = UIStoryboard(name: "JobDetails", bundle: nil).instantiateViewController(identifier: "jobDetailsVC") as? JobDetailsViewController{
+            
+            jobDetailsVC.job = completedJobs[indexPath.row]
+            jobDetailsVC.onLeaveHandler = {
+                [weak self] in
+                self?.loadCompletedOrders()
+            }
+            present(jobDetailsVC, animated: true, completion: nil)
+        }
+    }
     
 }

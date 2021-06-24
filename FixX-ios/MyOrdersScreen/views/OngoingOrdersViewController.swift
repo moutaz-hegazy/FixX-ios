@@ -16,15 +16,18 @@ class OngoingOrdersViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        fetchJobs()
+
+    }
+
+    private func fetchJobs(){
         FirestoreService.shared.fetchMyOngoingOrderedJobs { (jobs) in
             self.ongoingOrders = jobs
             self.ongoingOrdersTableView.reloadData()
         } onFailureHandler: {
             
         }
-
     }
-
 }
 
 
@@ -49,4 +52,14 @@ extension OngoingOrdersViewController : UITableViewDelegate, UITableViewDataSour
     }
     
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let jobDetailsVC = UIStoryboard(name: "JobDetails", bundle: nil).instantiateViewController(identifier: "jobDetailsVC") as? JobDetailsViewController{
+
+            jobDetailsVC.job = ongoingOrders[indexPath.row]
+            jobDetailsVC.onLeaveHandler = {[weak self] in
+                self?.fetchJobs()
+            }
+            present(jobDetailsVC, animated: true, completion: nil)
+        }
+    }
 }

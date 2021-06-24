@@ -77,6 +77,8 @@
 		A9776BBF267BBB5F00E9B80B /* SignUpViewControllerC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9776BBE267BBB5F00E9B80B /* SignUpViewControllerC.storyboard */; };
 		A9776BC2267BBB8D00E9B80B /* SignUpViewControllerD.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9776BC1267BBB8D00E9B80B /* SignUpViewControllerD.storyboard */; };
 		A9776BE2267BD0F600E9B80B /* LogInViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9776BE1267BD0F600E9B80B /* LogInViewController.storyboard */; };
+		A9847D74268525A40077C724 /* jobDetailsImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9847D73268525A40077C724 /* jobDetailsImageCollectionViewCell.swift */; };
+		A9847D7726853CF70077C724 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9847D7626853CF70077C724 /* RatingViewController.swift */; };
 		A998D7A32683FB8600F71371 /* BidderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A998D7A22683FB8600F71371 /* BidderTableViewCell.swift */; };
 		A9BBD8072680AB1B00197447 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BBD8062680AB1B00197447 /* LaunchScreenViewController.swift */; };
 		A9BBD80B2680AB9300197447 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9BBD80A2680AB9300197447 /* Launch.storyboard */; };
@@ -181,6 +183,8 @@
 		A9776BBE267BBB5F00E9B80B /* SignUpViewControllerC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpViewControllerC.storyboard; sourceTree = "<group>"; };
 		A9776BC1267BBB8D00E9B80B /* SignUpViewControllerD.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpViewControllerD.storyboard; sourceTree = "<group>"; };
 		A9776BE1267BD0F600E9B80B /* LogInViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogInViewController.storyboard; sourceTree = "<group>"; };
+		A9847D73268525A40077C724 /* jobDetailsImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jobDetailsImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		A9847D7626853CF70077C724 /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
 		A998D7A22683FB8600F71371 /* BidderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidderTableViewCell.swift; sourceTree = "<group>"; };
 		A9BBD8062680AB1B00197447 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		A9BBD80A2680AB9300197447 /* Launch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
@@ -400,6 +404,8 @@
 				A96323FF2682A3DD00565A0F /* JobDetailsViewController.swift */,
 				A96324032682A40D00565A0F /* JobDetails.storyboard */,
 				A998D7A22683FB8600F71371 /* BidderTableViewCell.swift */,
+				A9847D73268525A40077C724 /* jobDetailsImageCollectionViewCell.swift */,
+				A9847D7626853CF70077C724 /* RatingViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -891,6 +897,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9DC5DF6267AA73E0084948C /* OngoingTableViewCell.swift in Sources */,
+				A9847D74268525A40077C724 /* jobDetailsImageCollectionViewCell.swift in Sources */,
 				A9E444F6267A4D12009DD6AE /* CompletedOrdersViewController.swift in Sources */,
 				A967759F2683DF8F00BD6AC0 /* ReviewsTableViewCell.swift in Sources */,
 				A962EF71267F945500A8420C /* FirestoreService.swift in Sources */,
@@ -932,6 +939,7 @@
 				A962EF66267F942900A8420C /* User.swift in Sources */,
 				A9EDA45626824F6800F26634 /* MapViewController.swift in Sources */,
 				A9EDA44C26824F6800F26634 /* MyWorkLocationViewController.swift in Sources */,
+				A9847D7726853CF70077C724 /* RatingViewController.swift in Sources */,
 				A9776A85267B6C9200E9B80B /* ImageCollectionViewCell.swift in Sources */,
 				A962EF68267F942900A8420C /* Extension.swift in Sources */,
 				A96775242683816B00BD6AC0 /* ShowTechnicianTableViewController.swift in Sources */,

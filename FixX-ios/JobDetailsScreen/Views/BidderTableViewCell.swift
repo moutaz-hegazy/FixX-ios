@@ -8,6 +8,7 @@
 
 import UIKit
 import Cosmos
+import SDWebImage
 
 class BidderTableViewCell: UITableViewCell {
 
@@ -25,5 +26,18 @@ class BidderTableViewCell: UITableViewCell {
     @IBAction func chatBtnPressed(_ sender: UIButton) {
     }
     @IBAction func callBtnPressed(_ sender: UIButton) {
+    }
+    
+    func displayBidderData(for bidder: Technician, with price:String){
+        bidderRatingBar.settings.updateOnTouch = false
+    
+        if let image = bidder.profilePicture?.second, !image.isEmpty{
+            bidderImageView.sd_setImage(with: URL(string: image), placeholderImage: UIImage(named: "placeholder.png"))
+        }else{
+            //code for image lbl.
+        }
+        bidderNameLbl.text = bidder.name
+        priceLbl.text = price
+        bidderRatingBar.rating = bidder.rating ?? 2.5
     }
 }
