@@ -13,15 +13,11 @@ class MyWorkLocationViewController: UIViewController, UITableViewDelegate, UITab
     @IBOutlet weak var myWorkLocationsTableView: UITableView!
     
     var addresses = [String]()
-    var titles = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        addresses.append("add1")
-        addresses.append("add2")
-        titles.append("title1")
-        titles.append("title2")
+        addresses = (HomeScreenViewController.USER_OBJECT as? Technician)?.workLocations ?? []
+        myWorkLocationsTableView.reloadData()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -40,9 +36,7 @@ class MyWorkLocationViewController: UIViewController, UITableViewDelegate, UITab
         // Configure the cell...
         
         cell.addLbl.text = addresses[indexPath.row]
-        cell.titleLbl.text = titles[indexPath.row]
 
-        
         return cell
 
     }
@@ -60,7 +54,6 @@ class MyWorkLocationViewController: UIViewController, UITableViewDelegate, UITab
             alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { [self] (action: UIAlertAction!) in
                 
                 addresses.remove(at: indexPath.row)
-                titles.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
                 
                }))
@@ -85,6 +78,12 @@ class MyWorkLocationViewController: UIViewController, UITableViewDelegate, UITab
     @IBAction func addWorkLocationActionBtn(_ sender: Any) {
         
         let addWorkLocationVC = self.storyboard?.instantiateViewController(identifier: "AWLVC") as! AddWorkLocationViewController
+        
+        addWorkLocationVC.onWorkAddressAddedHandler = {
+            [weak self](address) in
+            self?.addresses.append(address)
+            self?.myWorkLocationsTableView.reloadData()
+        }
         
         self.present(addWorkLocationVC, animated: true, completion: nil)
     }

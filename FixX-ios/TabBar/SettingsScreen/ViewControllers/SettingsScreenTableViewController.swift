@@ -19,9 +19,6 @@ class SettingsScreenTableViewController: UITableViewController {
     //    var str : String?
 //    override func viewDidAppear(_ animated: Bool) {
 //        Name.text = str
-        
-    private var settings = [UIViewController]()
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,25 +30,8 @@ class SettingsScreenTableViewController: UITableViewController {
             profileImage.sd_setImage(with: URL(string: pic.second), placeholderImage: UIImage(named: "placeholder.png"))
         }else{
             print("no image")
+            profileLbl.layer.masksToBounds = true
             profileLbl.text = HomeScreenViewController.USER_OBJECT?.name.first?.uppercased()
-        }
-        
-        if let profileScreenVC = UIStoryboard(name: "ProfileScreenStoryboard", bundle: nil)
-            .instantiateViewController(identifier: "profileScreenVC")
-        as? ProfileTableViewController{
-            settings.append(profileScreenVC)
-        }
-        
-        if let chatLogsVC = UIStoryboard(name: "ChatLogs", bundle: nil)
-            .instantiateViewController(identifier: "chatLogsVC")
-        as? ChatLogsTableViewController{
-            settings.append(chatLogsVC)
-        }
-    
-        if let myAddressesVC = UIStoryboard(name: "MyAddresses", bundle: nil)
-            .instantiateViewController(identifier: "myAddressesVC")
-        as? MyAddressesViewController{
-            settings.append(myAddressesVC)
         }
     }
 
@@ -69,28 +49,39 @@ class SettingsScreenTableViewController: UITableViewController {
     }
     */
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if(indexPath.row == 0){
+            return 126
+        }
+        
+        if (HomeScreenViewController.USER_OBJECT?.accountType == "User"){
+            if (indexPath.row == 1 || indexPath.row == 4) {
+                return 0
+            }
+        }
+        
+        return 82
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         print("you selected \(indexPath.row)")
-        if let myAddressesVC = UIStoryboard(name: "MyAddresses", bundle: nil)
-            .instantiateViewController(identifier: "myAddressesVC")
-        as? MyAddressesViewController{
-            myAddressesVC.modalPresentationStyle = .fullScreen
-            self.present(myAddressesVC,animated: true)
+        
+        if(indexPath.row == 6){
+            let firebaseAuth = Auth.auth()
+            do {
+                try firebaseAuth.signOut()
+
+                if let regVC = UIStoryboard(name: "Registration", bundle: nil).instantiateViewController(identifier: "regVC") as? RegistrationViewController{
+                    regVC.modalPresentationStyle = .fullScreen
+                    present(regVC, animated: true)
+                }            } catch let signOutError as NSError {
+                print ("Error signing out: %@", signOutError)
+            }
         }
-//        if(indexPath.row == settings.count){
-//            let firebaseAuth = Auth.auth()
-//            do {
-//              try firebaseAuth.signOut()
-//            } catch let signOutError as NSError {
-//                print ("Error signing out: %@", signOutError)
-//            }
-//        } else{
-//            settings[indexPath.row].modalPresentationStyle = .fullScreen
-//            self.present(settings[indexPath.row],animated: true)
-//        }
     }
 
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

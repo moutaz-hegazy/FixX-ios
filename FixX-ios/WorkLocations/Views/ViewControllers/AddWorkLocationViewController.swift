@@ -15,6 +15,9 @@ class AddWorkLocationViewController: UIViewController {
     @IBOutlet weak var cityDropDown: DropDown!
     
     @IBOutlet weak var areaDropDown: DropDown!
+    
+    var onWorkAddressAddedHandler : ((String) -> ())?
+    
     let cities = ["Cairo", "Alexandria"]
     let alexArea = ["AR Riyadah",
                     "Moharam Bek",
@@ -100,7 +103,17 @@ class AddWorkLocationViewController: UIViewController {
         }else if areaDropDown.text == "Area"{
             self.showToast(message: "Please Choose Area", font: .systemFont(ofSize: 12.0))
         }else{
-            self.dismiss(animated: true, completion: nil)
+            var address = "\(cityDropDown.text ?? ""),\(areaDropDown.text ?? "")"
+            FirestoreService.shared.updateWorkLocations(loc: address, onSuccessHandler: {
+                [weak self] in
+                self?.onWorkAddressAddedHandler?(address)
+                if ((HomeScreenViewController.USER_OBJECT as? Technician)?.workLocations != nil){
+                    (HomeScreenViewController.USER_OBJECT as? Technician)?.workLocations! += [address]
+                }else{
+                    (HomeScreenViewController.USER_OBJECT as? Technician)?.workLocations = [address]
+                }
+                self?.dismiss(animated: true)
+            }, onFailHandler: {})
         }
      }
     

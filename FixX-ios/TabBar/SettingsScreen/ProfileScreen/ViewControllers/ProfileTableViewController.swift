@@ -127,6 +127,7 @@ class ProfileTableViewController: UITableViewController {
             myProfileImage.sd_setImage(with: URL(string: pic.second), placeholderImage: UIImage(named: "placeholder.png"))
         }else{
             print("no image")
+            myImageLbl.layer.masksToBounds = true
             myImageLbl.text = HomeScreenViewController.USER_OBJECT?.name.first?.uppercased()
         }
         myName.text = HomeScreenViewController.USER_OBJECT?.name

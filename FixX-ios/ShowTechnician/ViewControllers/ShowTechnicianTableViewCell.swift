@@ -29,6 +29,7 @@ class ShowTechnicianTableViewCell: UITableViewCell {
             techImageLbl.isHidden = true
             techImage.sd_setImage(with: URL(string: pic.second), placeholderImage: UIImage(named: "placeholder.png"))
         }else{
+            techImageLbl.layer.masksToBounds = true
             techImageLbl.text = tech.name.first?.uppercased()
         }
         techName.text = tech.name

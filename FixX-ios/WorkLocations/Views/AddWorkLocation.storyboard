@@ -67,22 +67,6 @@
                                     <constraint firstAttribute="bottom" secondItem="FhK-Ua-yqw" secondAttribute="bottom" id="zF3-i5-Ua8"/>
                                 </constraints>
                             </scrollView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Kn-Tc-rUn">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                <color key="barTintColor" red="0.50034951809999995" green="0.1570959904" blue="0.59121192889999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="My Work Locations" id="kdg-y6-faC">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.backward" catalog="system" id="As6-0C-fdG">
-                                            <connections>
-                                                <action selector="backActionBtn:" destination="vOa-uy-Ig2" id="QeJ-Bk-0Ru"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CBF-kz-SD7"/>
                         <color key="backgroundColor" red="0.88884387480000004" green="0.92395688929999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -92,9 +76,6 @@
                             <constraint firstAttribute="bottom" secondItem="GZI-bZ-phx" secondAttribute="bottom" id="TYk-Wo-xmh"/>
                             <constraint firstItem="GZI-bZ-phx" firstAttribute="trailing" secondItem="CBF-kz-SD7" secondAttribute="trailing" id="bFZ-eH-LyA"/>
                             <constraint firstItem="FhK-Ua-yqw" firstAttribute="width" secondItem="8un-NN-hCg" secondAttribute="width" id="hPy-gu-oQS"/>
-                            <constraint firstAttribute="trailing" secondItem="3Kn-Tc-rUn" secondAttribute="trailing" id="kBd-m7-yVf"/>
-                            <constraint firstItem="3Kn-Tc-rUn" firstAttribute="top" secondItem="8un-NN-hCg" secondAttribute="top" id="l25-dQ-11L"/>
-                            <constraint firstItem="3Kn-Tc-rUn" firstAttribute="leading" secondItem="8un-NN-hCg" secondAttribute="leading" id="mhb-1c-j5g"/>
                         </constraints>
                     </view>
                     <size key="freeformSize" width="414" height="750"/>
@@ -108,7 +89,4 @@
             <point key="canvasLocation" x="1115.9420289855072" y="59.598214285714285"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="chevron.backward" catalog="system" width="96" height="128"/>
-    </resources>
 </document>
