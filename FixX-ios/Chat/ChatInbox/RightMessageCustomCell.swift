@@ -10,23 +10,41 @@ import UIKit
 
 class RightMessageCustomCell: UITableViewCell {
     
-    @IBOutlet weak var R_Constraints: NSLayoutConstraint!
     @IBOutlet weak var R_Avatar: UIImageView!
-    @IBOutlet weak var R_Message: UITextView!
+    @IBOutlet weak var msgLbl: UILabel!
+    @IBOutlet weak var imageLbl: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        //R_Message.translatesAutoresizingMaskIntoConstraints = true
-        //R_Constraints.constant = self.R_Message.contentSize.height
-        //R_Message.sizeToFit()
-        R_Message.isScrollEnabled = false
-        R_Message.layer.cornerRadius = 20
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func displayMessage(_ message : ChatMessage){
+        if let image = HomeScreenViewController.USER_OBJECT?.profilePicture?.second, !image.isEmpty{
+            imageLbl.isHidden = true
+            R_Avatar.isHidden = false
+            R_Avatar.sd_setImage(with: URL(string: image), placeholderImage: UIImage(named: "placeholder.png"))
+        }else{
+            imageLbl.isHidden = false
+            R_Avatar.isHidden = true
+            imageLbl.text = HomeScreenViewController.USER_OBJECT?.name.first?.uppercased()
+        }
+        
+        msgLbl.text = message.text
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        R_Avatar.image = nil
+        msgLbl.text = nil
+        imageLbl.isHidden = true
     }
     
 }

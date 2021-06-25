@@ -1,13 +1,18 @@
 import UIKit
+import Firebase
 
 class ChatInboxViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var userSwitcher = true
-    var logsArray: Array<User> = []
+    var userSwitcher = false
+    var logsArray: Array<ChatMessage> = []
     
     
     let cellSpacingHeigh: CGFloat = 5
+    
+    var contact : Person?
+    var channel : String?
 
+    private var observer : DatabaseReference!
     
     @IBOutlet weak var chatLogTableView: UITableView!
     @IBOutlet weak var sendButton: UIButton!
@@ -16,10 +21,42 @@ class ChatInboxViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        navigationItem.title = contact?.name
+        sendButton.isUserInteractionEnabled = false
+        if let ch = channel{
+            FirestoreService.shared.fetchChatHistoryForChannelTest(channelName: ch) { [weak self](msg) in
+                if(!msg.text.isEmpty){
+                    self?.logsArray += [msg]
+                    self?.chatLogTableView.reloadData()
+                    if let count = self?.logsArray.count, count > 5{
+                        self?.chatLogTableView.scrollToRow(at: [0,count-1], at: .bottom, animated: false)
+                    }
+                }
+            } chatRegHandler: { [weak self](reg) in
+                self?.observer = reg
+            }
+            
+        }else{
+            FirestoreService.shared.fetchChatHistoryForInstanceTest(contact: contact!.uid!) { [weak self](msg) in
+                if(!msg.text.isEmpty){
+                    self?.logsArray += [msg]
+                    self?.chatLogTableView.reloadData()
+                    
+                    if let count = self?.logsArray.count, count > 5{
+                        self?.chatLogTableView.scrollToRow(at: [0,count-1], at: .bottom, animated: false)
+                    }
+                }
+            } onCompletion: { [weak self](ch) in
+                self?.channel = ch
+                self?.sendButton.isUserInteractionEnabled = true
+            } chatRegHandler: { [weak self](reg) in
+                self?.observer = reg
+            }
+
+        }
+        
         self.chatLogTableView.delegate = self
         self.chatLogTableView.dataSource = self
-        
         self.chatLogTableView.rowHeight = 100
         
         let rightChatLogCell = UINib(nibName: "RightMessageCustomCell", bundle: nil)
@@ -33,17 +70,13 @@ class ChatInboxViewController: UIViewController, UITableViewDelegate, UITableVie
     
     
     @IBAction func sendButtonAction(_ sender: UIButton) {
-//        var userImage = UIImage(named: "square.png")
-//        var chatMessage = String.init(chatTextField.text!)
-//        var userObject = User.init(userAvatar: userImage!, userMessage: chatMessage)
-//        if (chatMessage != nil){
-//            userSwitcher = !userSwitcher
-//            logsArray.append(userObject)
-//            self.chatLogTableView.reloadData()
-//        }
+        print("Clicked")
     }
     
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return logsArray.count
@@ -51,27 +84,19 @@ class ChatInboxViewController: UIViewController, UITableViewDelegate, UITableVie
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        var R_cell = tableView.dequeueReusableCell(withIdentifier: "right", for: indexPath) as! RightMessageCustomCell
-        var L_cell = tableView.dequeueReusableCell(withIdentifier: "left", for: indexPath) as! LeftMessageCustomCell
 
-        if(userSwitcher){//chatlogcustomcell
-            R_cell.R_Avatar.image = UIImage(named: "square.png")
-            R_cell.R_Avatar.layer.masksToBounds = true
-            R_cell.R_Avatar.layer.cornerRadius = R_cell.R_Avatar.bounds.width/2
-            R_cell.R_Avatar.layer.borderWidth = 1
-            R_cell.R_Avatar.layer.borderColor = UIColor.blue.cgColor
-            R_cell.R_Message.text = chatTextField.text
-            R_cell.R_Message.isEditable = false
+        let message = logsArray[indexPath.row]
+        if(message.fromId == HomeScreenViewController.USER_OBJECT?.uid){
+            let R_cell = tableView.dequeueReusableCell(withIdentifier: "right", for: indexPath) as! RightMessageCustomCell
+            
+            R_cell.displayMessage(message)
+            
             return R_cell
         }else{
-            L_cell.L_Avatar.image = UIImage(named: "square.png")
-            L_cell.L_Avatar.layer.masksToBounds = true
-            L_cell.L_Avatar.layer.cornerRadius = L_cell.L_Avatar.bounds.width/2
-            L_cell.L_Avatar.layer.borderWidth = 1
-            L_cell.L_Avatar.layer.borderColor = UIColor.blue.cgColor
-            L_cell.L_Message.text = chatTextField.text
-            L_cell.L_Message.isEditable = false
+            let L_cell = tableView.dequeueReusableCell(withIdentifier: "left", for: indexPath) as! LeftMessageCustomCell
+            
+            L_cell.displayMessage(message, imgStr: contact?.profilePicture?.second, name: contact?.name ?? "none")
+            
             return L_cell
         }
     }
@@ -82,14 +107,9 @@ class ChatInboxViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        observer.removeAllObservers()
+        print("removed")
     }
-    */
 }

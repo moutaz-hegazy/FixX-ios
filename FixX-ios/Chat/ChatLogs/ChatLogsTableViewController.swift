@@ -3,9 +3,17 @@ import UIKit
 class ChatLogsTableViewController: UITableViewController {
     
     let cellSpacingHeight: CGFloat = 10
+    var contacts = [ContactInfo]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = "Chat Logs"
+        
+        FirestoreService.shared.fetchChatUsersTest { [weak self](conts) in
+            self?.contacts = conts
+            self?.tableView.reloadData()
+        }
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -14,11 +22,6 @@ class ChatLogsTableViewController: UITableViewController {
         
         let chatLogCell = UINib(nibName: "ChatLogsCustomCell", bundle: nil)
         self.tableView.register(chatLogCell, forCellReuseIdentifier: "chatlogscustomcell")
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -28,75 +31,32 @@ class ChatLogsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return contacts.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "chatlogscustomcell", for: indexPath) as! ChatLogsCustomCell
-        cell.userAvatar.image = UIImage(named: "square.png")
-        cell.userAvatar.layer.masksToBounds = true
-        cell.userAvatar.layer.cornerRadius = cell.userAvatar.bounds.width/2
-        cell.userAvatar.layer.borderWidth = 1
-        cell.userAvatar.layer.borderColor = UIColor.blue.cgColor
-        cell.username.text = "Username"
-        cell.username.isEditable = false
+        
+        cell.displayInfo(for: contacts[indexPath.row])
+        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.navigationController?.pushViewController(ChatInboxViewController(), animated: true)
+        if let logVC = UIStoryboard(name: "ChatInbox", bundle: nil).instantiateViewController(identifier: "ChatInboxVC") as? ChatInboxViewController{
+            if let contact = (tableView.cellForRow(at: indexPath) as? ChatLogsCustomCell)?.contact{
+                logVC.contact = contact
+                logVC.channel = contacts[indexPath.row].channel
+                navigationController?.pushViewController(logVC, animated: true)
+            }
+        }
     }
     
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return cellSpacingHeight
     }
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    //override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    //}
     
 
 }

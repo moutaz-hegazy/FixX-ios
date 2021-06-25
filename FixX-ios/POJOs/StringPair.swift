@@ -11,4 +11,9 @@ import Foundation
 class StringPair : Codable{
     var first : String
     var second : String
+    
+    init(first : String = "", second : String = "") {
+        self.first = first
+        self.second = second
+    }
 }

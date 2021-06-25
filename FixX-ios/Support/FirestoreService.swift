@@ -19,6 +19,26 @@ struct FirestoreService{
     //private var database = Database.database()
     private var contactsRef = Database.database().reference(withPath: "Contacts")
     private var chatsRef = Database.database().reference(withPath: "Chats")
+    private let storageRef = Storage.storage().reference()
+    
+    
+    func uploadImagsToStorage(_ images: [URL],onSuccess handler : ([StringPair])->()){
+        var imagepathsList = [StringPair]()
+        if !images.isEmpty{
+            images.forEach { (url) in
+                let path = "Images/\(UUID().uuidString)"
+                let imgRef = storageRef.child(path)
+                imgRef.putFile(from: url)
+                imgRef.downloadURL { (url, err) in
+                    if let dUrl = url{
+                        let pair  = StringPair(first: path,second: dUrl.absoluteString)
+                        print("URL ?????>>>>> \(dUrl)")
+                        imagepathsList += [pair]
+                    }
+                }
+            }
+        }
+    }
     
     func registerUser(user:Person,
                       password : String,
@@ -209,7 +229,7 @@ struct FirestoreService{
         ref.observe(.childAdded, with: { (snapshot) -> Void in
             if snapshot.exists(){
                 let value = snapshot.value as? [String : Any]
-                let msg = ChatMessage(text: value?["fromId"] as? String ?? "", fromId: value?["text"] as? String ?? "", timestamp: value?["timestamp"] as? Int64 ?? -1)
+                let msg = ChatMessage(text: value?["text"] as? String ?? "", fromId: value?["fromId"] as? String ?? "", timestamp: value?["timestamp"] as? Int64 ?? -1)
             
                 observerHandler(msg)
             }

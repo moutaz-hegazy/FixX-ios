@@ -30,6 +30,8 @@ class JobDetailsViewController: UIViewController {
     @IBOutlet weak var techRatingView: CosmosView!
     @IBOutlet weak var techPriceTitle: UILabel!
     @IBOutlet weak var techPrice: UILabel!
+    @IBOutlet weak var ratingViewBackground: UIView!
+    @IBOutlet weak var ratingMiniView: UIView!
     
     @IBOutlet weak var techView: UIView!
     @IBOutlet weak var techCancelBtn: UIButton!
@@ -38,6 +40,8 @@ class JobDetailsViewController: UIViewController {
     @IBOutlet weak var techViewHeight: NSLayoutConstraint!
     @IBOutlet weak var biddersTableView: UITableView!
     
+    @IBOutlet weak var ratingCommentTxt: UITextField!
+    @IBOutlet weak var ratingRatingbar: CosmosView!
     
     private var jobImages = [StringPair]()
     private var bidders = [Technician]()
@@ -106,13 +110,61 @@ class JobDetailsViewController: UIViewController {
         priceTitleLbl.isHidden = false
     }
     @IBAction func techRatingBtnPressed(_ sender: UIButton) {
-        if let ratingVC = storyboard?.instantiateViewController(identifier: "ratingVC") as? RatingViewController{
-//            ratingVC.modalPresentationStyle = .popover
-            present(ratingVC, animated: true, completion: nil)
-        }
+        ratingViewBackground.isHidden = false
+        ratingMiniView.isHidden = false
+        
         
     }
+    @IBAction func submitRatingAction(_ sender: UIButton) {
+        let comment = Comment(username: HomeScreenViewController.USER_OBJECT!.name, commentContent: ratingCommentTxt.text, profilePicture: HomeScreenViewController.USER_OBJECT!.profilePicture!.second, date: getCurrentdate(), reply: nil, timestamp: Int64(Date().timeIntervalSince1970) * 1000, rating: ratingRatingbar.rating)
+        
+        FirestoreService.shared.addRatingAndComment(techId: tech!.uid!, rating: getFinalRating(with: ratingRatingbar.rating), extraRating: getMonthlyRating(for: ratingRatingbar.rating), comment: comment, reviews: tech!.reviewCount + 1) {
+            [weak self] in
+            self?.techRatingView.rating = self?.getFinalRating(with: self?.ratingRatingbar.rating ?? 2.5) ?? 2.5
+            self?.ratingViewBackground.isHidden = true
+            self?.ratingMiniView.isHidden = true
+            FirestoreService.shared.updateDocumentField(collectionName: "Jobs", fieldName: "rateable", element: false, documentId: self?.job?.jobId ?? "")
+        } onFailHandler: {
+            
+        }
+
+    }
     
+    @IBAction func tapAction(_ sender: UITapGestureRecognizer) {
+        let yLocation = sender.location(in: ratingMiniView).y
+        
+        if(yLocation < 0 || yLocation > 250){
+            ratingViewBackground.isHidden = true
+            ratingMiniView.isHidden = true
+        }
+    }
+    
+    private func getFinalRating(with rating : Double) -> Double{
+        let reviews = tech!.reviewCount + 1
+        let oldRating = tech!.rating ?? 2.5
+        
+        var oldValue = 2.5
+        
+        if(reviews > 1){
+            oldValue = ((oldRating*Double(reviews))-4)/(Double(reviews) - 1)
+        }
+        return ((rating - oldValue)/Double(reviews))+oldValue
+    }
+    
+    private func getMonthlyRating(for rating : Double) -> Double{
+        let increase = (Double(job!.price!) * ((rating - 4)/5))/5
+        return Double(tech?.monthlyRating ?? 0) + increase
+    }
+    
+    private func getCurrentdate() -> String{
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "nl_NL")
+        formatter.setLocalizedDateFormatFromTemplate("dd-MMM-yyyy")
+        var datetime = formatter.string(from: Date())
+        datetime.remove(at: datetime.firstIndex(of: ".")!)
+        let dateForm = datetime.replacingOccurrences(of: " ", with: "-")
+        return dateForm
+    }
     
     private func getLocation(from locString:String)->String{
         let subString = String(locString[..<locString.firstIndex(of: "%")!])
@@ -184,46 +236,51 @@ class JobDetailsViewController: UIViewController {
                 return
             }
             self?.tech = tech
-            self?.biddersTableView.isHidden = true
-            self?.techView.isHidden = false
-            self?.techViewHeight.constant = 200
-            
-            if let image = tech.profilePicture?.second, !image.isEmpty{
-                self?.techImageView.sd_setImage(with: URL(string: image), placeholderImage: UIImage(named: "placeholder.png"))
-            }else{
-                // tech image lbl.
-                
-            }
-            
-            self?.techNameLbl.text = tech.name
-            self?.techRatingView.rating = tech.rating ?? 2.5
-            
-            if(jobType == "OnRequest"){
-                self?.techAcceptBtn.isHidden = false
-                self?.techCancelBtn.isHidden = false
-                self?.techPriceTitle.isHidden = false
-                self?.techPrice.isHidden = false
-                self?.techPrice.text = "\(price!) LE"
-                
-                self?.techRatingBtn.isHidden = true
-            }else if(jobType == "Accepted"){
-                self?.techAcceptBtn.isHidden = true
-                self?.techCancelBtn.isHidden = true
-                self?.techRatingBtn.isHidden = true
-                self?.techPriceTitle.isHidden = true
-                self?.techPrice.isHidden = true
-            }else if(jobType == "Completed"){
-                self?.techAcceptBtn.isHidden = true
-                self?.techCancelBtn.isHidden = true
-                self?.techPriceTitle.isHidden = true
-                self?.techPrice.isHidden = true
-                
-                if let ratable = self?.job?.rateable, ratable{
-                    self?.techRatingBtn.isHidden = false
-                }else{
-                    self?.techRatingBtn.isHidden = true
+            self?.displayTechData(for: tech, with: jobType,and: price)
 
-                }
+        }
+    }
+    
+    private func displayTechData(for tech : Technician,with jobType : String,and price : String? = nil){
+        self.biddersTableView.isHidden = true
+        self.techView.isHidden = false
+        self.techViewHeight.constant = 200
+        
+        if let image = tech.profilePicture?.second, !image.isEmpty{
+            self.techImageView.sd_setImage(with: URL(string: image), placeholderImage: UIImage(named: "placeholder.png"))
+        }else{
+            // tech image lbl.
+            
+        }
+        
+        self.techNameLbl.text = tech.name
+        self.techRatingView.rating = tech.rating ?? 2.5
+        
+        if(jobType == "OnRequest"){
+            self.techAcceptBtn.isHidden = false
+            self.techCancelBtn.isHidden = false
+            self.techPriceTitle.isHidden = false
+            self.techPrice.isHidden = false
+            self.techPrice.text = "\(price!) LE"
+            
+            self.techRatingBtn.isHidden = true
+        }else if(jobType == "Accepted"){
+            self.techAcceptBtn.isHidden = true
+            self.techCancelBtn.isHidden = true
+            self.techRatingBtn.isHidden = true
+            self.techPriceTitle.isHidden = true
+            self.techPrice.isHidden = true
+        }else if(jobType == "Completed"){
+            self.techAcceptBtn.isHidden = true
+            self.techCancelBtn.isHidden = true
+            self.techPriceTitle.isHidden = true
+            self.techPrice.isHidden = true
+            
+            if let ratable = self.job?.rateable, ratable{
+                self.techRatingBtn.isHidden = false
+            }else{
+                self.techRatingBtn.isHidden = true
+
             }
         }
     }
@@ -262,9 +319,20 @@ extension JobDetailsViewController : UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "bidderCell", for: indexPath)
         if let bidderCell = cell as? BidderTableViewCell{
             bidderCell.displayBidderData(for: bidders[indexPath.row], with: job?.bidders?[bidders[indexPath.row].uid!] ?? "none")
+            bidderCell.onAcceptHandler = {
+                [weak self](price,tech) in
+                self?.onTechAccepled(with: tech, and: price)
+            }
         }
         return cell
     }
     
+    private func onTechAccepled(with techData : Technician,and price : String){
+        FirestoreService.shared.selectTechForJob(techId: techData.uid!, jobId: job!.jobId, price: price)
+        displayTechData(for: techData, with: "Accepted")
+        priceTitleLbl.isHidden = false
+        priceLbl.text = price
+        priceLbl.isHidden = false
+    }
     
 }

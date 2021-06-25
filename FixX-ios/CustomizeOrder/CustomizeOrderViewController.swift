@@ -224,10 +224,16 @@ class CustomizeOrderViewController:
         if imagePickerController.sourceType == .camera{
             var cameraImage = UIImage()
             cameraImage = info[UIImagePickerController.InfoKey.editedImage] as! UIImage
+            let imgUrl = info[UIImagePickerController.InfoKey.imageURL] as! URL
+            
             orderImages?.append(cameraImage)
         }else{
             var galleryImage = UIImage()
             galleryImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+            let imgUrl = info[UIImagePickerController.InfoKey.imageURL] as! URL
+            FirestoreService.shared.uploadImagsToStorage([imgUrl]) { (pair) in
+                print(">>>> firest \(pair.first?.first) >>>> second \(pair.first?.second)")
+            }
             orderImages?.append(galleryImage)
         }
         self.orderImagesCollectionView.reloadData()

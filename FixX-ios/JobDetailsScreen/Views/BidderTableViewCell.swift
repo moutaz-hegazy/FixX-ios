@@ -17,10 +17,13 @@ class BidderTableViewCell: UITableViewCell {
     @IBOutlet weak var priceLbl: UILabel!
     @IBOutlet weak var bidderRatingBar: CosmosView!
     
+    var price : String?
+    var tech : Technician?
+    var onAcceptHandler:((String,Technician) -> ())?
 
     @IBAction func acceptBtnPressed(_ sender: UIButton) {
         
-        
+        onAcceptHandler?(price!,tech!)
         
     }
     @IBAction func chatBtnPressed(_ sender: UIButton) {
@@ -29,8 +32,9 @@ class BidderTableViewCell: UITableViewCell {
     }
     
     func displayBidderData(for bidder: Technician, with price:String){
+        self.price = price
+        tech = bidder
         bidderRatingBar.settings.updateOnTouch = false
-    
         if let image = bidder.profilePicture?.second, !image.isEmpty{
             bidderImageView.sd_setImage(with: URL(string: image), placeholderImage: UIImage(named: "placeholder.png"))
         }else{
