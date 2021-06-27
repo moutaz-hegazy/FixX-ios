@@ -20,6 +20,7 @@ class BidderTableViewCell: UITableViewCell {
     var price : String?
     var tech : Technician?
     var onAcceptHandler:((String,Technician) -> ())?
+    var onChatHandler : ((Technician?)->())?
 
     @IBAction func acceptBtnPressed(_ sender: UIButton) {
         
@@ -27,11 +28,14 @@ class BidderTableViewCell: UITableViewCell {
         
     }
     @IBAction func chatBtnPressed(_ sender: UIButton) {
+        onChatHandler?(tech)
     }
     @IBAction func callBtnPressed(_ sender: UIButton) {
     }
     
     func displayBidderData(for bidder: Technician, with price:String){
+        bidderRatingBar.settings.updateOnTouch = false
+        bidderRatingBar.settings.fillMode = .half
         self.price = price
         tech = bidder
         bidderRatingBar.settings.updateOnTouch = false

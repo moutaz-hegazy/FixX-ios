@@ -44,12 +44,13 @@ class ChatLogsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let logVC = UIStoryboard(name: "ChatInbox", bundle: nil).instantiateViewController(identifier: "ChatInboxVC") as? ChatInboxViewController{
-            if let contact = (tableView.cellForRow(at: indexPath) as? ChatLogsCustomCell)?.contact{
-                logVC.contact = contact
-                logVC.channel = contacts[indexPath.row].channel
-                navigationController?.pushViewController(logVC, animated: true)
-            }
+        if let cell = tableView.cellForRow(at: indexPath) as? ChatLogsCustomCell{
+            let chatVC = ChatWindowViewController()
+            chatVC.person = cell.contact
+            chatVC.channel = contacts[indexPath.row].channel
+            
+            navigationController?.pushViewController(chatVC, animated: true)
+
         }
     }
     

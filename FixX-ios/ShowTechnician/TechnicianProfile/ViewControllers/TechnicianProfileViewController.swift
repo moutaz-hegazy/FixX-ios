@@ -14,86 +14,124 @@ class TechnicianProfileViewController: UIViewController,UITableViewDataSource,UI
     @IBOutlet weak var ReviewsTable: UITableView!
     
     
-    var reviews = [Review]()
+    var reviews = [Comment]()
     
-    var name : String?
-    var image : String?
-    var rating : Double?
-    var noOfJobs : String?
-    var noOfReviews : String?
-    
-    @IBAction func backButtonAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
+    var tech : Technician?
+    var onBookHandler : (()->())?
+    var orderImagesUrls = [URL]()
+    var job : Job?
+    var displayOnly = true
     
     @IBOutlet weak var techImageView: UIImageView!
-    
     @IBOutlet weak var techNameLabel: UILabel!
-    
-    
     @IBOutlet weak var techRatingView: CosmosView!
-    
-    
     @IBOutlet weak var techNoOfJobsLabel: UILabel!
-    
     @IBOutlet weak var techNoOfReviews: UILabel!
+    @IBOutlet weak var bookBtn: UIButton!
+    @IBOutlet weak var bookBtnHeight: NSLayoutConstraint!
+    @IBOutlet weak var techImageLbl: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        techNameLabel.text = name ?? ""
-        techRatingView.rating = rating ?? 5
-        techNoOfJobsLabel.text = noOfJobs ?? "0"
-        techNoOfReviews.text = noOfReviews ?? "0"
+        navigationItem.title = tech?.name
+        if(!displayOnly){
+            bookBtn.isHidden = false
+            bookBtnHeight.constant = 45
+        }
+        
+        FirestoreService.shared.fetchCommentsForTech(techId: tech!.uid!) { [weak self](comments) in
+            self?.reviews = comments
+            self?.ReviewsTable.reloadData()
+        } onFailHandler: {
+            
+        }
+
+        if let image = tech?.profilePicture?.second, !image.isEmpty{
+            techImageLbl.isHidden = true
+            techImageView.isHidden = false
+            techImageView.sd_setImage(with: URL(string: image), placeholderImage: UIImage(named: "placeholder.png"))
+        }else{
+            techImageView.isHidden = true
+            techImageLbl.isHidden = false
+            techImageLbl.text = tech?.name.first?.uppercased()
+        }
+        
+        techNameLabel.text = tech?.name ?? ""
+        techRatingView.rating = tech?.rating ?? 2.5
+        techNoOfJobsLabel.text = String(tech?.jobsCount ?? 0)
+        techNoOfReviews.text = String(tech?.reviewCount ?? 0)
         
         techRatingView.settings.updateOnTouch = false
-        techRatingView.settings.fillMode = .precise
+        techRatingView.settings.fillMode = .half
         techRatingView.settings.starMargin = 1
-       reviews = [Review(reviewPhoto: UIImage(imageLiteralResourceName: "profile"), reviewName: "Dina Adel", reviewRate: 3.5, reviewDate: "4-06-21", comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),Review(reviewPhoto: UIImage(imageLiteralResourceName: "profile"), reviewName: "Esraa Gohar", reviewRate: 3, reviewDate: "3-06-21", comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")]
+        
+        
 
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func bookBtnPressed(_ sender: UIButton) {
+        bookTechnician(with: tech!)
+    }
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+        if reviews.isEmpty{
+            tableView.isHidden = true
+        }else{
+            tableView.isHidden = false
+        }
         return reviews.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath) as! ReviewsTableViewCell
         
-        let review = reviews[indexPath.row]
-        cell.reviewRate.rating = review.reviewRate
-        cell.reviewRate.settings.updateOnTouch = false
-        cell.reviewRate.settings.fillMode = .precise
-        cell.reviewRate.settings.starMargin = 1
-        cell.reviewName?.text = review.reviewName
-        cell.reviewDate?.text = review.reviewDate
-        cell.reviewComment?.text = review.comment
-        cell.reviewImage?.image = review.reviewPhoto
+        cell.displayComment(reviews[indexPath.row])
+        
         return cell
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-    struct Review {
-        let reviewPhoto : UIImage
-        let reviewName : String
-        let reviewRate : Double
-        let reviewDate : String
-        let comment : String
+    private func bookTechnician(with techData: Technician){
+        if let jobRequested = job{
+            jobRequested.privateTechUid = techData.uid
+            uploadJob(job: jobRequested)
+        }
     }
     
-
+    private func uploadJob(job : Job){
+        if orderImagesUrls.isEmpty{
+            FirestoreService.shared.saveJobDetails(job: job) { (jobData) in
+                self.onBookHandler?()
+                self.navigationController?.popViewController(animated: true)
+            } onFailHandler: {
+                
+            }
+            
+        }else{
+            var imagesLinks = [StringPair]()
+            for url in orderImagesUrls{
+                FirestoreService.shared.uploadImagsToStorage(url) { [weak self](imagePair) in
+                    imagesLinks += [imagePair]
+                    if(imagesLinks.count == self?.orderImagesUrls.count ?? 0){
+                        
+                        job.images = imagesLinks
+                        FirestoreService.shared.saveJobDetails(job: job) { (job) in
+                            self?.onBookHandler?()
+                            self?.navigationController?.popViewController(animated: true)
+                            
+                        } onFailHandler: {
+                            
+                        }
+                        
+                        
+                    }
+                }
+            }
+        }
+    }
 }

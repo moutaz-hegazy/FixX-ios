@@ -94,6 +94,7 @@
 		A9E43DAD267917E0008B5A45 /* MyOrdersStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9E43DAC267917E0008B5A45 /* MyOrdersStoryboard.storyboard */; };
 		A9E444F2267A4C68009DD6AE /* OngoingOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E444F1267A4C68009DD6AE /* OngoingOrdersViewController.swift */; };
 		A9E444F6267A4D12009DD6AE /* CompletedOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E444F5267A4D12009DD6AE /* CompletedOrdersViewController.swift */; };
+		A9E4E25B2687E85A00B8FAF4 /* ChatWindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E4E25A2687E85A00B8FAF4 /* ChatWindowViewController.swift */; };
 		A9EDA44A26824F6800F26634 /* AddWorkLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDA43926824F6700F26634 /* AddWorkLocationViewController.swift */; };
 		A9EDA44B26824F6800F26634 /* MyWorkLocationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDA43A26824F6700F26634 /* MyWorkLocationsTableViewCell.swift */; };
 		A9EDA44C26824F6800F26634 /* MyWorkLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EDA43B26824F6700F26634 /* MyWorkLocationViewController.swift */; };
@@ -202,6 +203,7 @@
 		A9E43DAC267917E0008B5A45 /* MyOrdersStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyOrdersStoryboard.storyboard; sourceTree = "<group>"; };
 		A9E444F1267A4C68009DD6AE /* OngoingOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OngoingOrdersViewController.swift; sourceTree = "<group>"; };
 		A9E444F5267A4D12009DD6AE /* CompletedOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedOrdersViewController.swift; sourceTree = "<group>"; };
+		A9E4E25A2687E85A00B8FAF4 /* ChatWindowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatWindowViewController.swift; sourceTree = "<group>"; };
 		A9EDA43926824F6700F26634 /* AddWorkLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWorkLocationViewController.swift; sourceTree = "<group>"; };
 		A9EDA43A26824F6700F26634 /* MyWorkLocationsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyWorkLocationsTableViewCell.swift; sourceTree = "<group>"; };
 		A9EDA43B26824F6700F26634 /* MyWorkLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyWorkLocationViewController.swift; sourceTree = "<group>"; };
@@ -493,6 +495,7 @@
 		A9776A66267B68C400E9B80B /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				A9E4E2572687E74100B8FAF4 /* ChatWithPod */,
 				A9776A87267B6DF700E9B80B /* ChatLogs */,
 				A9776A88267B6E0000E9B80B /* ChatInbox */,
 			);
@@ -660,6 +663,14 @@
 				A9DC5DF8267AADA50084948C /* CompletedTableViewCell.swift */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		A9E4E2572687E74100B8FAF4 /* ChatWithPod */ = {
+			isa = PBXGroup;
+			children = (
+				A9E4E25A2687E85A00B8FAF4 /* ChatWindowViewController.swift */,
+			);
+			path = ChatWithPod;
 			sourceTree = "<group>";
 		};
 		A9EDA43626824F6700F26634 /* WorkLocations */ = {
@@ -924,6 +935,7 @@
 				A962EF64267F942900A8420C /* ServiceItem.swift in Sources */,
 				A962EF63267F942900A8420C /* Details.swift in Sources */,
 				A9EDA44B26824F6800F26634 /* MyWorkLocationsTableViewCell.swift in Sources */,
+				A9E4E25B2687E85A00B8FAF4 /* ChatWindowViewController.swift in Sources */,
 				A96775252683816B00BD6AC0 /* ShowTechnicianTableViewCell.swift in Sources */,
 				A9776AA0267B6FCB00E9B80B /* RegistrationProtocol.swift in Sources */,
 				A9EDA44F26824F6800F26634 /* AddressProtocol.swift in Sources */,

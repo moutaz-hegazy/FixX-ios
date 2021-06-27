@@ -13,18 +13,19 @@ class CustomizeOrderViewController:
     var jobType : String?
 
     //Order details
-    var orderLocation: String?
-    var orderImages: [UIImage]?
-    var orderDate: String?
-    var orderStartTime: String?
-    var orderEndTime: String?
-    var orderDescription: String?
+    private var orderLocation: String?
+    private var orderImages = [UIImage]()
+    private var orderImagesUrls = [URL]()
+    private var orderDate: String?
+    private var orderStartTime: String?
+    private var orderEndTime: String?
+    private var orderDescription: String?
     
     
-    var imagePickerController = UIImagePickerController()
-    var datePicker: UIDatePicker?
-    var startTimePicker: UIDatePicker?
-    var endTimePicker: UIDatePicker?
+    private var imagePickerController = UIImagePickerController()
+    private var datePicker: UIDatePicker?
+    private var startTimePicker: UIDatePicker?
+    private var endTimePicker: UIDatePicker?
     
     private lazy var currentDate : String = {
         let formatter = DateFormatter()
@@ -50,12 +51,15 @@ class CustomizeOrderViewController:
     @IBOutlet weak var selectTechnicianButton: UIButton!
     @IBOutlet weak var publishOrderButton: UIButton!
     @IBOutlet weak var navBarItem: UINavigationItem!
+    @IBOutlet weak var activitySpinner: UIActivityIndicatorView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         selectLocationMenu.optionArray = getUserLocations()
         selectLocationMenu.optionArray += ["Add New location"]
+        
+        orderDate = getDateStringFormatted(for: Date())
         
         selectLocationMenu.didSelect { (loc, index, id) in
             if(index == self.selectLocationMenu.optionArray.count-1){
@@ -117,7 +121,7 @@ class CustomizeOrderViewController:
         let optionsMenu = UIAlertController(title: "Action Required", message: "Delete this image?", preferredStyle: .alert)
         let chooseDeleteAction = UIAlertAction(title: "Ok", style: .default){_ in
             DispatchQueue.main.async {
-                self.orderImages?.remove(at: position)
+                self.orderImages.remove(at: position)
                 self.orderImagesCollectionView?.reloadData()
             }}
         let chooseCancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -152,16 +156,10 @@ class CustomizeOrderViewController:
     
     //Mark: Image adding functions
     func displayActionSheet(){
-        //Since Simulator has no camera, app crashes and an exception is thrown...
-        //Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: 'Source type 1 not available'
         let optionsMenu = UIAlertController(title: "Action Required", message: "Add images via", preferredStyle: .actionSheet)
         let chooseCameraAction = UIAlertAction(title: "Camera", style: .default){_ in self.openCamera()}
         let choosePhotosAction = UIAlertAction(title: "Photos", style: .default){_ in self.openPhotos()}
         let chooseCancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        //let cameraIcon = UIImage(named: "ios_camera.png")
-        //let photosIcon = UIImage(named: "ios_photos.png")
-        //chooseCameraAction.setValue(cameraIcon?.withRenderingMode(.alwaysOriginal), forKey: "camera")
-        //chooseCameraAction.setValue(photosIcon?.withRenderingMode(.alwaysOriginal), forKey: "photos")
         optionsMenu.addAction(chooseCameraAction)
         optionsMenu.addAction(choosePhotosAction)
         optionsMenu.addAction(chooseCancelAction)
@@ -201,11 +199,15 @@ class CustomizeOrderViewController:
     
     //Mark: Image adding functions
     func openCamera(){
-        let imagePicker = UIImagePickerController()
-        imagePicker.sourceType = .camera
-        imagePicker.allowsEditing = true
-        imagePicker.delegate = self
-        present(imagePicker, animated: true)
+        if(UIImagePickerController.isSourceTypeAvailable(.camera)){
+            let imagePicker = UIImagePickerController()
+            imagePicker.sourceType = .camera
+            imagePicker.allowsEditing = true
+            imagePicker.delegate = self
+            present(imagePicker, animated: true)
+        }else{
+            print("NO CAMERA !!")
+        }
     }
     
     
@@ -225,16 +227,15 @@ class CustomizeOrderViewController:
             var cameraImage = UIImage()
             cameraImage = info[UIImagePickerController.InfoKey.editedImage] as! UIImage
             let imgUrl = info[UIImagePickerController.InfoKey.imageURL] as! URL
-            
-            orderImages?.append(cameraImage)
+            orderImagesUrls += [imgUrl]
+            orderImages.append(cameraImage)
         }else{
             var galleryImage = UIImage()
             galleryImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
             let imgUrl = info[UIImagePickerController.InfoKey.imageURL] as! URL
-            FirestoreService.shared.uploadImagsToStorage([imgUrl]) { (pair) in
-                print(">>>> firest \(pair.first?.first) >>>> second \(pair.first?.second)")
-            }
-            orderImages?.append(galleryImage)
+            orderImagesUrls += [imgUrl]
+            
+            orderImages.append(galleryImage)
         }
         self.orderImagesCollectionView.reloadData()
         imagePickerController.dismiss(animated: true, completion: nil)
@@ -244,7 +245,7 @@ class CustomizeOrderViewController:
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return orderImages?.count ?? 0
+        return orderImages.count
     }
     
     
@@ -252,7 +253,7 @@ class CustomizeOrderViewController:
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ImageCollectionViewCell
-        cell.attachedImage.image = orderImages?[indexPath.row]
+        cell.attachedImage.image = orderImages[indexPath.row]
         cell.attachedImage.contentMode = UIView.ContentMode.scaleAspectFit
         return cell
     }
@@ -312,18 +313,22 @@ class CustomizeOrderViewController:
     
     //Mark: Date picker
     @objc func dueDateChanged(sender: UIDatePicker){
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "nl_NL")
-        formatter.setLocalizedDateFormatFromTemplate("dd-MMM-yyyy")
-        var datetime = formatter.string(from: sender.date)
-        datetime.remove(at: datetime.firstIndex(of: ".")!)
-        let dateForm = datetime.replacingOccurrences(of: " ", with: "-")
+        let dateForm = getDateStringFormatted(for: sender.date)
         dateLabel.text = dateForm
         orderDate = dateForm
         datePicker?.isHidden = true
         print(dateForm)
     }
     
+    private func getDateStringFormatted(for date: Date) -> String{
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "nl_NL")
+        formatter.setLocalizedDateFormatFromTemplate("dd-MMM-yyyy")
+        var datetime = formatter.string(from: date)
+        datetime.remove(at: datetime.firstIndex(of: ".")!)
+        let dateForm = datetime.replacingOccurrences(of: " ", with: "-")
+        return dateForm
+    }
     
     
     
@@ -393,6 +398,7 @@ class CustomizeOrderViewController:
         if let showTechsVC = UIStoryboard(name: "ShowTechnicianScreenStoryboard", bundle: nil).instantiateViewController(identifier: "showTechVC") as? ShowTechnicianTableViewController{
             
             showTechsVC.job = job
+            showTechsVC.orderImagesUrls = orderImagesUrls
             showTechsVC.onTechSelectedHandler = {
                 self.presentingViewController?.dismiss(animated: true, completion:  nil)
             }
@@ -404,29 +410,58 @@ class CustomizeOrderViewController:
     
     
     @IBAction func publishOrder(_ sender: UIButton) {
-        print("Publish Order")
         let job = getOrderData(isPrivate: false)
         if job != nil{
-            FirestoreService.shared.saveJobDetails(job: job!) { (jobData) in
+            
+            publishOrderButton.isHidden = true
+            selectTechnicianButton.isHidden = true
+            activitySpinner.isHidden = false
+            activitySpinner.startAnimating()
+            uploadJob(job: job!)
+        }
+    }
+    
+    private func uploadJob(job : Job){
+        if orderImagesUrls.isEmpty{
+            FirestoreService.shared.saveJobDetails(job: job) { (jobData) in
                 self.presentingViewController?.dismiss(animated: true, completion: nil)
             } onFailHandler: {
                 
+            }
+            
+        }else{
+            var imagesLinks = [StringPair]()
+            for url in orderImagesUrls{
+                FirestoreService.shared.uploadImagsToStorage(url) { [weak self](imagePair) in
+                    imagesLinks += [imagePair]
+                    if(imagesLinks.count == self?.orderImagesUrls.count ?? 0){
+                        
+                        job.images = imagesLinks
+                        FirestoreService.shared.saveJobDetails(job: job) { (job) in
+                            self?.presentingViewController?.dismiss(animated: true, completion: nil)
+                            
+                        } onFailHandler: {
+                            
+                        }
+                        
+                        
+                    }
+                }
             }
         }
     }
     
     
     func getOrderData(isPrivate : Bool)-> Job?{
-        orderDate = dateLabel.text
+        if let date = dateLabel.text, !date.isEmpty{
+            orderDate = date
+        }
         orderStartTime = startTimeLabel.text
         orderEndTime = endTimeLabel.text
         orderDescription = descriptionTextField.text
         
         if(orderLocation != nil){
             let job = Job(uid: HomeScreenViewController.USER_OBJECT?.uid, type: jobType!, location: orderLocation, status: "OnRequest", jobId: "", description: descriptionTextField.text ?? "", date: orderDate ?? currentDate, completionDate: "", fromTime: orderStartTime, toTime: orderEndTime, price: nil, techID: nil, bidders: nil, images: nil, privateRequest: isPrivate)
-            
-            print(job.areaLocation)
-            
             return job
         }
         return nil

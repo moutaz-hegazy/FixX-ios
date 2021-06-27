@@ -18,12 +18,15 @@ class ShowTechnicianTableViewCell: UITableViewCell {
     @IBOutlet weak var techNoOfReviews: UILabel!
     @IBOutlet weak var techRating: CosmosView!
     @IBOutlet weak var techImageLbl: UILabel!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var bookBtn: UIButton!
     
     var techData : Technician?
     
     var techSelectedHandle : ((Technician?)->())?
     
     func displayTechData(tech : Technician){
+        techRating.settings.updateOnTouch = false
         techData = tech
         if let pic = tech.profilePicture, !pic.second.isEmpty{
             techImageLbl.isHidden = true
@@ -39,6 +42,8 @@ class ShowTechnicianTableViewCell: UITableViewCell {
     }
 
     @IBAction func bookBtnPressed(_ sender: UIButton){
+        spinner.isHidden = false
+        spinner.startAnimating()
         techSelectedHandle?(techData)
     }
 }

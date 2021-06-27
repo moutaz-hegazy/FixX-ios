@@ -13,10 +13,14 @@ class ShowTechnicianTableViewController: UITableViewController {
 
     var technicians = [Technician]()
     var job : Job?
+    var orderImagesUrls = [URL]()
     var onTechSelectedHandler : (()->())?
+    var onDisplay = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = "Technicians List"
         
         if let myJob = job{
             FirestoreService.shared.searchForTechnicianByJobAndLocation(job: myJob.type, location: myJob.areaLocation!) { [weak self](techs) in
@@ -32,13 +36,39 @@ class ShowTechnicianTableViewController: UITableViewController {
     private func bookTechnician(with techData: Technician){
         if let jobRequested = job{
             jobRequested.privateTechUid = techData.uid
-            FirestoreService.shared.saveJobDetails(job:jobRequested) { (job) in
+            uploadJob(job: jobRequested)
+        }
+    }
+    
+    private func uploadJob(job : Job){
+        if orderImagesUrls.isEmpty{
+            FirestoreService.shared.saveJobDetails(job: job) { (jobData) in
                 self.onTechSelectedHandler?()
                 self.navigationController?.popViewController(animated: true)
             } onFailHandler: {
                 
             }
-
+            
+        }else{
+            var imagesLinks = [StringPair]()
+            for url in orderImagesUrls{
+                FirestoreService.shared.uploadImagsToStorage(url) { [weak self](imagePair) in
+                    imagesLinks += [imagePair]
+                    if(imagesLinks.count == self?.orderImagesUrls.count ?? 0){
+                        
+                        job.images = imagesLinks
+                        FirestoreService.shared.saveJobDetails(job: job) { (job) in
+                            self?.onTechSelectedHandler?()
+                            self?.navigationController?.popViewController(animated: true)
+                            
+                        } onFailHandler: {
+                            
+                        }
+                        
+                        
+                    }
+                }
+            }
         }
     }
     
@@ -58,14 +88,17 @@ class ShowTechnicianTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TechCell", for: indexPath) as! ShowTechnicianTableViewCell
-        
+        if(!onDisplay){
+            cell.bookBtn.isHidden = true
+        }
         cell.displayTechData(tech:technicians[indexPath.row])
         cell.techSelectedHandle = {
             [weak self] (techData) in
             guard let tech = techData else {
                 return
             }
-            
+            self?.onDisplay = false
+            self?.tableView.reloadData()
             self?.bookTechnician(with : tech)
             
         }
@@ -74,49 +107,27 @@ class ShowTechnicianTableViewController: UITableViewController {
         return cell
     }
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? ShowTechnicianTableViewCell{
+            openTechProfile(for: cell.techData)
+        }
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    private func openTechProfile(for tech : Technician?){
+        if let techVC = UIStoryboard(name: "TechnicianProfileStoryboard", bundle: nil)
+            .instantiateViewController(identifier: "techProfileScreenVC") as? TechnicianProfileViewController ,let technician = tech{
+            techVC.tech = technician
+            techVC.job = job
+            techVC.orderImagesUrls = orderImagesUrls
+            techVC.displayOnly = false
+            techVC.onBookHandler = {
+                [weak self] in
+                self?.onTechSelectedHandler?()
+                self?.navigationController?.popViewController(animated: true)
+            }
+//            present(techVC, animated: true, completion: nil)
+            navigationController?.pushViewController(techVC, animated: true)
+        }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

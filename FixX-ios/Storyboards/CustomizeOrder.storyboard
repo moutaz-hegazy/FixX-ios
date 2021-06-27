@@ -252,6 +252,10 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
+                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="hn3-Mb-Mlr">
+                                                <rect key="frame" x="188.5" y="690" width="37" height="37"/>
+                                                <color key="color" systemColor="labelColor"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -260,6 +264,7 @@
                                             <constraint firstItem="P7n-VS-Yte" firstAttribute="centerY" secondItem="m8q-g8-Ug6" secondAttribute="centerY" id="4LZ-RA-oy6"/>
                                             <constraint firstItem="G6f-nn-o79" firstAttribute="leading" secondItem="qlz-Nr-xuP" secondAttribute="trailing" constant="8" id="6vD-TD-IyS"/>
                                             <constraint firstItem="BPY-fZ-Isi" firstAttribute="top" secondItem="UZf-Il-wAW" secondAttribute="bottom" constant="20" id="7PR-O8-6gh"/>
+                                            <constraint firstItem="hn3-Mb-Mlr" firstAttribute="centerX" secondItem="PWX-lh-FVL" secondAttribute="centerX" id="7To-he-fVv"/>
                                             <constraint firstItem="uHV-ff-2Gv" firstAttribute="height" secondItem="pEZ-ed-rhH" secondAttribute="height" id="7hW-Va-6Kx"/>
                                             <constraint firstItem="gVp-A7-cKE" firstAttribute="height" secondItem="P7n-VS-Yte" secondAttribute="height" id="82A-JG-K7l"/>
                                             <constraint firstItem="RPl-O6-I6B" firstAttribute="top" secondItem="PWX-lh-FVL" secondAttribute="top" constant="30" id="85h-RZ-upe"/>
@@ -281,6 +286,7 @@
                                             <constraint firstItem="P7n-VS-Yte" firstAttribute="leading" secondItem="m8q-g8-Ug6" secondAttribute="leading" id="S8m-6V-8e6"/>
                                             <constraint firstItem="Fvj-jh-Cn3" firstAttribute="centerX" secondItem="PWX-lh-FVL" secondAttribute="centerX" id="SUZ-VP-CC6"/>
                                             <constraint firstItem="HZ1-ym-tiD" firstAttribute="centerX" secondItem="PWX-lh-FVL" secondAttribute="centerX" id="U9W-Kv-kSK"/>
+                                            <constraint firstItem="hn3-Mb-Mlr" firstAttribute="top" secondItem="HZ1-ym-tiD" secondAttribute="bottom" constant="5" id="WpD-mw-4mI"/>
                                             <constraint firstItem="gVp-A7-cKE" firstAttribute="leading" secondItem="P7n-VS-Yte" secondAttribute="trailing" constant="8" id="ZIn-Gm-qeN"/>
                                             <constraint firstAttribute="trailing" secondItem="RPl-O6-I6B" secondAttribute="trailing" constant="60" id="chj-KD-P7v"/>
                                             <constraint firstItem="gW2-1z-3IC" firstAttribute="top" secondItem="m8q-g8-Ug6" secondAttribute="bottom" constant="30" id="eOg-uk-0qx"/>
@@ -332,6 +338,7 @@
                     </navigationItem>
                     <size key="freeformSize" width="414" height="900"/>
                     <connections>
+                        <outlet property="activitySpinner" destination="hn3-Mb-Mlr" id="gX8-va-WmM"/>
                         <outlet property="dateButton" destination="XwG-hj-hNV" id="GmP-0M-kRI"/>
                         <outlet property="dateLabel" destination="uHV-ff-2Gv" id="AGD-fe-dia"/>
                         <outlet property="descriptionTextField" destination="2S5-i8-MZb" id="Wxx-Kp-yaT"/>
@@ -376,6 +383,9 @@
         <image name="ios_add_image" width="512" height="512"/>
         <image name="ios_calendar" width="512" height="512"/>
         <image name="ios_clock" width="512" height="512"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

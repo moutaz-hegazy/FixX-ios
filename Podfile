@@ -14,5 +14,6 @@ target 'FixX-ios' do
   pod 'iOSDropDown'
   pod 'Toaster'
   pod 'Cosmos'
+  pod 'MessageKit'
 
 end

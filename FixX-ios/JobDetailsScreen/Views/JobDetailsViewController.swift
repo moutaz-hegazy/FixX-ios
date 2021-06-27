@@ -56,6 +56,7 @@ class JobDetailsViewController: UIViewController {
             return
         }
         techRatingView.settings.updateOnTouch = false
+        techRatingView.settings.fillMode = .half
         displayJobData(for: jobData)
         if let techId = jobData.techID{
             displaySingleTech(techId: techId, jobType: jobData.status)
@@ -86,6 +87,9 @@ class JobDetailsViewController: UIViewController {
     
     @IBAction func techChatBtnPressed(_ sender: UIButton) {
         
+        let chatVC = ChatWindowViewController()
+        chatVC.person = tech
+        present(chatVC, animated: true, completion: nil)
     }
     @IBAction func techCallBtnPressed(_ sender: UIButton) {
         if let url = URL(string: "tel://\(tech!.phoneNumber)"),UIApplication.shared.canOpenURL(url){
@@ -136,6 +140,18 @@ class JobDetailsViewController: UIViewController {
         if(yLocation < 0 || yLocation > 250){
             ratingViewBackground.isHidden = true
             ratingMiniView.isHidden = true
+        }
+    }
+    
+    @IBAction func techViewTapAction(_ sender: UITapGestureRecognizer) {
+        openTechProfile(for: tech)
+    }
+    
+    private func openTechProfile(for tech : Technician?){
+        if let techVC = UIStoryboard(name: "TechnicianProfileStoryboard", bundle: nil)
+            .instantiateViewController(identifier: "techProfileScreenVC") as? TechnicianProfileViewController ,let technician = tech{
+            techVC.tech = technician
+            present(techVC, animated: true, completion: nil)
         }
     }
     
@@ -270,6 +286,7 @@ class JobDetailsViewController: UIViewController {
             self.techRatingBtn.isHidden = true
             self.techPriceTitle.isHidden = true
             self.techPrice.isHidden = true
+            techViewHeight.constant = 100
         }else if(jobType == "Completed"){
             self.techAcceptBtn.isHidden = true
             self.techCancelBtn.isHidden = true
@@ -278,9 +295,10 @@ class JobDetailsViewController: UIViewController {
             
             if let ratable = self.job?.rateable, ratable{
                 self.techRatingBtn.isHidden = false
+                techViewHeight.constant = 200
             }else{
                 self.techRatingBtn.isHidden = true
-
+                techViewHeight.constant = 100
             }
         }
     }
@@ -323,8 +341,21 @@ extension JobDetailsViewController : UITableViewDelegate, UITableViewDataSource{
                 [weak self](price,tech) in
                 self?.onTechAccepled(with: tech, and: price)
             }
+            bidderCell.onChatHandler = {
+                [weak self] tech in
+                let chatVC = ChatWindowViewController()
+                chatVC.person = tech
+                self?.present(chatVC, animated: true)
+            }
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? BidderTableViewCell
+        {
+            openTechProfile(for: cell.tech)
+        }
     }
     
     private func onTechAccepled(with techData : Technician,and price : String){

@@ -22,18 +22,17 @@ struct FirestoreService{
     private let storageRef = Storage.storage().reference()
     
     
-    func uploadImagsToStorage(_ images: [URL],onSuccess handler : ([StringPair])->()){
-        var imagepathsList = [StringPair]()
-        if !images.isEmpty{
-            images.forEach { (url) in
-                let path = "Images/\(UUID().uuidString)"
-                let imgRef = storageRef.child(path)
-                imgRef.putFile(from: url)
+    func uploadImagsToStorage(_ imageUrl: URL,onSuccess handler : @escaping(StringPair)->()){
+        let path = "Images/\(UUID().uuidString)"
+        let imgRef = storageRef.child(path)
+        imgRef.putFile(from: imageUrl, metadata: nil) { (mt, er) in
+            if(er == nil){
                 imgRef.downloadURL { (url, err) in
                     if let dUrl = url{
                         let pair  = StringPair(first: path,second: dUrl.absoluteString)
-                        print("URL ?????>>>>> \(dUrl)")
-                        imagepathsList += [pair]
+                        handler(pair)
+                    }else{
+                        print("wezza : Found nil")
                     }
                 }
             }
@@ -134,8 +133,11 @@ struct FirestoreService{
                 } else {
                     for document in querySnapshot!.documents {
                         let commentData = try? document.data(as: CommentData.self)
-                        print("first : \(commentData?.comment)")
-                        comments.append((commentData?.comment)!)
+                        
+                        if let comment = commentData?.comment?.commentContent,
+                           !comment.isEmpty{
+                            comments.append((commentData?.comment)!)
+                        }
                     }
                     onSuccessHandler(comments)
                 }
@@ -413,23 +415,21 @@ struct FirestoreService{
     }
     
     func saveJobDetails(job : Job, onSuccessHandler : @escaping (Job) -> Void, onFailHandler : @escaping () -> Void){
-        let mirror = Mirror(reflecting: job)
-        let dictionary = Dictionary(uniqueKeysWithValues: mirror.children.lazy
-                                        .map({ (label:String?, value:Any) -> (String, Any)? in
-                guard let label = label else { return nil }
-                return (label, value)
-            }).compactMap { $0 })
         let ref = db.collection("Jobs").document()
-        ref.setData(dictionary, completion: {error in
-            if error != nil{
-                onFailHandler()
-            } else{
-                ref.updateData(["jobId" : ref.documentID])
-                job.jobId = ref.documentID
-                onSuccessHandler(job)
-            }
-            
-        })
+
+        do{
+            try ref.setData(from: job, completion: { (err) in
+                if err != nil{
+                    onFailHandler()
+                } else{
+                    ref.updateData(["jobId" : ref.documentID])
+                    job.jobId = ref.documentID
+                    onSuccessHandler(job)
+                }
+            })
+        }catch (let error){
+            print("error happend >>> \(error.localizedDescription)")
+        }
     }
     
     
